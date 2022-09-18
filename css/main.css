@@ -13,20 +13,21 @@ body {
 }
 
 header {
-  display: flex; 
+  display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 
 img {
   width: 100%;
 }
 
-nav {
-  padding-left: 270px;
-}
-
 h5 {
   color: #fff;
+}
+
+a {
+  all: unset;
 }
 
 .contenedor {
@@ -66,6 +67,7 @@ h5 {
   border-radius: 16px;
   font-size: 16px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn-submit:hover {
@@ -99,7 +101,7 @@ h5 {
 
 .subt-reg {
   font-weight: 300;
-  color: #BFBFBF;
+  color: #bfbfbf;
   margin-bottom: 24px;
 }
 
@@ -124,7 +126,7 @@ h5 {
 }
 
 .logo-grupo-aico {
-  width: 200px; 
+  width: 200px;
   height: 110px;
   margin: 15px;
   margin-left: 50px;
@@ -132,8 +134,9 @@ h5 {
 
 .nav-text {
   color: #041e4f;
-  font-size: 20px;
+  font-size: 16px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .nav-text:hover {
@@ -151,4 +154,10 @@ h5 {
   justify-content: space-around;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.icono {
+  width: 20px;
+  cursor: pointer;
+  margin-right: 4px;
 }
