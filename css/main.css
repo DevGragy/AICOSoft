@@ -12,13 +12,26 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+header {
+  display: flex; 
+  align-items: center;
+}
+
 img {
   width: 100%;
 }
 
+nav {
+  padding-left: 270px;
+}
+
+h5 {
+  color: #fff;
+}
+
 .contenedor {
   padding: 40px;
-  height: 100vh;
+  height: 80vh;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -52,9 +65,28 @@ img {
   border: none;
   border-radius: 16px;
   font-size: 16px;
+  text-decoration: none;
 }
 
 .btn-submit:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  transition: all ease-in 0.3s;
+}
+
+.btn-link {
+  padding: 12px 14px;
+  margin: 20px;
+  background-color: rgb(101, 101, 255);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.btn-link:hover {
   background-color: #fff;
   color: #000;
   border: 1px solid #000;
@@ -67,6 +99,56 @@ img {
 
 .subt-reg {
   font-weight: 300;
-  color: #ccc;
+  color: #BFBFBF;
   margin-bottom: 24px;
+}
+
+.top-header {
+  background-color: #041e4f;
+  color: #fff;
+  padding: 8px;
+}
+
+.top-header-space {
+  display: flex;
+  justify-content: space-around;
+}
+
+.links {
+  color: #fff;
+  text-decoration: none;
+}
+
+.links:hover {
+  color: #f5f5f5;
+}
+
+.logo-grupo-aico {
+  width: 200px; 
+  height: 110px;
+  margin: 15px;
+  margin-left: 50px;
+}
+
+.nav-text {
+  color: #041e4f;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.nav-text:hover {
+  color: rgb(101, 101, 255);
+}
+
+.footer-bg {
+  background-color: #041e4f;
+  color: #fff;
+  font-size: 20px;
+}
+
+.footer-space {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
