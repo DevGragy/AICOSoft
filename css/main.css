@@ -22,8 +22,8 @@ img {
   width: 100%;
 }
 
-h5 {
-  color: #fff;
+h4 {
+  font-size: 25px;
 }
 
 a {
@@ -130,11 +130,12 @@ a {
   height: 110px;
   margin: 15px;
   margin-left: 50px;
+  cursor: pointer;
 }
 
 .nav-text {
   color: #041e4f;
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -160,4 +161,22 @@ a {
   width: 20px;
   cursor: pointer;
   margin-right: 4px;
+}
+
+.icono-footer {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.icono-top-header {
+  width: 15px;
+  cursor: pointer;
+  margin-top: 3px;
+  margin-right: 10px;
+}
+
+.espacio-footer {
+  padding-bottom: 15px;
 }
