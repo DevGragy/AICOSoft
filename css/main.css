@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 
 *,
 *::before,
@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
@@ -103,6 +103,7 @@ a {
   font-weight: 300;
   color: #bfbfbf;
   margin-bottom: 24px;
+  font-size: 16px;
 }
 
 .top-header {
@@ -114,6 +115,7 @@ a {
 .top-header-space {
   display: flex;
   justify-content: space-around;
+  font-size: 12px;
 }
 
 .links {
@@ -135,7 +137,7 @@ a {
 
 .nav-text {
   color: #041e4f;
-  font-size: 18px;
+  font-size: 14px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -155,6 +157,7 @@ a {
   justify-content: space-around;
   padding-top: 30px;
   padding-bottom: 30px;
+  font-size: 14px;
 }
 
 .icono {
