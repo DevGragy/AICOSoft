@@ -1,3 +1,8 @@
 # AICOSoft
 
-AICOSoft creando con HTML, CSS y PHP
+Dashboard creado con el stack WAMP.
+
+- Windows
+- Apache
+- MySQL
+- PHP
