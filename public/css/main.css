@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 
+:root {
+    --main-color: #fff;
+}
+
 *,
 *::before,
 *::after {
@@ -62,7 +66,7 @@ a {
     padding: 12px 14px;
     margin: 20px;
     background-color: rgb(101, 101, 255);
-    color: #fff;
+    color: var(--main-color);
     border: 1px solid rgb(101, 101, 255);
     border-radius: 16px;
     font-size: 16px;
@@ -73,7 +77,7 @@ a {
 .btn-submit:hover {
     background-color: #fff;
     color: #000;
-    border: 1px solid #000;
+    border: 1px solid rgb(101, 101, 255);
     transition: all ease-in 0.3s;
 }
 
@@ -91,7 +95,7 @@ a {
 .btn-link:hover {
     background-color: #fff;
     color: #000;
-    border: 1px solid #000;
+    border: 1px solid rgb(101, 101, 255);
     transition: all ease-in 0.3s;
 }
 
