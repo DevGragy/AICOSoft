@@ -17,21 +17,21 @@
             
             if($userAdded) {
                 echo "<script>alert('Usuario registrado!')</script>";
-                header('Location: ../view/login.php');
+                header('Location: ../view/login.html');
                 $username="";
                 $email="";
                 $_POST["password"]="";
                 $_POST["confirmpass"]="";
             } else {
                 echo "<script>alert('Hay un error!')</script>";
-                header('Location: ../view/registro.php');
+                header('Location: ../view/registro.html');
             }
         }else {
             echo "<script>alert('El correo ya existe!')</script>";
-            header('Location: ../view/registro.php');
+            header('Location: ../view/registro.html');
         }
     } else {
         echo "<script>alert('Las contraseñas no coinciden!')</script>";
-        header('Location: ../view/registro.php');
+        header('Location: ../view/registro.html');
     }
 ?>

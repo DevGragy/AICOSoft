@@ -14,7 +14,7 @@
         $_SESSION["email"] = $email;
         header("Location: ../public/dashboard.php");
     } else {
-        header("Location: ../view/login.php");    
+        header("Location: ../view/login.html");    
     }
         
 ?>
