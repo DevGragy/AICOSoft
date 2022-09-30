@@ -27,11 +27,11 @@
                 header('Location: ../view/registro.html');
             }
         }else {
-            echo "<script>alert('El correo ya existe!')</script>";
+            echo "<script>alert('¡Este correo ya fue utilizado! Por favor utiliza uno diferente.')</script>";
             header('Location: ../view/registro.html');
         }
     } else {
-        echo "<script>alert('Las contraseñas no coinciden!')</script>";
-        header('Location: ../view/registro.html');
+        echo "<script>alert('¡Las contraseñas no coinciden!')</script>";
+        header('Location: ../view/registro.html')
     }
 ?>

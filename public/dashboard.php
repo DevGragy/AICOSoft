@@ -40,7 +40,7 @@
         </div>
     </div>
     <header>
-        <a href="/index.html">
+        <a href="#">
             <img src="https://gpoaico.com.mx/wp-content/uploads/2021/10/Logo-AICO.png" alt="GRUPO AICO" id="logo"
                 class="logo-grupo-aico">
         </a>
@@ -80,61 +80,60 @@
     <footer class="footer-bg">
         <div class="footer-space">
             <div>
-                <h4>Contáctanos</h4><br>
+                <h4>Contáctanos</h4>
+                <br />
                 <div class="espacio-footer top-header-space">
-                    <img src="./img/home-ico.png" alt="Dirección" class="icono-footer">
-                    <p>Insurgentes Sur 586, Del Valle,<br> Benito Juárez, 03100 Ciudad de<br> México, CDMX.</p>
+                    <img src="../public/img/home-ico.png" alt="Dirección" class="icono-footer" />
+                    <p>
+                        Insurgentes Sur 586, Del Valle,<br />
+                        Benito Juárez, 03100 Ciudad de<br />
+                        México, CDMX.
+                    </p>
                 </div>
                 <div>
-                    <a href="https://wa.me/5215562533082" target="_blank"><img src="./img/phone-ico.png"
-                            alt="Teléfono de contacto" class="icono-footer"></a>
-                    <a href="https://wa.me/5215562533082" target="_blank" class="icono-footer">55 6253 3082</a>
+                    <a href="https://wa.me/5215562533082" target="_blank" class="icono">
+                        <img src="../public/img/phone-ico.png" alt="Teléfono de contacto" class="icono-footer" />55 6253 3082</a>
                 </div>
             </div>
             <div>
-                <h4>Legales</h4><br>
+                <h4>Legales</h4>
+                <br />
                 <div>
                     <div class="espacio-footer">
-                        <a href="https://gpoaico.com.mx/politica-de-privacidad/" target="_blank"><img
-                                src="./img/doc-ico.png" alt="Aviso de privacidad" class="icono-footer"></a>
-                        <a href="https://gpoaico.com.mx/politica-de-privacidad/" target="_blank"
-                            class="icono-footer">Aviso de Privacidad</a>
+                        <a href="https://gpoaico.com.mx/politica-de-privacidad/" target="_blank" class="icono"><img
+                                src="../public/img/doc-ico.png" alt="Aviso de privacidad" class="icono-footer" />Aviso de Privacidad</a>
                     </div>
                     <div class="espacio-footer">
                         <a href="https://gpoaico.com.mx/terminosycondiciones/" target="_blank"><img
-                                src="./img/doc-ico.png" alt="Términos y condiciones" class="icono-footer"></a>
-                        <a href="https://gpoaico.com.mx/terminosycondiciones/" target="_blank"
-                            class="icono-footer">Términos y condiciones</a>
+                                src="../public/img/doc-ico.png" alt="Términos y condiciones" class="icono-footer" />Términos y condiciones</a>
                     </div>
                     <div class="espacio-footer top-header-space">
-                        <img src="./img/copyright-ico.png" alt="Aviso de privacidad" class="icono-footer">
-                        <p>©2020 - Grupo AICO. Todos los<br> derechos reservados. </p>
+                        <img src="../public/img/copyright-ico.png" alt="Aviso de privacidad" class="icono-footer" />
+                        <p>
+                            ©2020 - Grupo AICO. Todos los<br />
+                            derechos reservados.
+                        </p>
                     </div>
                 </div>
             </div>
             <div>
-                <h4>Redes Sociales</h4><br>
+                <h4>Redes Sociales</h4>
+                <br />
                 <div>
                     <div class="espacio-footer">
-                        <a href="https://www.facebook.com/AICOgpo" target="_blank">
-                            <img src="./img/fb-ico.png" alt="Facebook" class="icono">
-                        </a>
-                        <a href="https://www.facebook.com/AICOgpo" target="_blank" class="icono">/AICOgpo
+                        <a href="https://www.facebook.com/AICOgpo" target="_blank" class="icono">
+                            <img src="../public/img/fb-ico.png" alt="Facebook" class="icono" />&nbsp;/AICOgpo
                         </a>
                     </div>
                     <div class="espacio-footer">
-                        <a href="https://www.linkedin.com/company/aico-accountants" target="_blank">
-                            <img src="./img/li-ico.png" alt="LinkedIn" class="icono">
-                        </a>
-                        <a href="https://www.linkedin.com/company/aico-accountants" target="_blank"
-                            class="icono">/aico-accountants
+                        <a href="https://www.linkedin.com/company/aico-accountants" target="_blank" class="icono">
+                            <img src="../public/img/li-ico.png" alt="LinkedIn" class="icono" />&nbsp;/aico-accountants
                         </a>
                     </div>
                     <div class="espacio-footer">
-                        <a href="https://wa.me/5215562533082" target="_blank">
-                            <img src="./img/wa-ico.png" alt="WhatsApp" class="icono">
+                        <a href="https://wa.me/5215562533082" target="_blank" class="icono">
+                            <img src="../public/img/wa-ico.png" alt="WhatsApp" class="icono" />&nbsp;WhatsApp
                         </a>
-                        <a href="https://wa.me/5215562533082" target="_blank" class="icono">WhatsApp</a>
                     </div>
                 </div>
             </div>

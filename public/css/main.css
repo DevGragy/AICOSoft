@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
-    --main-color: #fff;
+    --azul-header: #041e4f;
+    --azul-botones: rgb(101, 101, 255);
+    --texto-normal: #000;
+    --texto-opaco: #bfbfbf;
+    --texto-blanco: #fff;
 }
 
 *,
@@ -65,9 +69,9 @@ a {
 .btn-submit {
     padding: 12px 14px;
     margin: 20px;
-    background-color: rgb(101, 101, 255);
-    color: var(--main-color);
-    border: 1px solid rgb(101, 101, 255);
+    background-color: var(--azul-botones);
+    color: var(--texto-blanco);
+    border: 1px var(--azul-botones);
     border-radius: 16px;
     font-size: 16px;
     text-decoration: none;
@@ -75,17 +79,17 @@ a {
 }
 
 .btn-submit:hover {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid rgb(101, 101, 255);
+    background-color: var(--texto-blanco);
+    color: var(--texto-normal);
+    border: 1px solid var(--azul-botones);
     transition: all ease-in 0.3s;
 }
 
 .btn-link {
     padding: 12px 14px;
     margin: 20px;
-    background-color: rgb(101, 101, 255);
-    color: #fff;
+    background-color: var(--azul-botones);
+    color: var(--texto-blanco);
     border: none;
     border-radius: 16px;
     font-size: 16px;
@@ -93,9 +97,9 @@ a {
 }
 
 .btn-link:hover {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid rgb(101, 101, 255);
+    background-color: var(--texto-blanco);
+    color: var(--texto-normal);
+    border: 1px var(--azul-botones);
     transition: all ease-in 0.3s;
 }
 
@@ -105,14 +109,23 @@ a {
 
 .subt-reg {
     font-weight: 300;
-    color: #bfbfbf;
+    color: var(--texto-opaco);
     margin-bottom: 24px;
     font-size: 16px;
 }
 
+.center {
+    text-align: center;
+}
+
+.aqui {
+    cursor: pointer;
+    color: var(--azul-botones);
+}
+
 .top-header {
-    background-color: #041e4f;
-    color: #fff;
+    background-color: var(--azul-header);
+    color: var(--texto-blanco);
     padding: 8px;
 }
 
@@ -120,15 +133,6 @@ a {
     display: flex;
     justify-content: space-around;
     font-size: 12px;
-}
-
-.links {
-    color: #fff;
-    text-decoration: none;
-}
-
-.links:hover {
-    color: #f5f5f5;
 }
 
 .logo-grupo-aico {
@@ -140,19 +144,19 @@ a {
 }
 
 .nav-text {
-    color: #041e4f;
+    color: var(--azul-header);
     font-size: 14px;
     text-decoration: none;
     cursor: pointer;
 }
 
 .nav-text:hover {
-    color: rgb(101, 101, 255);
+    color: var(--azul-botones);
 }
 
 .footer-bg {
-    background-color: #041e4f;
-    color: #fff;
+    background-color: var(--azul-header);
+    color: var(--texto-blanco);
     font-size: 20px;
 }
 
