@@ -7,8 +7,5 @@
 
     if($conexion->connect_error){
         die("Conexion fallida ". $conexion->connect_error);
-    } else {
-        //Eliminar else, solo es un debug.
-        echo "Conexion a ".$db;
     }
 ?>
