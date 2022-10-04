@@ -99,17 +99,24 @@
                     ¿No tienes cuenta? Registrate, es gratis.
                 </h4>
 
+                <?php if($error1): ?>
                 <p class="error">
-                    <?php 
-                    if($error1){
-                        echo $error1;
-                    } else if($error2) {
-                        echo $error2;
-                    } else if($error3) {
-                        echo $error3;
-                    } 
-                    ?>
+                    <?php echo $error1; ?>
                 </p>
+                <?php endif; ?>
+
+                <?php if($error2): ?>
+                <p class="error">
+                    <?php echo $error2; ?>
+                </p>
+                <?php endif; ?>
+
+                <?php if($error3): ?>
+                <p class="error">
+                    <?php echo $error3; ?>
+                </p>
+                <?php endif; ?>
+
 
                 <label class="label">Usuario</label>
                 <input class="input" type="text" required name="usuario" value="<?php echo $username; ?>" />

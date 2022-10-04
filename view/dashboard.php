@@ -12,7 +12,6 @@
 
 
 </main>
-
 <?php require_once "../view/includes/footer.php" ?>
 
 <?php 
