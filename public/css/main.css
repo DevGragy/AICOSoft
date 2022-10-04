@@ -38,6 +38,10 @@ a {
     all: unset;
 }
 
+span {
+    font-size: 20px;
+}
+
 .contenedor {
     padding: 40px;
     max-width: 1200px;
@@ -189,4 +193,12 @@ a {
 
 .espacio-footer {
     padding-bottom: 15px;
+}
+
+.error {
+    border: 1px solid red;
+    background-color: pink;
+    padding: 4px;
+    margin: 12px 0;
+    text-align: center;
 }

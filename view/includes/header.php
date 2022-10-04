@@ -1,7 +1,3 @@
-<?php 
-    $username = $_SESSION["username"];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +5,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-
     <title>AICO Soft</title>
     <link href="../public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
     <link
@@ -26,7 +19,7 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fa-solid fa-user-tie"></i>
                 </div>
@@ -39,17 +32,18 @@
             <hr class="sidebar-divider my-0" />
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item active fs-2">
+                <a class="nav-link" href="dashboard.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Dashboard</span>
+                </a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider" />
 
             <!-- Heading -->
-            <div class="sidebar-heading">Recursos</div>
+            <div class="sidebar-heading text-white fs-3">Menu</div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -61,9 +55,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <a class="collapse-item" href="login.php">Login</a>
+                        <a class="collapse-item" href="registro.php">Register</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>

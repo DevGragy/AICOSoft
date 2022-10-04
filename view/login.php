@@ -92,6 +92,11 @@
                 <button class="btn-submit" name="acceder">
                     Acceder
                 </button>
+
+                <div>
+                    <p class="center">¿No tienes una cuenta? Registrate <a href="./registro.php" class="aqui">aquí</a>
+                    </p>
+                </div>
             </form>
         </div>
     </main>

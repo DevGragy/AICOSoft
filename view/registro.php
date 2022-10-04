@@ -28,13 +28,13 @@
                     $_POST["password"]="";
                     $_POST["confirmpass"]="";
                 } else {
-                    echo "<script>alert('Hay un error!')</script>";
+                   $error1 = "Hay un error!";
                 }
             }else {
-                echo "<script>alert('¡Este correo ya fue utilizado! Por favor utiliza uno diferente.')</script>";
+                $error2 = "¡Este correo ya fue utilizado! Por favor utiliza uno diferente.";
             }
         } else {
-            echo "<script>alert('¡Las contraseñas no coinciden!')</script>";
+            $error3 = "¡Las contraseñas no coinciden!";
         }
     }
 ?>
@@ -98,6 +98,19 @@
                 <h4 class="subt-reg">
                     ¿No tienes cuenta? Registrate, es gratis.
                 </h4>
+
+                <p class="error">
+                    <?php 
+                    if($error1){
+                        echo $error1;
+                    } else if($error2) {
+                        echo $error2;
+                    } else if($error3) {
+                        echo $error3;
+                    } 
+                    ?>
+                </p>
+
                 <label class="label">Usuario</label>
                 <input class="input" type="text" required name="usuario" value="<?php echo $username; ?>" />
 
