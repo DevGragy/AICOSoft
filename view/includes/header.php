@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet" />
     <link href="../public/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="../public/css/main.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -43,7 +44,8 @@
             <hr class="sidebar-divider" />
 
             <!-- Heading -->
-            <div class="sidebar-heading text-white fs-3">Menu</div>
+            <div class="sidebar-heading text-white fs-2">Menu Principal</div>
+
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -54,20 +56,18 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.php">Login</a>
-                        <a class="collapse-item" href="registro.php">Register</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <?php if($rol == 1) :?>
+                        <h6 class="collapse-header">Admin:</h6>
+                        <a class="collapse-item" href="usuarios.php">Usuarios</a>
+                        <?php endif; ?>
+
+                        <h6 class="collapse-header">Usuario:</h6>
+                        <a class="collapse-item" href="perfil.php">Mi Perfil</a>
                     </div>
                 </div>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block" />
-
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -94,14 +94,14 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 medium">
-                                    <?php echo $username;?>
+                                    <?php echo $email;?>
                                 </span>
                                 <img class="img-profile rounded-circle" src="../public/img/undraw_profile.svg" />
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="./perfil.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Perfil
                                 </a>

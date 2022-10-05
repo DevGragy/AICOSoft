@@ -52,6 +52,10 @@ span {
     align-items: center;
 }
 
+.fondo-aico {
+    background-color: #041e4f !important;
+}
+
 .formulario {
     display: flex;
     flex-direction: column;

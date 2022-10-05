@@ -9,14 +9,16 @@
 
     if(isset($_POST['acceder'])) {
         $email = $_POST["email"];
-        $password = md5($_POST["password"]);
+        $password = sha1($_POST["password"]);
     
-        $query = "SELECT * FROM users WHERE EMAIL = '$email' AND PASSWORD = '$password'";
+        $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
         $result = mysqli_query($conexion, $query);
 
         if($result->num_rows > 0) {
             $row = mysqli_fetch_assoc($result);
             $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['id_rol'] = $row['id_rol'];
             header("Location: ./dashboard.php");
         } else {
             echo "<script>alert('Hay un error!')</script";

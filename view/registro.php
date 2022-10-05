@@ -1,7 +1,7 @@
 <?php 
     include "../controller/config.php";
-    error_reporting(0);
     session_start();
+    error_reporting(0);
 
     if(isset($_SESSION["username"])){
         header("Location: ./dashboard.php");
@@ -10,15 +10,16 @@
     if(isset($_POST["registro"])){
         $username = $_POST['usuario'];
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
-        $confirmpass = md5($_POST['confirmpass']);
+        $password = sha1($_POST['password']);
+        $confirmpass = sha1($_POST['confirmpass']);
+        $id_rol = 2;
         
         if($password == $confirmpass) {
-            $query = "SELECT * FROM users WHERE EMAIL = '$email'";
+            $query = "SELECT * FROM users WHERE email = '$email'";
             $result = mysqli_query($conexion, $query);
     
             if(!$result->num_rows > 0){
-                $newUser = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+                $newUser = "INSERT INTO users (username, email, password, id_rol) VALUES ('$username', '$email', '$password', '$id_rol')";
                 $userAdded = mysqli_query($conexion, $newUser);
                 
                 if($userAdded) {
@@ -28,7 +29,7 @@
                     $_POST["password"]="";
                     $_POST["confirmpass"]="";
                 } else {
-                   $error1 = "Hay un error!";
+                   $error1 = "Hay un error en la base de datos!";
                 }
             }else {
                 $error2 = "¡Este correo ya fue utilizado! Por favor utiliza uno diferente.";
