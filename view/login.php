@@ -21,7 +21,7 @@
             $_SESSION['id_rol'] = $row['id_rol'];
             header("Location: ./dashboard.php");
         } else {
-            echo "<script>alert('Hay un error!')</script";
+            $error1 = "Correo o contraseña incorrectos.";
         }
         
     }
@@ -83,6 +83,12 @@
             <form action="" method="POST" class="formulario">
                 <h1 class="titulo-reg">Bienvenido a AICOSoft!</h1>
                 <h4 class="subt-reg">Inicia sesion con tu cuenta.</h4>
+
+                <?php if($error1): ?>
+                <p class="error">
+                    <?php echo $error1; ?>
+                </p>
+                <?php endif; ?>
 
                 <label class="label">Email</label>
                 <input class="input" type="email" required name="email" value="<?php echo $email; ?>" />

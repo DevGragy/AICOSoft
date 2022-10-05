@@ -29,7 +29,7 @@
                     $_POST["password"]="";
                     $_POST["confirmpass"]="";
                 } else {
-                   $error1 = "Hay un error en la base de datos!";
+                   $error1 = "¡Hay un error en la base de datos!";
                 }
             }else {
                 $error2 = "¡Este correo ya fue utilizado! Por favor utiliza uno diferente.";
