@@ -18,9 +18,10 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: rgb(101, 101, 255);">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #041e4f;">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php" style="font-size: 1.3rem;">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php"
+                style="font-size: 1.3rem;">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-user"></i>
                 </div>
