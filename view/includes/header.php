@@ -20,7 +20,7 @@
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #041e4f;">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php"
+            <a class="sidebar-brand d-flex align-items-center justify-content-center pointer" href="dashboard.php"
                 style="font-size: 1.3rem;">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-user"></i>
@@ -35,7 +35,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active fs-2">
-                <a class="nav-link" href="dashboard.php">
+                <a class="nav-link pointer" href="dashboard.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span style="font-size: 1rem;">Dashboard</span>
                 </a>
@@ -59,11 +59,11 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <?php if($rol == 1) :?>
                         <h6 class="collapse-header">Admin:</h6>
-                        <a class="collapse-item" href="usuarios.php">Usuarios</a>
+                        <a class="collapse-item pointer" href="usuarios.php">Usuarios</a>
                         <?php endif; ?>
 
                         <h6 class="collapse-header">Usuario:</h6>
-                        <a class="collapse-item" href="perfil.php">Mi Perfil</a>
+                        <a class="collapse-item pointer" href="perfil.php">Mi Perfil</a>
                     </div>
                 </div>
             </li>
@@ -98,16 +98,16 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="./perfil.php">
+                                <a class="dropdown-item pointer" href="./perfil.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Perfil
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item pointer" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Ajustes
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item pointer" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Salir
                                 </a>
