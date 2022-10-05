@@ -19,7 +19,7 @@
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
-                <th>Usuario</th>
+                <th>Usuarios</th>
                 <th>Email</th>
                 <th>Id_Rol</th>
             </tr>

@@ -22,8 +22,7 @@
             header("Location: ./dashboard.php");
         } else {
             $error1 = "Correo o contraseña incorrectos.";
-        }
-        
+        } 
     }
 ?>
 
