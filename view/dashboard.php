@@ -8,9 +8,9 @@
     require_once "../view/includes/header.php"
 ?>
 <main class="text-center">
-    <h1 class="my-5 ">
+    <h2 class="my-5 display-4">
         <?php echo 'Bienvenid@ '.$username; ?>
-    </h1>
+    </h2>
 </main>
 <?php require_once "../view/includes/footer.php" ?>
 

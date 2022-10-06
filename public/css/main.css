@@ -200,8 +200,9 @@ span {
 }
 
 .error {
-    border: 1px solid red;
-    background-color: pink;
+    border: 1px solid #f8ccc8;
+    background-color: #fadbd8;
+    color: #78261f;
     padding: 4px;
     margin: 12px 0;
     text-align: center;

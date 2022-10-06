@@ -1,11 +1,13 @@
 <?php 
+    //servidor = "localhost";
+    //$usuario = "u175573487_root";
+    //$password = "Aicosoft1";
+    //$db = "u175573487_aico";
+
     $servidor = "localhost";
-    // root
-    $usuario = "u175573487_root";
-    // 
-    $password = "Aicosoft1";
-    //aico
-    $db = "u175573487_aico";
+    $usuario = "root";
+    $password = "";
+    $db = "aico";
     $conexion = new mysqli($servidor, $usuario, $password, $db);
 
     if($conexion->connect_error){
