@@ -7,10 +7,19 @@
     if(isset($_SESSION["username"])) {
     require_once "../view/includes/header.php"
 ?>
-<main class="text-center">
-    <h2 class="my-5 display-4">
-        <?php echo 'Bienvenid@ '.$username; ?>
-    </h2>
+<main class="main">
+    <div class="topbar">
+        <!--User img-->
+        <div class="mail">
+            <div class="user">
+                <img src="../public/img/undraw_profile_1.svg">
+            </div>
+            <label>
+                <?php echo $email ?>
+            </label>
+        </div>
+    </div>
+    <hr class="linea">
 </main>
 <?php require_once "../view/includes/footer.php" ?>
 

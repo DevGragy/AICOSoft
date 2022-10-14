@@ -77,38 +77,45 @@
         </nav>
     </header>
     <hr>
-    <main class="contenedor">
-        <div class="contenedor-img">
-            <img src="../public/img/login_img.png" alt="login_img" class="imagen-login" />
-        </div>
-        <div class="contenedor-form">
-            <form action="" method="POST" class="formulario">
-                <h1 class="titulo-reg">Bienvenido a AICOSoft!</h1>
-                <h4 class="subt-reg">Inicia sesion con tu cuenta.</h4>
+    <main class="contenedor card-sty">
 
-                <?php if($error1): ?>
-                <p class="error">
-                    <?php echo $error1; ?>
+        <div class="back-azul card-izq">
+            <h2 class="margin-bottom">¿No tienes una cuenta?</h2>
+            <p class="margin-bottom">Registrate para poder <br> acceder
+                a nuestros servicios</p>
+
+            <button class="btn-submit" name="registrarme">
+                <a href="../view/registro.php">
+                    Registrarme
+                </a>
+            </button>
+
+        </div>
+        <form action="" method="POST" class="formulario card-der">
+            <h1 class="titulo-reg">¡Bienvenido a AICOSoft!</h1>
+            <h4 class="subt-reg center chingadamadre">Inicia sesion ingresando tus datos 😃</h4>
+
+            <?php if($error1): ?>
+            <p class="error">
+                <?php echo $error1; ?>
+            </p>
+            <?php endif; ?>
+
+            <input class="input-round" type="email" required name="email" placeholder="Email"
+                value="<?php echo $email; ?>" />
+
+            <input class="input-round" type="password" required name="password" placeholder="Contraseña"
+                value="<?php echo $_POST['password']; ?>" />
+
+            <button class="btn-submit" name="acceder">
+                Acceder
+            </button>
+
+            <div>
+                <p class="center"><a href="#" class="aqui">¿Olvidaste tu contraseña?</a>
                 </p>
-                <?php endif; ?>
-
-                <label class="label">Email</label>
-                <input class="input" type="email" required name="email" value="<?php echo $email; ?>" />
-
-                <label class="label">Contraseña</label>
-                <input class="input" type="password" required name="password"
-                    value="<?php echo $_POST['password']; ?>" />
-
-                <button class="btn-submit" name="acceder">
-                    Acceder
-                </button>
-
-                <div>
-                    <p class="center">¿No tienes una cuenta? Registrate <a href="./registro.php" class="aqui">aquí</a>
-                    </p>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </main>
     <footer class="footer-bg">
         <div class="footer-space">

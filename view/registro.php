@@ -24,6 +24,10 @@
                 $userAdded = mysqli_query($conexion, $newUser);
                 
                 if($userAdded) {
+                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['username'] = $row['username'];
+                    $_SESSION['email'] = $row['email'];
+                    $_SESSION['id_rol'] = $row['id_rol'];
                     header('Location: ./login.php');
                     $username="";
                     $email="";

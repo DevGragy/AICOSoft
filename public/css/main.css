@@ -43,9 +43,9 @@ span {
 }
 
 .contenedor {
-    padding: 40px;
     max-width: 1200px;
-    margin: 0 auto;
+    height: 100vh;
+    margin: 80px 120px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
@@ -59,7 +59,8 @@ span {
 .formulario {
     display: flex;
     flex-direction: column;
-    padding: 40px 60px;
+    padding: 40px 120px;
+    text-align: center;
 }
 
 .label {
@@ -78,7 +79,7 @@ span {
     margin: 20px;
     background-color: var(--azul-botones);
     color: var(--texto-blanco);
-    border: 1px var(--azul-botones);
+    border: 1px solid var(--azul-botones);
     border-radius: 16px;
     font-size: 16px;
     text-decoration: none;
@@ -86,10 +87,10 @@ span {
 }
 
 .btn-submit:hover {
+    transition: all ease-in 0.3s;
     background-color: var(--texto-blanco);
     color: var(--texto-normal);
     border: 1px solid var(--azul-botones);
-    transition: all ease-in 0.3s;
 }
 
 .btn-link {
@@ -211,3 +212,84 @@ span {
 .pointer {
     cursor: pointer;
 }
+
+.card-cont {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+.card-sty {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.perfil-usuario {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+}
+
+.perfil-usuario2 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+}
+
+.sin-borde {
+    border: none;
+    border-bottom: 2px solid var(--azul-botones);
+}
+
+.sin-margen {
+    margin-bottom: 0px;
+}
+
+.card-izq {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+/* --------- OTRO LOGIN */
+
+.back-azul {
+    background-color: #041e4f;
+}
+
+.input-round {
+    padding: 8px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    border-radius: 18px;
+    border-color: #bfbfbf;
+}
+
+.cuentas {
+    height: 40px;
+    width: 40px;
+
+}
+
+.chingadamadre {
+    margin-top: 12px;
+    margin-bottom: 0px;
+}
+
+.centrar {
+    display: flex;
+    justify-content: center;
+}
+
