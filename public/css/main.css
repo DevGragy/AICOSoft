@@ -43,9 +43,9 @@ span {
 }
 
 .contenedor {
-    max-width: 1200px;
-    height: 100vh;
-    margin: 80px 120px;
+    max-width: 1000px;
+    height: 700px;
+    margin: 120px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
@@ -216,7 +216,7 @@ span {
 .card-cont {
     display: flex;
     justify-content: space-evenly;
-  }
+}
 
 .card-sty {
     background-color: #fff;
@@ -280,7 +280,6 @@ span {
 .cuentas {
     height: 40px;
     width: 40px;
-
 }
 
 .chingadamadre {
@@ -292,4 +291,3 @@ span {
     display: flex;
     justify-content: center;
 }
-

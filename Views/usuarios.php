@@ -1,5 +1,5 @@
 <?php 
-    include "../controller/config.php";
+    include "../Config/config.php";
     session_start();
     $username = $_SESSION["username"];
     $email = $_SESSION['email'];

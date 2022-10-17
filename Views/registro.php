@@ -1,5 +1,5 @@
 <?php 
-    include "../controller/config.php";
+    include "../Config/config.php";
     session_start();
     error_reporting(0);
 
