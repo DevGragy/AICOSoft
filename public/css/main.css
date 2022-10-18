@@ -79,7 +79,7 @@ span {
 .formulario {
     display: flex;
     flex-direction: column;
-    padding: 40px 120px;
+    padding: 40px 140px;
     text-align: center;
 }
 
@@ -94,6 +94,7 @@ span {
     margin-bottom: 12px;
     font-size: 16px;
     border-radius: 18px;
+    border-color: var(--negro);
 }
 
 .btn-submit {
@@ -120,11 +121,11 @@ span {
 }
 
 .card-cont {
-    display: flex;
+    display: block;
     justify-content: space-evenly;
 }
 
-.card-cont h1 {
+.card-cont h2 {
     padding-bottom: 20px;
 }
 
@@ -139,8 +140,6 @@ span {
     border-radius: 10px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
 }
 
 .error {
@@ -271,9 +270,34 @@ span {
     color: var(--azul-botones);
 }
 
+.card-sty-login {
+    background-color: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
 /* --------- LOGIN */
 
 /* REGISTRO --------- */
+
+.contenedor-reg {
+    max-width: 1000px;
+    height: 700px;
+    margin: 120px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-aico-reg {
+    width: 200px;
+    height: 110px;
+    margin: 40px auto;
+    margin-bottom: 80px;
+}
 
 .titulo-reg {
     margin-bottom: 8px;
@@ -284,6 +308,18 @@ span {
     color: var(--gris);
     margin-bottom: 24px;
     font-size: 16px;
+}
+
+.gap-r {
+    margin-right: 10px;
+}
+
+.gap-l {
+    margin-left: 10px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
 }
 
 /* --------- REGISTRO */
@@ -445,9 +481,16 @@ span {
 .topbar {
     height: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 0 10px;
+    margin-right: 200px;
+    transition: 0.5s;
+}
+
+.topbar.active {
+    margin-right: 0px;
+    transition: 0.5s;
 }
 
 .toggle {
@@ -482,6 +525,17 @@ span {
     object-fit: cover;
 }
 
+.tabcontainer {
+    padding: 30px 200px;
+    margin-right: 200px;
+    transition: 0.5s;
+}
+
+.tabcontainer.active {
+    margin-right: 1px;
+    transition: 0.5s;
+}
+
 /* --------- DASHBOARD */
 
 /* PERFIL --------- */
@@ -489,13 +543,22 @@ span {
 .perfil-usuario {
     display: flex;
     flex-direction: column;
-    padding: 40px 60px;
+    padding: 40px 80px;
 }
 
 .perfil-usuario2 {
     display: flex;
     flex-direction: column;
-    padding: 20px 30px;
+    padding: 40px 80px;
+    margin-top: 20px;
+}
+
+.perfil-usuario2 h3 {
+    margin-bottom: 20px;
+}
+
+.perfil-usuario2 label {
+    margin: 10px 0px;
 }
 
 .input-space {
@@ -513,6 +576,10 @@ span {
 
 .sin-margen {
     margin-bottom: 0px;
+}
+
+.linea-azul {
+    border: solid 1px var(--azul-botones);
 }
 
 /* --------- PERFIL */

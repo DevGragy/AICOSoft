@@ -93,12 +93,11 @@
         </nav>
     </header>
     <hr />
-    <main class="contenedor card-sty">
-        <div class="contenedor-img">
-            <img src="../Public/img/login_img.png" alt="login_img" class="imagen-login" />
-        </div>
-        <div class="contenedor-form">
+    <main class="contenedor-reg card-sty">
+        <div>
             <form action="" method="POST" class="formulario">
+                <img src="https://gpoaico.com.mx/wp-content/uploads/2021/10/Logo-AICO.png" alt="GRUPO AICO" id="logo"
+                class="logo-aico-reg" />
                 <h1 class="titulo-reg">Bienvenido a AICOSoft!</h1>
 
                 <h4 class="subt-reg">
@@ -127,18 +126,18 @@
 
                 <input class="input-round" type="email" required name="email" placeholder="Email" value="<?php echo $email; ?>" />
 
-                <div style="display: flex; ">
-                    <input class="input-round" type="password" required name="password" placeholder="Contraseña"
+                <div class="centrar">
+                    <input class="input-round gap-r" type="password" required name="password" placeholder="Contraseña"
                     value="<?php echo $_POST['password']; ?>" />
 
-                    <input class="input-round" type="password" required name="confirmpass" placeholder="Confirmar Contraseña"
+                    <input class="input-round gap-l" type="password" required name="confirmpass" placeholder="Confirmar Contraseña"
                     value="<?php echo $_POST['confirmpass']; ?>" />
                 </div>
 
                 <button class="btn-submit" name="registro">Registrarme
                 </button>
 
-                <div>
+                <div class="mb-40">
                     <p class="center">¿Ya tienes una cuenta? Inicia sesión <a href="./login.php" class="aqui">aquí</a>
                     </p>
                 </div>

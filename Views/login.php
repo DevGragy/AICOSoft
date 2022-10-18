@@ -77,18 +77,16 @@
         </nav>
     </header>
     <hr>
-    <main class="contenedor card-sty">
+    <main class="contenedor card-sty-login">
 
         <div class="back-azul card-izq">
             <h2 class="margin-bottom">¿No tienes una cuenta?</h2>
             <p class="margin-bottom">Registrate para poder <br> acceder
                 a nuestros servicios</p>
 
-            <button class="btn-submit" name="registrarme">
-                <a href="../Views/registro.php">
-                    Registrarme
-                </a>
-            </button>
+            <a href="../Views/registro.php" class="btn-submit">
+                Registrarme
+            </a>
 
         </div>
         <form action="" method="POST" class="formulario card-der">
