@@ -9,7 +9,7 @@
 
     $query = "SELECT username, email, id_rol FROM users";
     $resultado = mysqli_query($conexion, $query);
-    require_once "../view/includes/header.php"
+    require_once "../Views/includes/header.php"
 ?>
 <main class="container text-center">
     <h1 class="my-4">
@@ -35,7 +35,7 @@
         </tbody>
     </table>
 </main>
-<?php require_once "../view/includes/footer.php" ?>
+<?php require_once "../Views/includes/footer.php" ?>
 
 <?php 
     } else {

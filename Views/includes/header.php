@@ -3,12 +3,12 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/dashboard.css">
+    <link rel="stylesheet" href="../Public/css/main.css">
     <title>Admin Dashboard | AICOSoft</title>
 </head>
 
 <body>
-    <header class="container">
+    <div class="container">
         <div class="navigation">
             <ul>
                 <li class="btn-menu">
@@ -16,8 +16,9 @@
                         <ion-icon name="menu-outline"></ion-icon>
                     </div>
                 </li>
+                <hr class="linea2">
                 <li>
-                    <a href="#">
+                    <a href="dashboard.php">
                         <span class="icon">
                             <ion-icon name="briefcase-outline"></ion-icon>
                         </span>
@@ -25,7 +26,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="perfil.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -40,30 +41,15 @@
                         <span class="title">Proyectos</span>
                     </a>
                 </li>
+                <hr class="linea3">
                 <li>
-                    <a href="#">
+                    <a href="../Controllers/logout.php">
                         <span class="icon">
-                            <ion-icon name="mail-open-outline"></ion-icon>
+                        <ion-icon name="power-outline"></ion-icon>
                         </span>
-                        <span class="title">Mensajes</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="build-outline"></ion-icon>
-                        </span>
-                        <span class="title">Ayuda</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="cog-outline"></ion-icon>
-                        </span>
-                        <span class="title">Preferencias</span>
+                        <span class="title">Cerrar Sesión</span>
                     </a>
                 </li>
             </ul>
         </div>
-    </header>
+    </div>

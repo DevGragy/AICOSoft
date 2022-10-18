@@ -5,14 +5,14 @@
     $rol = $_SESSION["id_rol"];
 
     if(isset($_SESSION["username"])) {
-    require_once "../view/includes/header.php"
+    require_once "../Views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
         <!--User img-->
         <div class="mail">
             <div class="user">
-                <img src="../public/img/undraw_profile_1.svg">
+                <img src="../Public/img/undraw_profile_1.svg">
             </div>
             <label>
                 <?php echo $email ?>
@@ -21,7 +21,7 @@
     </div>
     <hr class="linea">
 </main>
-<?php require_once "../view/includes/footer.php" ?>
+<?php require_once "../Views/includes/footer.php" ?>
 
 <?php 
     } else {

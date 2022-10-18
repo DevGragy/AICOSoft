@@ -2,5 +2,5 @@
     session_start();
     session_destroy();
 
-    header("Location: ../view/login.php");
+    header("Location: ../Views/login.php");
 ?>

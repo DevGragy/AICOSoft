@@ -5,10 +5,22 @@
     $rol = $_SESSION["id_rol"];
 
     if(isset($_SESSION["username"])) {
-    require_once "../view/includes/header.php"
+    require_once "../Views/includes/header.php"
 ?>
-<main class="text-left">
-    <div class="card-cont">
+<main class="main">
+    <div class="topbar">
+        <!--User img-->
+        <div class="mail">
+            <div class="user">
+                <img src="../Public/img/undraw_profile_1.svg">
+            </div>
+            <label>
+                <?php echo $email ?>
+            </label>
+        </div>
+    </div>
+    <hr class="linea">
+    <div class=" card-cont">
         <aside>
             <div class="perfil-usuario2 card-sty">
                 <h3>Datos<br>Adicionales</h3>
@@ -54,7 +66,7 @@
         </div>
     </div>
 </main>
-<?php require_once "../view/includes/footer.php" ?>
+<?php require_once "../Views/includes/footer.php" ?>
 
 <?php 
     } else {

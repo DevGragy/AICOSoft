@@ -1,13 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap");
-
-:root {
-    --azul-header: #041e4f;
-    --azul-botones: rgb(101, 101, 255);
-    --texto-normal: #000;
-    --texto-opaco: #bfbfbf;
-    --texto-blanco: #fff;
-}
-
 *,
 *::before,
 *::after {
@@ -16,8 +6,21 @@
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --azul-AICO: #041e4f;
+    --azul-botones: rgb(101, 101, 255);
+    --negro: #000;
+    --gris: #bfbfbf;
+    --blanco: #fff;
+}
+
 body {
-    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 header {
@@ -42,6 +45,8 @@ span {
     font-size: 20px;
 }
 
+/* GLOBALES --------- */
+
 .contenedor {
     max-width: 1000px;
     height: 700px;
@@ -52,8 +57,23 @@ span {
     align-items: center;
 }
 
-.fondo-aico {
-    background-color: #041e4f !important;
+.contenedor2 {
+    max-width: 1000px;
+    height: 700px;
+    margin: 120px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.centrar {
+    display: flex;
+    justify-content: center;
 }
 
 .formulario {
@@ -68,17 +88,19 @@ span {
     font-weight: 600;
 }
 
-.input {
+.input-round {
     padding: 8px;
-    margin-bottom: 24px;
+    margin-top: 12px;
+    margin-bottom: 12px;
     font-size: 16px;
+    border-radius: 18px;
 }
 
 .btn-submit {
     padding: 12px 14px;
     margin: 20px;
     background-color: var(--azul-botones);
-    color: var(--texto-blanco);
+    color: var(--blanco);
     border: 1px solid var(--azul-botones);
     border-radius: 16px;
     font-size: 16px;
@@ -88,52 +110,60 @@ span {
 
 .btn-submit:hover {
     transition: all ease-in 0.3s;
-    background-color: var(--texto-blanco);
-    color: var(--texto-normal);
+    background-color: var(--blanco);
+    color: var(--negro);
     border: 1px solid var(--azul-botones);
 }
 
-.btn-link {
-    padding: 12px 14px;
-    margin: 20px;
-    background-color: var(--azul-botones);
-    color: var(--texto-blanco);
-    border: none;
-    border-radius: 16px;
-    font-size: 16px;
-    text-decoration: none;
+.pointer {
+    cursor: pointer;
 }
 
-.btn-link:hover {
-    background-color: var(--texto-blanco);
-    color: var(--texto-normal);
-    border: 1px var(--azul-botones);
-    transition: all ease-in 0.3s;
+.card-cont {
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.titulo-reg {
-    margin-bottom: 8px;
+.card-cont h1 {
+    padding-bottom: 20px;
 }
 
-.subt-reg {
-    font-weight: 300;
-    color: var(--texto-opaco);
-    margin-bottom: 24px;
-    font-size: 16px;
+.card-cont label {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 20px;
 }
 
-.center {
+.card-sty {
+    background-color: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.error {
+    border: 1px solid #f8ccc8;
+    background-color: #fadbd8;
+    color: #78261f;
+    padding: 4px;
+    margin: 12px 0;
     text-align: center;
 }
 
-.aqui {
-    cursor: pointer;
-    color: var(--azul-botones);
+/* --------- GLOBALES */
+
+
+/* HEADER AICO --------- */
+
+.fondo-aico {
+    background-color: #041e4f !important;
 }
 
 .top-header {
-    background-color: var(--azul-header);
-    color: var(--texto-blanco);
+    background-color: var(--azul-AICO);
+    color: var(--blanco);
     padding: 8px;
 }
 
@@ -151,8 +181,21 @@ span {
     cursor: pointer;
 }
 
+.icono {
+    width: 20px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.icono-top-header {
+    width: 15px;
+    cursor: pointer;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
 .nav-text {
-    color: var(--azul-header);
+    color: var(--azul-AICO);
     font-size: 14px;
     text-decoration: none;
     cursor: pointer;
@@ -162,9 +205,13 @@ span {
     color: var(--azul-botones);
 }
 
+/* --------- HEADER AICO */
+
+/* FOOTER AICO --------- */
+
 .footer-bg {
-    background-color: var(--azul-header);
-    color: var(--texto-blanco);
+    background-color: var(--azul-AICO);
+    color: var(--blanco);
     font-size: 20px;
 }
 
@@ -176,12 +223,6 @@ span {
     font-size: 14px;
 }
 
-.icono {
-    width: 20px;
-    cursor: pointer;
-    margin-right: 4px;
-}
-
 .icono-footer {
     width: 20px;
     height: 20px;
@@ -189,43 +230,261 @@ span {
     margin-right: 10px;
 }
 
-.icono-top-header {
-    width: 15px;
-    cursor: pointer;
-    margin-top: 3px;
-    margin-right: 10px;
-}
-
 .espacio-footer {
     padding-bottom: 15px;
 }
 
-.error {
-    border: 1px solid #f8ccc8;
-    background-color: #fadbd8;
-    color: #78261f;
-    padding: 4px;
-    margin: 12px 0;
+/* --------- FOOTER AICO */
+
+/* LOGIN --------- */
+
+.back-azul {
+    background-color: #041e4f;
+}
+
+.cuentas {
+    height: 40px;
+    width: 40px;
+}
+
+.chingadamadre {
+    margin-top: 12px;
+    margin-bottom: 0px;
+}
+
+.card-izq {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--blanco);
+    text-align: center;
+    padding: 0 40px;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.aqui {
+    cursor: pointer;
+    color: var(--azul-botones);
+}
+
+/* --------- LOGIN */
+
+/* REGISTRO --------- */
+
+.titulo-reg {
+    margin-bottom: 8px;
+}
+
+.subt-reg {
+    font-weight: 300;
+    color: var(--gris);
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+/* --------- REGISTRO */
+
+/* DASHBOARD --------- */
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.navigation {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: var(--azul-AICO);
+    border-left: 10px solid var(--azul-AICO);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover{
+    background: var(--blanco);
+}
+
+.navigation ul li:nth-child(1){
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+
+.navigation ul li:last-child{
+    justify-self: flex-end;
+}
+
+.navigation ul li:nth-child(1):hover{
+    background: var(--azul-AICO);
+}
+
+.btn-menu {
+    align-self: center;
+    transition: 0.5s;
+} 
+
+.back-to {
+    transition: 0.5s;
+    margin-right: 130px;
+}
+
+.navigation ul li:last-child{
+    bottom: 0;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--blanco)
+}
+
+.navigation ul li:hover a{
+    color: var(--azul-AICO)
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
     text-align: center;
 }
 
-.pointer {
+.navigation ul li a .icon ion-icon{
+    font-size: 1.75em;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 0px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+.navigation ul li a span{
+    font-size: 16px;
+}
+
+.linea {
+    border: 1px solid #ccc;
+}
+
+.linea2 {
+    border: 1px solid #fff;
+    margin: 5px 10px 5px 0px;
+    transition: 0.5s;
+}
+
+.linea2.active {
+    border: 1px solid #fff;
+    margin-right: 130px;
+    transition: 0.5s;
+}
+
+.linea3 {
+    border: 1px solid #fff;
+    margin: 5px 10px 5px 0px;
+    transition: 0.5s;
+}
+
+.linea3.active {
+    border: 1px solid #fff;
+    margin-right: 130px;
+    transition: 0.5s;
+}
+
+.main {
+    position: absolute;
+    width: 100%;
+    left: 200px;
+    min-height: 100vh;
+    background: var(--blanco);
+    transition: 0.5s;
+}
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+    right: 330px;
+}
+
+.main div .mail {
+    display: flex; 
+    align-items: center;
+}
+
+.topbar {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+    color: #fff;
+}
+
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 0 12px;
+
+    border-radius: 50%;
+    overflow: hidden;
     cursor: pointer;
 }
 
-.card-cont {
-    display: flex;
-    justify-content: space-evenly;
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.card-sty {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-}
+/* --------- DASHBOARD */
+
+/* PERFIL --------- */
 
 .perfil-usuario {
     display: flex;
@@ -239,6 +498,14 @@ span {
     padding: 20px 30px;
 }
 
+.input-space {
+    padding: 8px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    border-color: #bfbfbf;
+}
+
 .sin-borde {
     border: none;
     border-bottom: 2px solid var(--azul-botones);
@@ -248,46 +515,4 @@ span {
     margin-bottom: 0px;
 }
 
-.card-izq {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-    padding: 0 40px;
-}
-
-.margin-bottom {
-    margin-bottom: 20px;
-}
-
-/* --------- OTRO LOGIN */
-
-.back-azul {
-    background-color: #041e4f;
-}
-
-.input-round {
-    padding: 8px;
-    margin-top: 12px;
-    margin-bottom: 12px;
-    font-size: 16px;
-    border-radius: 18px;
-    border-color: #bfbfbf;
-}
-
-.cuentas {
-    height: 40px;
-    width: 40px;
-}
-
-.chingadamadre {
-    margin-top: 12px;
-    margin-bottom: 0px;
-}
-
-.centrar {
-    display: flex;
-    justify-content: center;
-}
+/* --------- PERFIL */
