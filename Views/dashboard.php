@@ -19,7 +19,12 @@
             </label>
         </div>
     </div>
-    <hr class="linea">
+    <div class="tabcontainer center">
+        <h2>
+            Bienvenido <?php echo $username ?>
+        </h2>
+
+    </div>
 </main>
 <?php require_once "../Views/includes/footer.php" ?>
 
