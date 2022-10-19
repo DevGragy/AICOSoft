@@ -151,6 +151,15 @@ span {
     text-align: center;
 }
 
+.created {
+    border: 1px solid #14b8a6;
+    background-color: #ccfbf1;
+    color: #134e4a;
+    padding: 4px;
+    margin: 12px 0;
+    text-align: center;
+}
+
 /* --------- GLOBALES */
 
 /* HEADER AICO --------- */
@@ -449,6 +458,18 @@ span {
 }
 
 .linea3.active {
+    border: 1px solid #fff;
+    margin-right: 130px;
+    transition: 0.5s;
+}
+
+.linea4 {
+    border: 1px solid #fff;
+    margin: 5px 10px 5px 0px;
+    transition: 0.5s;
+}
+
+.linea4 .active {
     border: 1px solid #fff;
     margin-right: 130px;
     transition: 0.5s;

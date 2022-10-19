@@ -33,19 +33,28 @@
                         <span class="title">Perfil</span>
                     </a>
                 </li>
+                <hr class="linea3">
                 <li>
-                    <a href="#">
+                    <a href="proyectos.php">
                         <span class="icon">
                             <ion-icon name="hammer-outline"></ion-icon>
                         </span>
                         <span class="title">Proyectos</span>
                     </a>
                 </li>
-                <hr class="linea3">
+                <li>
+                    <a href="crear-proyecto.php">
+                        <span class="icon">
+                            <ion-icon name="hammer-outline"></ion-icon>
+                        </span>
+                        <span class="title">Crear Proyecto</span>
+                    </a>
+                </li>
+                <hr class="linea4">
                 <li>
                     <a href="../Controllers/logout.php">
                         <span class="icon">
-                        <ion-icon name="power-outline"></ion-icon>
+                            <ion-icon name="power-outline"></ion-icon>
                         </span>
                         <span class="title">Cerrar Sesión</span>
                     </a>
