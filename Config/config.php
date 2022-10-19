@@ -5,8 +5,8 @@
     //$db = "u175573487_aico";
 
     $servidor = "localhost";
-    $usuario = "root";
-    $password = "";
+    $usuario = "admin";
+    $password = "root";
     $db = "aico";
     $conexion = new mysqli($servidor, $usuario, $password, $db);
 

@@ -47,7 +47,7 @@
                         <span class="icon">
                             <ion-icon name="hammer-outline"></ion-icon>
                         </span>
-                        <span class="title">Crear Proyecto</span>
+                        <span class="title">Crear <br> Proyecto</span>
                     </a>
                 </li>
                 <hr class="linea4">

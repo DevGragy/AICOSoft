@@ -24,6 +24,8 @@ toggle.onclick = function() {
     topbar.classList.toggle('baract')
 }
 </script>
-</body>
+<script src="../public/js/projects.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+</body>
 </html>

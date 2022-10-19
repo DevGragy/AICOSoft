@@ -13,9 +13,10 @@ if (isset($_SESSION["username"])) {
 
     if (isset($_POST['crear-proyecto'])) {
         $project_name = $_POST['project-name'];
+        $description = $_POST['description'];
         $url = md5(uniqid());
 
-        $createProject = "INSERT INTO projects (project_name, url, id_user) VALUES ('$project_name', '$url', '$user_id')";
+        $createProject = "INSERT INTO projects (project_name, description, url, id_user) VALUES ('$project_name', '$description', '$url', '$user_id')";
         $project_created = mysqli_query($conexion, $createProject);
 
         if ($project_created) {
@@ -41,6 +42,7 @@ if (isset($_SESSION["username"])) {
     </div>
 
     <div class="tabcontainer center">
+        <!-- Alerta de proyecto creado -->
         <?php if ($created) { ?>
         <p class="created">
             <?php echo $created; ?>
@@ -48,13 +50,13 @@ if (isset($_SESSION["username"])) {
         </p>
         <?php } ?>
 
-        <form action="" method="POST">
-            <h2>
+        <form action="" method="POST" class="formulario">
+            <h2 class="titulo-reg">
                 Crear Proyecto
             </h2>
-            <input type="text" name="project-name" placeholder="Nombre del Proyecto" required">
-            <!-- <input type="text" name="description" placeholder="Descripcion del Proyecto" required> -->
-            <button name="crear-proyecto">Crear proyecto</button>
+            <input class="input-round" type="text" name="project-name" id="projectName" placeholder="Nombre del Proyecto" required >
+            <input class="input-round" type="text" name="description" id="projectDes" placeholder="Descripcion del Proyecto" required maxlength="30">
+            <button class="btn-submit" name="crear-proyecto" onclick="validatedProjects()">Crear proyecto</button>
         </form>
     </div>
 

@@ -40,16 +40,6 @@
                 } ?>" />
             </form>
         </div>
-        <div class="perfil-usuario2 card-sty">
-            <h2>Mis Proyectos</h2>
-            <hr class="linea-azul">
-            <label>Proyecto 1</label>
-            <hr class="linea-azul">
-            <label>Proyecto 2</label>
-            <hr class="linea-azul">
-            <label>Proyecto 3</label>
-            <hr class="sin-margen linea-azul">
-        </div>
     </div>
 </main>
 <?php require_once "../Views/includes/footer.php" ?>

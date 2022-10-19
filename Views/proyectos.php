@@ -8,7 +8,7 @@ $rol = $_SESSION["id_rol"];
 
 if (isset($_SESSION["username"])) {
 
-    $query = "SELECT id_project, project_name, id_user FROM projects WHERE id_user = $user_id";
+    $query = "SELECT * FROM projects WHERE id_user = $user_id";
     $resultado = mysqli_query($conexion, $query);
     require_once "../Views/includes/header.php"
 ?>
@@ -29,22 +29,22 @@ if (isset($_SESSION["username"])) {
             Mis Proyectos
         </h2>
 
-        <table class="center">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Proyecto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $resultado->fetch_assoc()) { ?>
-                <tr>
-                    <td> <?php echo $row['id_project']; ?> </td>
-                    <td> <?php echo $row['project_name']; ?> </td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+       
+
+        <div class="projects-cards">
+        <?php while ($row = $resultado->fetch_assoc()) { ?>
+                <div class="project-card">
+                    <a class="pointer" href='proyectos.php?id=<?php echo $row['url']; ?>'>
+                        <h3> <?php echo $row['project_name']; ?> </h3>
+                        <h3> <?php echo $row['description']; ?> </h3>
+                    </a>
+                    <div class="project-actions"> 
+                        <a class="pointer btn-submit" href="editar-proyecto.php?id=<?php echo $row['url']; ?>">Editar</a> 
+                        <a class="pointer btn-submit" href="borrar-proyecto.php?id=<?php echo $row['url']; ?>">Borrar</a>
+                    </div>
+                </div>
+        <?php } ?>
+        </div>
     </div>
 
 </main>

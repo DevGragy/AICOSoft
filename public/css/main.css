@@ -377,6 +377,10 @@ span {
     margin-bottom: 5px;
 }
 
+.navigation ul li:nth-child(n+2) {
+    margin: 20px 0;
+}
+
 .navigation ul li:last-child {
     justify-self: flex-end;
 }
@@ -428,11 +432,12 @@ span {
     position: relative;
     display: block;
     padding: 0 0px;
-    height: 60px;
-    line-height: 60px;
-    text-align: start;
-    white-space: nowrap;
+    /* height: 60px; */
+    /* line-height: 60px; */
+    /* white-space: nowrap; */
     padding-left: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .navigation ul li a span {
@@ -601,3 +606,29 @@ span {
 }
 
 /* --------- PERFIL */
+
+/* --------- PROYECTOS */
+.projects-cards {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.project-card {
+    box-shadow: 0px 0px 8px 0px rgba(100, 100, 111, 0.2);
+    margin: 20px 0;
+    padding: 20px 16px;
+}
+
+.project-card h3 {
+    margin-bottom: 20px;
+}
+
+.project-actions {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid;
+}
+/* --------- PROYECTOS */
