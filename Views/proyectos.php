@@ -1,10 +1,13 @@
 <?php
 include "../Config/config.php";
 session_start();
+
+//Variables de sesion
 $user_id = $_SESSION["id"];
 $username = $_SESSION["username"];
 $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
+
 
 if (isset($_SESSION["username"])) {
 
@@ -25,25 +28,30 @@ if (isset($_SESSION["username"])) {
         </div>
     </div>
     <div class="tabcontainer center">
+        <?php if (isset($_SESSION['message'])) { ?>
+        <p class="error">
+            <?php echo $_SESSION['message']; ?>
+            <?php echo $_SESSION['username']; ?>
+        </p>
+        <?php } ?>
+
         <h2>
             Mis Proyectos
         </h2>
 
-       
-
         <div class="projects-cards">
-        <?php while ($row = $resultado->fetch_assoc()) { ?>
-                <div class="project-card">
-                    <a class="pointer" href='proyectos.php?id=<?php echo $row['url']; ?>'>
-                        <h3> <?php echo $row['project_name']; ?> </h3>
-                        <h3> <?php echo $row['description']; ?> </h3>
-                    </a>
-                    <div class="project-actions"> 
-                        <a class="pointer btn-submit" href="editar-proyecto.php?id=<?php echo $row['url']; ?>">Editar</a> 
-                        <a class="pointer btn-submit" href="borrar-proyecto.php?id=<?php echo $row['url']; ?>">Borrar</a>
-                    </div>
+            <?php while ($row = $resultado->fetch_assoc()) { ?>
+            <div class="project-card">
+                <a class="pointer" href='proyectos.php?id=<?php echo $row['url']; ?>'>
+                    <h3> <?php echo $row['project_name']; ?> </h3>
+                    <h3> <?php echo $row['description']; ?> </h3>
+                </a>
+                <div class="project-actions">
+                    <a class="pointer btn-submit" href="editar-proyecto.php?id=<?php echo $row['url']; ?>">Editar</a>
+                    <a class="pointer btn-submit" href="borrar-proyecto.php?url=<?php echo $row['url']; ?>">Borrar</a>
                 </div>
-        <?php } ?>
+            </div>
+            <?php } ?>
         </div>
     </div>
 

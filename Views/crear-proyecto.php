@@ -1,6 +1,7 @@
 <?php
 include "../Config/config.php";
 session_start();
+
 $user_id = $_SESSION["id"];
 $username = $_SESSION["username"];
 $email = $_SESSION['email'];
@@ -54,8 +55,10 @@ if (isset($_SESSION["username"])) {
             <h2 class="titulo-reg">
                 Crear Proyecto
             </h2>
-            <input class="input-round" type="text" name="project-name" id="projectName" placeholder="Nombre del Proyecto" required >
-            <input class="input-round" type="text" name="description" id="projectDes" placeholder="Descripcion del Proyecto" required maxlength="30">
+            <input class="input-round" type="text" name="project-name" id="projectName"
+                placeholder="Nombre del Proyecto" required>
+            <input class="input-round" type="text" name="description" id="projectDes"
+                placeholder="Descripcion del Proyecto" required maxlength="30">
             <button class="btn-submit" name="crear-proyecto" onclick="validatedProjects()">Crear proyecto</button>
         </form>
     </div>
