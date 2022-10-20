@@ -1,5 +1,6 @@
 <?php
 include "../Config/config.php";
+include "./borrar-proyecto.php";
 session_start();
 
 //Variables de sesion
@@ -28,6 +29,7 @@ if (isset($_SESSION["username"])) {
         </div>
     </div>
     <div class="tabcontainer center">
+        <?php echo $_SESSION['message']; ?>
         <?php if (isset($_SESSION['message'])) { ?>
         <p class="error">
             <?php echo $_SESSION['message']; ?>
