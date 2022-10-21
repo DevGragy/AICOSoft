@@ -41,14 +41,14 @@ if (isset($_SESSION["username"])) {
 
         <div class=" projects-cards">
             <?php while ($row = $resultado->fetch_assoc()) { ?>
-            <div class="project-card">
-                <a class="pointer" href='proyectos.php?id=<?php echo $row['url']; ?>'>
+            <div>
+                <a class="pointer project-card" href='proyectos.php?id=<?php echo $row['url']; ?>'>
                     <h3> <?php echo $row['project_name']; ?> </h3>
-                    <h3> <?php echo $row['description']; ?> </h3>
+                    <h4> <?php echo $row['description']; ?> </h4>
                 </a>
                 <div class="project-actions">
-                    <a class="pointer btn-submit" href="editar-proyecto.php?url=<?php echo $row['url']; ?>">Editar</a>
-                    <a class="pointer btn-submit" href="borrar-proyecto.php?url=<?php echo $row['url']; ?>">Borrar</a>
+                    <a class="btn-editar" href="editar-proyecto.php?url=<?php echo $row['url']; ?>">Editar</a>
+                    <a class="btn-eliminar" href="borrar-proyecto.php?url=<?php echo $row['url']; ?>">Borrar</a>
                 </div>
             </div>
             <?php } ?>

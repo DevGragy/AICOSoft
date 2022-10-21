@@ -55,7 +55,7 @@ if (isset($_POST['update'])) {
             <input class="input-round" type="text" name="project_name" id="projectName" placeholder="Editar Nombre"
                 required value="<?php echo $project_name; ?>">
             <input class="input-round" type="text" name="description" id="projectDes" placeholder="Editar Descripcion"
-                required maxlength="30" value="<?php echo $description; ?>">
+                required maxlength="255" value="<?php echo $description; ?>">
             <button class="btn-submit" name="update" onclick="validatedProjects()">Editar Proyecto</button>
         </form>
     </div>

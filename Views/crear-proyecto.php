@@ -56,7 +56,7 @@ if (isset($_SESSION["username"])) {
             <input class="input-round" type="text" name="project-name" id="projectName"
                 placeholder="Nombre del Proyecto" required>
             <input class="input-round" type="text" name="description" id="projectDes"
-                placeholder="Descripcion del Proyecto" required maxlength="30">
+                placeholder="Descripcion del Proyecto" required maxlength="255">
             <button class="btn-submit" name="crear-proyecto" onclick="validatedProjects()">Crear proyecto</button>
         </form>
     </div>

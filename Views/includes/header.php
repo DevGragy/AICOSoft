@@ -20,7 +20,7 @@
                 <li>
                     <a href="dashboard.php">
                         <span class="icon">
-                            <ion-icon name="briefcase-outline"></ion-icon>
+                            <ion-icon name="home-outline"></ion-icon>
                         </span>
                         <span class="title">AICOSoft</span>
                     </a>
@@ -28,7 +28,7 @@
                 <li>
                     <a href="perfil.php">
                         <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
+                            <ion-icon name="person-circle-outline"></ion-icon>
                         </span>
                         <span class="title">Perfil</span>
                     </a>
@@ -37,9 +37,9 @@
                 <li>
                     <a href="proyectos.php">
                         <span class="icon">
-                            <ion-icon name="hammer-outline"></ion-icon>
+                            <ion-icon name="briefcase-outline"></ion-icon>
                         </span>
-                        <span class="title">Proyectos</span>
+                        <span class="title">Mis<br> Proyectos</span>
                     </a>
                 </li>
                 <li>
@@ -48,6 +48,14 @@
                             <ion-icon name="hammer-outline"></ion-icon>
                         </span>
                         <span class="title">Crear <br> Proyecto</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="crear-proyecto.php">
+                        <span class="icon">
+                            <ion-icon name="file-tray-full-outline"></ion-icon>
+                        </span>
+                        <span class="title">Archivos</span>
                     </a>
                 </li>
                 <hr class="linea4">
