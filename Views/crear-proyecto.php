@@ -7,9 +7,6 @@ $username = $_SESSION["username"];
 $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
 
-$created = "";
-$error1 = "";
-
 if (isset($_SESSION["username"])) {
 
     if (isset($_POST['crear-proyecto'])) {
@@ -20,11 +17,11 @@ if (isset($_SESSION["username"])) {
         $createProject = "INSERT INTO projects (project_name, description, url, id_user) VALUES ('$project_name', '$description', '$url', '$user_id')";
         $project_created = mysqli_query($conexion, $createProject);
 
-        if ($project_created) {
-            $created = "Proyecto " . $project_name . " creado satisfactoriamente.";
-        } else {
-            $error1 = "No se pudo crear el proyecto.";
+        if (!$project_created) {
+            $_SESSION['message'] = 'No se pudo crear el proyecto';
         }
+
+        $_SESSION['message'] = 'Proyecto ' . $project_name . ' creado. Ingrese a la pestaña Proyectos para visualizar su proyecto.';
     }
 
     require_once "../Views/includes/header.php"
@@ -44,14 +41,15 @@ if (isset($_SESSION["username"])) {
 
     <div class="tabcontainer center">
         <!-- Alerta de proyecto creado -->
-        <?php if ($created) { ?>
+        <?php if (isset($_SESSION['message'])) { ?>
         <p class="created">
-            <?php echo $created; ?>
-            Haga clic <a class="pointer" href="proyectos.php">aqui</a> para ver su nuevo proyecto.
+            <?= $_SESSION['message'] ?>
         </p>
-        <?php } ?>
+        <?php unset($_SESSION['message']);
+            } ?>
 
-        <form action="" method="POST" class="formulario">
+
+        <form action="" method="POST" class="contenedor-dash">
             <h2 class="titulo-reg">
                 Crear Proyecto
             </h2>

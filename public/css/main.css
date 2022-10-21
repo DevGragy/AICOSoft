@@ -83,6 +83,13 @@ span {
     text-align: center;
 }
 
+.contenedor-dash {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    text-align: center;
+}
+
 .label {
     margin: 8px 0;
     font-weight: 600;
@@ -377,7 +384,7 @@ span {
     margin-bottom: 5px;
 }
 
-.navigation ul li:nth-child(n+2) {
+.navigation ul li:nth-child(n + 2) {
     margin: 20px 0;
 }
 
@@ -549,7 +556,7 @@ span {
 }
 
 .tabcontainer {
-    padding: 60px 200px;
+    padding: 40px;
     margin-right: 200px;
     transition: 0.5s;
 }

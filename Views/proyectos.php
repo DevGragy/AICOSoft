@@ -1,6 +1,5 @@
 <?php
 include "../Config/config.php";
-include "./borrar-proyecto.php";
 session_start();
 
 //Variables de sesion
@@ -29,19 +28,18 @@ if (isset($_SESSION["username"])) {
         </div>
     </div>
     <div class="tabcontainer center">
-        <?php echo $_SESSION['message']; ?>
         <?php if (isset($_SESSION['message'])) { ?>
-        <p class="error">
-            <?php echo $_SESSION['message']; ?>
-            <?php echo $_SESSION['username']; ?>
+        <p class="<?= $_SESSION['message_type'] ?>">
+            <?= $_SESSION['message'] ?>
         </p>
-        <?php } ?>
+        <?php unset($_SESSION['message']);
+            } ?>
 
         <h2>
             Mis Proyectos
         </h2>
 
-        <div class="projects-cards">
+        <div class=" projects-cards">
             <?php while ($row = $resultado->fetch_assoc()) { ?>
             <div class="project-card">
                 <a class="pointer" href='proyectos.php?id=<?php echo $row['url']; ?>'>
@@ -49,7 +47,7 @@ if (isset($_SESSION["username"])) {
                     <h3> <?php echo $row['description']; ?> </h3>
                 </a>
                 <div class="project-actions">
-                    <a class="pointer btn-submit" href="editar-proyecto.php?id=<?php echo $row['url']; ?>">Editar</a>
+                    <a class="pointer btn-submit" href="editar-proyecto.php?url=<?php echo $row['url']; ?>">Editar</a>
                     <a class="pointer btn-submit" href="borrar-proyecto.php?url=<?php echo $row['url']; ?>">Borrar</a>
                 </div>
             </div>

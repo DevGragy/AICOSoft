@@ -1,5 +1,12 @@
 <?php
 include "../Config/config.php";
+session_start();
+
+//Variables de sesion
+$user_id = $_SESSION["id"];
+$username = $_SESSION["username"];
+$email = $_SESSION['email'];
+$rol = $_SESSION["id_rol"];
 
 if (isset($_GET['url'])) {
 
@@ -13,5 +20,6 @@ if (isset($_GET['url'])) {
     }
 
     $_SESSION["message"] = 'Proyecto eliminado';
+    $_SESSION['message_type'] = 'error';
     header("Location: proyectos.php");
 }
