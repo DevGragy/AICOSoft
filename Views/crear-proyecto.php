@@ -21,7 +21,7 @@ if (isset($_SESSION["username"])) {
             $_SESSION['message'] = 'No se pudo crear el proyecto';
         }
 
-        $_SESSION['message'] = 'Proyecto ' . $project_name . ' creado. Ingrese a la pestaña Proyectos para visualizar su proyecto.';
+        $_SESSION['message'] = 'El proyecto "' . $project_name . '" ha sido creado. Ingrese a la pestaña Proyectos para visualizar su proyecto.';
     }
 
     require_once "../Views/includes/header.php"

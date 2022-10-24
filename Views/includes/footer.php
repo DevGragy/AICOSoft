@@ -5,6 +5,7 @@
 
 </script>
 <script src="../public/js/projects.js"></script>
+<script src="../public/js/modal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
