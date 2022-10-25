@@ -42,29 +42,11 @@ if (isset($_SESSION["username"])) {
         <div class=" projects-cards">
             <?php while ($row = $resultado->fetch_assoc()) { ?>
             <div>
-                <a class="pointer project-card" href='proyecto.php?id=<?php echo $row['url']; ?>'>
+                <a class="pointer project-card" href="proyecto.php?url=<?php echo $row['url']; ?>">
                     <h3> <?php echo $row['project_name']; ?> </h3>
                     <h4> <?php echo $row['description']; ?> </h4>
-                    <h4>
-                        <?php echo $row['url']; ?>
-
-                    </h4>
-                </a>
-                <div class="project-actions">
                     <a class="btn-editar" href="editar-proyecto.php?url=<?php echo $row['url']; ?>">Editar</a>
-                    <button class="btn-eliminar" id="<?php echo $row['url']; ?>">Eliminar</button>
-                </div>
-                <!-- The Modal -->
-                <div class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <div class="borrar-proyecto">
-                            <p>Al confirmar, el proyecto seleccionado se eliminará de manera permanente.</p>
-                            <a class="btn-eliminar" href="borrar-proyecto.php?url=<?php echo $row['url']; ?>">Sí,
-                                Eliminar</a>
-                        </div>
-                    </div>
-                </div>
+                </a>
             </div>
             <?php } ?>
         </div>

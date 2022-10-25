@@ -169,6 +169,30 @@ span {
     border: 1px solid var(--eliminarbg-hover);
 }
 
+.btn-cancelar {
+    padding: 12px 40px;
+    margin: 20px;
+    background-color: #aaa;
+    color: var(--blanco);
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-cancelar:hover {
+    transition: all ease-in 0.3s;
+    background-color: var(--blanco);
+    color: var(--negro);
+    border: 1px solid #aaa;
+}
+
+.eliminar_proyecto {
+    padding: 12px 12px;
+    font-size: 14px;
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -619,7 +643,7 @@ span {
 }
 
 .tabcontainer {
-    padding: 40px;
+    padding: 40px 150px;
     margin-right: 200px;
     transition: 0.5s;
 }
@@ -708,17 +732,19 @@ span {
 
 .project-actions {
     display: flex;
-    justify-content: center;
+    justify-content: end;
+    position: absolute;
+    bottom: 1px;
+    right: 200px;
 }
 
 /* --------- PROYECTOS */
 
 /* MODAL --------- */
 
-/* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    display: none;
+    position: fixed;
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
@@ -729,23 +755,30 @@ span {
     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-/* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 40px 20px;
+    padding: 40px;
+    padding-top: 60px;
     border: 1px solid #888;
-    width: 50%;
+    width: 35%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.modal-content hr {
+    border-bottom: 1px solid #ccc;
+    margin: 12px 1px;
 }
 
 /* The Close Button */
 .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 34px;
     font-weight: bold;
-    margin-top: -20px;
-    margin-right: -14px;
+    margin-top: -55px;
+    margin-right: -30px;
 }
 
 .close:hover,
