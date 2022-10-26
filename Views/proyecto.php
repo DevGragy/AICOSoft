@@ -91,7 +91,7 @@ if (isset($_SESSION['username'])) {
                                         } ?>
                             </th>
                             <th>
-                                <button type="button" class="btn-editar" data-toggle="modalUpdate"
+                                <button class="btn-editar" data-toggle="modalUpdate"
                                     data-target="#editChildren<?php echo $task['id_task'] ?>">Editar</button>
                                 <button class="btn-eliminar" data-toggle="modalDelete"
                                     data-target="#deleteChildren<?php echo $task['id_task'] ?>">Eliminar</button>
@@ -109,13 +109,13 @@ if (isset($_SESSION['username'])) {
     </div>
 
     <div class="project-actions">
-
         <button class="btn-eliminar eliminar_proyecto" id="eliminar-pr">Eliminar proyecto</button>
     </div>
     <!-- The Modal -->
     <div class="modal" id="modal-eliminar">
         <div class="modal-content">
             <span class="close" id="close">&times;</span>
+
             <div class="borrar-proyecto">
                 <h3>¿Desea eliminar el proyecto "
                     <?php echo $row['project_name']; ?> " ?
@@ -124,9 +124,13 @@ if (isset($_SESSION['username'])) {
                 <p>Al confirmar, el proyecto seleccionado se eliminará de manera permanente.</p>
                 <div>
                     <button class="btn-cancelar" id="btn-cancelar">Cancelar</button>
+                    <?php if (!mysqli_num_rows($tasks) > 0) { ?>
                     <a class="btn-eliminar"
                         href="../Controllers/delete-project.php?id_project=<?php echo $row['id_project']; ?>">Sí,
                         Eliminar</a>
+                    <?php } else {
+                            echo "<p class='eliminated'>No se puede borrar un proyecto con tareas</p>";
+                        } ?>
                 </div>
             </div>
         </div>
