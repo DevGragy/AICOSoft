@@ -33,9 +33,19 @@
                         <span class="title">Perfil</span>
                     </a>
                 </li>
+                <?php if ($_SESSION['id_rol'] == 1) : ?>
+                <li>
+                    <a href="usuarios.php">
+                        <span class="icon">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Usuarios</span>
+                    </a>
+                </li>
+                <?php endif; ?>
                 <hr class="linea3">
                 <li>
-                    <a href="proyectos.php">
+                    <a href="mis-proyectos.php">
                         <span class="icon">
                             <ion-icon name="briefcase-outline"></ion-icon>
                         </span>
@@ -51,7 +61,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="crear-proyecto.php">
+                    <a href="archivos.php">
                         <span class="icon">
                             <ion-icon name="file-tray-full-outline"></ion-icon>
                         </span>

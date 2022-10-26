@@ -793,5 +793,15 @@ span {
     flex-direction: column;
     justify-content: space-between;
 }
-
 /* --------- MODAL */
+
+/* --------- PROYECTO */
+.vista-proyecto {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.contenedor-tareas {
+    padding: 40px;
+}

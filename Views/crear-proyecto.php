@@ -8,22 +8,7 @@ $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
 
 if (isset($_SESSION["username"])) {
-
-    if (isset($_POST['crear-proyecto'])) {
-        $project_name = $_POST['project-name'];
-        $description = $_POST['description'];
-        $url = md5(uniqid());
-
-        $createProject = "INSERT INTO projects (project_name, description, url, id_user) VALUES ('$project_name', '$description', '$url', '$user_id')";
-        $project_created = mysqli_query($conexion, $createProject);
-
-        if (!$project_created) {
-            $_SESSION['message'] = 'No se pudo crear el proyecto';
-        }
-
-        $_SESSION['message'] = 'El proyecto "' . $project_name . '" ha sido creado. Ingrese a la pestaña Proyectos para visualizar su proyecto.';
-    }
-
+    include "../Controllers/create-project.php";
     require_once "../Views/includes/header.php"
 ?>
 <main class="main">

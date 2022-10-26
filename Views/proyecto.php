@@ -8,21 +8,15 @@ $username = $_SESSION["username"];
 $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
 
-if (isset($_GET['url'])) {
+$currentDate = date('Y-m-d');
 
-    $url = $_GET['url'];
-    $query = "SELECT * FROM projects WHERE url = '$url'";
-    $result = mysqli_query($conexion, $query);
+if (isset($_SESSION['username'])) {
+    include "../Controllers/create-task.php";
+    include "../Controllers/read-task.php";
 
-    if (mysqli_num_rows($result) == 1) {
-        $row = mysqli_fetch_array($result);
-        $project_name = $row['project_name'];
-        $description = $row['description'];
-    }
-}
+    include "../Views/includes/header.php";
 ?>
 
-<?php include("../Views/includes/header.php") ?>
 <main class="main">
     <div class="topbar">
         <!--User img-->
@@ -37,32 +31,107 @@ if (isset($_GET['url'])) {
     </div>
 
     <div class="tabcontainer center">
-        <h3> <?php echo $row ['project_name']; ?> </h3>
-        <h4> <?php echo $row ['description']; ?> </h4>
+        <h2> <?php echo $row['project_name']; ?> </h2>
+        <h4> <?php echo $row['description']; ?> </h4>
+
+        <!-- Alerta de proyecto creado -->
+        <?php if (isset($_SESSION['message'])) { ?>
+        <p class="created">
+            <?= $_SESSION['message'] ?>
+        </p>
+        <?php unset($_SESSION['message']);
+            } ?>
+
+        <div class="vista-proyecto">
+            <div>
+                <form action="" method="POST" class="contenedor-dash">
+                    <h4 class="titulo-reg">
+                        Añadir Tarea
+                    </h4>
+                    <input class="input-round" type="text" name="task-name" id="taskName"
+                        placeholder="Nombre de la Tarea" required maxlength="255">
+                    <input class="input-round" type="date" name="date-todo" id="dateTodo"
+                        min="<?php echo $currentDate; ?>">
+                    <button class="btn-submit" name="crear-tarea" onclick="validatedProjects()">Añadir Tarea</button>
+                </form>
+            </div>
+
+            <div class="contenedor-tareas">
+                <h2>
+                    Mis Tareas
+                </h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tarea</th>
+                            <th>Fecha Limite</th>
+                            <th>
+                                Estado
+                            </th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($task = $tasks->fetch_assoc()) { ?>
+                        <tr>
+                            <th>
+                                <?php echo $task['task_name']; ?>
+                            </th>
+                            <th>
+                                <?php echo $task['date_todo']; ?>
+                            </th>
+                            <th>
+                                <?php if ($task['done'] == 0) {
+                                            echo 'Sin hacer';
+                                        } else {
+                                            echo 'Hecha';
+                                        } ?>
+                            </th>
+                            <th>
+                                <button type="button" class="btn-editar" data-toggle="modal"
+                                    data-target="#editChildren<?php echo $task['id_task'] ?>">Editar</button>
+                                <button class="btn-eliminar" data-toggle="modal"
+                                    data-target="#deleteChildren<?php echo $task['id_task'] ?>">Borrar</button>
+                            </th>
+                        </tr>
+
+                        <?php include "./Includes/editar-tarea.php" ?>
+
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <div class="project-actions">
 
         <button class="btn-eliminar eliminar_proyecto" id="eliminar-pr">Eliminar proyecto</button>
     </div>
-        <!-- The Modal -->
-        <div class="modal" id="modal-eliminar">
+    <!-- The Modal -->
+    <div class="modal" id="modal-eliminar">
         <div class="modal-content">
             <span class="close" id="close">&times;</span>
             <div class="borrar-proyecto">
                 <h3>¿Desea eliminar el proyecto "
-                    <?php echo $row ['project_name'];?> " ?
+                    <?php echo $row['project_name']; ?> " ?
                 </h3>
                 <hr>
                 <p>Al confirmar, el proyecto seleccionado se eliminará de manera permanente.</p>
                 <div>
                     <button class="btn-cancelar" id="btn-cancelar">Cancelar</button>
-                    <a class="btn-eliminar" href="borrar-proyecto.php?url=<?php echo $row['url']; ?>">Sí,
+                    <a class="btn-eliminar" href="../Controllers/delete-project.php?url=<?php echo $row['url']; ?>">Sí,
                         Eliminar</a>
                 </div>
             </div>
         </div>
     </div>
 </main>
-
 <?php include("../Views/includes/footer.php") ?>
+
+<?php
+} else {
+    header("Location: ./login.php");
+}
+?>

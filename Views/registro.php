@@ -1,48 +1,8 @@
-<?php 
-    include "../Config/config.php";
-    session_start();
-    error_reporting(0);
-
-    if(isset($_SESSION["username"])){
-        header("Location: ./dashboard.php");
-    }
-
-    if(isset($_POST["registro"])){
-        $username = $_POST['usuario'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $confirmpass = $_POST['confirmpass'];
-        $id_rol = 2;
-        
-        if($password == $confirmpass) {
-            $query = "SELECT * FROM users WHERE email = '$email'";
-            $hashpass = password_hash($password, PASSWORD_BCRYPT);
-            $result = mysqli_query($conexion, $query);
-    
-            if(!$result->num_rows > 0){
-                $newUser = "INSERT INTO users (username, email, password, id_rol) VALUES ('$username', '$email', '$hashpass', '$id_rol')";
-                $userAdded = mysqli_query($conexion, $newUser);
-                
-                if($userAdded) {
-                    $_SESSION['id'] = $row['id'];
-                    $_SESSION['username'] = $row['username'];
-                    $_SESSION['email'] = $row['email'];
-                    $_SESSION['id_rol'] = $row['id_rol'];
-                    header('Location: ./login.php');
-                    $username="";
-                    $email="";
-                    $_POST["password"]="";
-                    $_POST["confirmpass"]="";
-                } else {
-                   $error1 = "¡Hay un error en la base de datos!";
-                }
-            }else {
-                $error2 = "¡Este correo ya fue utilizado! Por favor utiliza uno diferente.";
-            }
-        } else {
-            $error3 = "¡Las contraseñas no coinciden!";
-        }
-    }
+<?php
+include "../Config/config.php";
+session_start();
+error_reporting(0);
+include "../Controllers/register.php";
 ?>
 
 <!DOCTYPE html>
@@ -97,41 +57,43 @@
         <div>
             <form action="" method="POST" class="formulario">
                 <img src="https://gpoaico.com.mx/wp-content/uploads/2021/10/Logo-AICO.png" alt="GRUPO AICO" id="logo"
-                class="logo-aico-reg" />
+                    class="logo-aico-reg" />
                 <h1 class="titulo-reg">Bienvenido a AICOSoft!</h1>
 
                 <h4 class="subt-reg">
                     ¿No tienes cuenta? Registrate, es gratis.
                 </h4>
 
-                <?php if($error1): ?>
+                <?php if ($error1) : ?>
                 <p class="error">
                     <?php echo $error1; ?>
                 </p>
                 <?php endif; ?>
 
-                <?php if($error2): ?>
+                <?php if ($error2) : ?>
                 <p class="error">
                     <?php echo $error2; ?>
                 </p>
                 <?php endif; ?>
 
-                <?php if($error3): ?>
+                <?php if ($error3) : ?>
                 <p class="error">
                     <?php echo $error3; ?>
                 </p>
                 <?php endif; ?>
 
-                <input class="input-round" type="text" required name="usuario" placeholder="Usuario" value="<?php echo $username; ?>" />
+                <input class="input-round" type="text" required name="usuario" placeholder="Usuario"
+                    value="<?php echo $username; ?>" />
 
-                <input class="input-round" type="email" required name="email" placeholder="Email" value="<?php echo $email; ?>" />
+                <input class="input-round" type="email" required name="email" placeholder="Email"
+                    value="<?php echo $email; ?>" />
 
                 <div class="centrar">
                     <input class="input-round gap-r" type="password" required name="password" placeholder="Contraseña"
-                    value="<?php echo $_POST['password']; ?>" />
+                        value="<?php echo $_POST['password']; ?>" />
 
-                    <input class="input-round gap-l" type="password" required name="confirmpass" placeholder="Confirmar Contraseña"
-                    value="<?php echo $_POST['confirmpass']; ?>" />
+                    <input class="input-round gap-l" type="password" required name="confirmpass"
+                        placeholder="Confirmar Contraseña" value="<?php echo $_POST['confirmpass']; ?>" />
                 </div>
 
                 <button class="btn-submit" name="registro">Registrarme

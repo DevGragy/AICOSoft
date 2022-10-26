@@ -21,5 +21,5 @@ if (isset($_GET['url'])) {
 
     $_SESSION["message"] = 'Proyecto eliminado';
     $_SESSION['message_type'] = 'eliminated';
-    header("Location: proyectos.php");
+    header("Location: ../Views/mis-proyectos.php");
 }

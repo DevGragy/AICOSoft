@@ -11,8 +11,7 @@ $rol = $_SESSION["id_rol"];
 
 if (isset($_SESSION["username"])) {
 
-    $query = "SELECT * FROM projects WHERE id_user = $user_id";
-    $resultado = mysqli_query($conexion, $query);
+    include "../Controllers/read-project.php";
     require_once "../Views/includes/header.php"
 ?>
 <main class="main">
@@ -45,6 +44,8 @@ if (isset($_SESSION["username"])) {
                 <a class="pointer project-card" href="proyecto.php?url=<?php echo $row['url']; ?>">
                     <h3> <?php echo $row['project_name']; ?> </h3>
                     <h4> <?php echo $row['description']; ?> </h4>
+                    <p>Fecha de Creacion: <?php echo $row['created'] ?> </p>
+
                     <a class="btn-editar" href="editar-proyecto.php?url=<?php echo $row['url']; ?>">Editar</a>
                 </a>
             </div>
