@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2022 a las 07:09:13
+-- Tiempo de generación: 26-10-2022 a las 07:01:28
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -31,6 +31,7 @@ CREATE TABLE `projects` (
   `id_project` int(11) NOT NULL,
   `project_name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
+  `created` date NOT NULL DEFAULT current_timestamp(),
   `url` varchar(50) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -57,6 +58,21 @@ INSERT INTO `roles` (`id`, `rol`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tasks`
+--
+
+CREATE TABLE `tasks` (
+  `id_task` int(11) NOT NULL,
+  `task_name` varchar(255) NOT NULL,
+  `date_todo` date NOT NULL,
+  `done` tinyint(1) NOT NULL,
+  `id_project` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `users`
 --
 
@@ -74,7 +90,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `id_rol`) VALUES
 (19, 'DevJay', 'dev@mail.com', '$2y$10$2clwtCd5nNJ9j1z07C7mVOWRzOLrUQLra1NhFJt9NHoFgPyJrxtcW', 2),
-(21, 'Dev 2', 'dev2@mail.com', '$2y$10$9HvPIzdzgexFoCUCR.E1iOrkna4sWtCpBkJ/ll08pNjNaBO6lKzCq', 1);
+(21, 'Dev 2', 'dev2@mail.com', '$2y$10$9HvPIzdzgexFoCUCR.E1iOrkna4sWtCpBkJ/ll08pNjNaBO6lKzCq', 1),
+(22, 'Elias Dev', 'elias@mail.com', '$2y$10$4JVVjF9F85BnxUEfe7Y1u.L27gfV8Uz7y0LOiZhvNLXsdlzQdMAme', 2),
+(23, 'Desarrollador', 'desarrollador@mail.com', '$2y$10$pRlEZT63.V2TfhCMOpY5Qu3grR1/qDdVt2SqwKuj1E1kr.2bEAMNG', 1);
 
 --
 -- Índices para tablas volcadas
@@ -94,6 +112,14 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `tasks`
+--
+ALTER TABLE `tasks`
+  ADD PRIMARY KEY (`id_task`),
+  ADD KEY `id_project` (`id_project`),
+  ADD KEY `id_user` (`id_user`);
+
+--
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
@@ -108,7 +134,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id_project` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id_project` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -117,10 +143,16 @@ ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de la tabla `tasks`
+--
+ALTER TABLE `tasks`
+  MODIFY `id_task` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Restricciones para tablas volcadas
@@ -131,6 +163,13 @@ ALTER TABLE `users`
 --
 ALTER TABLE `projects`
   ADD CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
+
+--
+-- Filtros para la tabla `tasks`
+--
+ALTER TABLE `tasks`
+  ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`id_project`) REFERENCES `projects` (`id_project`),
+  ADD CONSTRAINT `tasks_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 
 --
 -- Filtros para la tabla `users`
