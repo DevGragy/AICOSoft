@@ -11,10 +11,10 @@ $rol = $_SESSION["id_rol"];
 $currentDate = date('Y-m-d');
 
 if (isset($_SESSION['username'])) {
-    include "../Controllers/create-project.php";
     include "../Controllers/read-project.php";
-    include "../Controllers/create-task.php";
+    include "../Controllers/create-project.php";
     include "../Controllers/read-task.php";
+    include "../Controllers/create-task.php";
 
     include "../Views/includes/header.php";
 ?>
