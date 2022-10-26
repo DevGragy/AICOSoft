@@ -31,10 +31,11 @@ window.onclick = function (event) {
  */
 
 let modal = document.getElementById("modal-eliminar");
-let span = document.getElementById("close");
+let close = document.getElementById("close");
 let btnCancelar = document.getElementById("btn-cancelar");
 let btnEliminar = document.getElementById("eliminar-pr")
-
+console.log(modal);
+console.log (close);
 
 btnEliminar.onclick = ()=>{
     modal.style.display = "block"
@@ -42,9 +43,11 @@ btnEliminar.onclick = ()=>{
 
 btnCancelar.onclick = ()=>{
     modal.style.display = "none"
+    console.log(modal);
+    console.log (close);
 }
 
-span.onclick = ()=>{
+close.onclick = () => {
     modal.style.display = "none"
 }
 

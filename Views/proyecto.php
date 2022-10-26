@@ -33,8 +33,8 @@ if (isset($_SESSION['username'])) {
     </div>
 
     <div class="tabcontainer center">
-        <h2> <?php echo $row['project_name']; ?> </h2>
-        <h4> <?php echo $row['description']; ?> </h4>
+        <h2 class="titulo-tareas"> <?php echo $row['project_name']; ?> </h2>
+        <h4 class="subt-tareas"> <?php echo $row['description']; ?> </h4>
 
         <!-- Alerta de proyecto creado -->
         <?php if (isset($_SESSION['message'])) { ?>
@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])) {
 
         <div class="vista-proyecto">
             <div>
-                <form action="" method="POST" class="contenedor-dash">
+                <form action="" method="POST" class="contenedor-dash card-sty">
                     <h4 class="titulo-reg">
                         Añadir Tarea
                     </h4>
@@ -58,7 +58,7 @@ if (isset($_SESSION['username'])) {
                 </form>
             </div>
 
-            <div class="contenedor-tareas">
+            <div class="contenedor-tareas card-sty">
                 <h2>
                     Mis Tareas
                 </h2>
@@ -94,7 +94,7 @@ if (isset($_SESSION['username'])) {
                                 <button type="button" class="btn-editar" data-toggle="modal"
                                     data-target="#editChildren<?php echo $task['id_task'] ?>">Editar</button>
                                 <button class="btn-eliminar" data-toggle="modal"
-                                    data-target="#deleteChildren<?php echo $task['id_task'] ?>">Borrar</button>
+                                    data-target="#deleteChildren<?php echo $task['id_task'] ?>">Eliminar</button>
                             </th>
                         </tr>
 

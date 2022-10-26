@@ -701,7 +701,7 @@ span {
 
 /* --------- PERFIL */
 
-/* PROYECTOS --------- */
+/* MIS PROYECTOS ------ */
 
 .projects-cards {
     display: grid;
@@ -714,7 +714,7 @@ span {
 .project-card {
     box-shadow: 0px 0px 8px 0px rgba(100, 100, 111, 0.2);
     margin-top: 20px;
-    padding: 40px 16px;
+    padding: 20px 16px 60px;
     display: block;
     height: 150px;
 }
@@ -738,21 +738,28 @@ span {
     right: 200px;
 }
 
-/* --------- PROYECTOS */
+.fecha {
+    font-weight: 300;
+    color: var(--gris);
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+/* ------MIS PROYECTOS */
 
 /* MODAL --------- */
 
 .modal {
     display: none;
     position: fixed;
-    z-index: 1; /* Sit on top */
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
@@ -771,7 +778,6 @@ span {
     margin: 12px 1px;
 }
 
-/* The Close Button */
 .close {
     color: #aaa;
     float: right;
@@ -795,7 +801,7 @@ span {
 }
 /* --------- MODAL */
 
-/* --------- PROYECTO */
+/* PROYECTO ------ */
 .vista-proyecto {
     display: flex;
     justify-content: space-evenly;
@@ -803,5 +809,37 @@ span {
 }
 
 .contenedor-tareas {
-    padding: 40px;
+
 }
+
+.contenedor-tareas h2{
+    background: var(--azul-AICO2);
+    color: var(--blanco);
+    padding: 10px 0px;
+}
+
+.contenedor-tareas th{
+    padding: 10px 15px;
+}
+
+tbody th{
+    border-top: 1px solid;
+}
+
+tbody .btn-editar, tbody .btn-eliminar{
+    padding: 8px 15px;
+    margin: 10px;
+}
+
+.titulo-tareas {
+    color: var(--azul-AICO);
+    font-size: 36px;
+    padding-bottom: 30px;
+}
+
+.subt-tareas {
+    font-size: 20px;
+    padding-bottom: 40px;
+}
+
+/* ------ PROYECTO */
