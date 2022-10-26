@@ -1,5 +1,5 @@
 <!-- The Modal -->
-<div class="modal" id="editChildren<?php echo $task['id_task']; ?>" style="display: block;">
+<div class="modal" id="editChildren<?php echo $task['id_task']; ?>">
     <div class="modal-content">
         <span class="close" id="close" data-dismiss="modal">&times;</span>
         <form action="editar-proyecto.php?url=<?php echo $_GET['url']; ?>" method="POST" class="contenedor-dash">

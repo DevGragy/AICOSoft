@@ -11,6 +11,8 @@ $rol = $_SESSION["id_rol"];
 $currentDate = date('Y-m-d');
 
 if (isset($_SESSION['username'])) {
+    include "../Controllers/create-project.php";
+    include "../Controllers/read-project.php";
     include "../Controllers/create-task.php";
     include "../Controllers/read-task.php";
 
@@ -121,7 +123,8 @@ if (isset($_SESSION['username'])) {
                 <p>Al confirmar, el proyecto seleccionado se eliminará de manera permanente.</p>
                 <div>
                     <button class="btn-cancelar" id="btn-cancelar">Cancelar</button>
-                    <a class="btn-eliminar" href="../Controllers/delete-project.php?url=<?php echo $row['url']; ?>">Sí,
+                    <a class="btn-eliminar"
+                        href="../Controllers/delete-project.php?id_project=<?php echo $row['id_project']; ?>">Sí,
                         Eliminar</a>
                 </div>
             </div>
