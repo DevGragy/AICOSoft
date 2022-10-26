@@ -91,14 +91,15 @@ if (isset($_SESSION['username'])) {
                                         } ?>
                             </th>
                             <th>
-                                <button type="button" class="btn-editar" data-toggle="modal"
+                                <button type="button" class="btn-editar" data-toggle="modalUpdate"
                                     data-target="#editChildren<?php echo $task['id_task'] ?>">Editar</button>
-                                <button class="btn-eliminar" data-toggle="modal"
+                                <button class="btn-eliminar" data-toggle="modalDelete"
                                     data-target="#deleteChildren<?php echo $task['id_task'] ?>">Eliminar</button>
                             </th>
                         </tr>
 
-                        <?php include "./Includes/editar-tarea.php" ?>
+                        <?php //include "./Includes/modal-editar-tarea.php"
+                                ?>
 
                         <?php } ?>
                     </tbody>
