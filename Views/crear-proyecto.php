@@ -27,23 +27,25 @@ if (isset($_SESSION["username"])) {
     <div class="tabcontainer center">
         <!-- Alerta de proyecto creado -->
         <?php if (isset($_SESSION['message'])) { ?>
-        <p class="created">
+        <p class="created" id="alert">
+            <span class="close-alert" id="close-alert">&times;</span>
             <?= $_SESSION['message'] ?>
         </p>
         <?php unset($_SESSION['message']);
             } ?>
 
-
-        <form action="" method="POST" class="contenedor-dash">
-            <h2 class="titulo-reg">
-                Crear Proyecto
-            </h2>
-            <input class="input-round" type="text" name="project-name" id="projectName"
-                placeholder="Nombre del Proyecto" required>
-            <input class="input-round" type="text" name="description" id="projectDes"
-                placeholder="Descripcion del Proyecto" required maxlength="255">
-            <button class="btn-submit" name="crear-proyecto" onclick="validatedProjects()">Crear proyecto</button>
-        </form>
+        <div class="card-sty">
+            <form action="" method="POST" class="contenedor-dash">
+                <h2 class="titulo-reg">
+                    Crear Proyecto
+                </h2>
+                <input class="input-round" type="text" name="project-name" id="projectName"
+                    placeholder="Nombre del Proyecto" required>
+                <input class="input-round" type="text" name="description" id="projectDes"
+                    placeholder="Descripcion del Proyecto" required maxlength="255">
+                <button class="btn-submit" name="crear-proyecto" onclick="validatedProjects()">Crear proyecto</button>
+            </form>
+        </div>
     </div>
 
 </main>

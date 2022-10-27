@@ -4,6 +4,7 @@
 <script src="../public/js/menuToggle.js"></script>
 <script src="../public/js/projects.js"></script>
 <script src="../public/js/modal.js"></script>
+<script src="../public/js/closeAlerts.js"></script>
 
 </body>
 

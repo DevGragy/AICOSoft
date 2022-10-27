@@ -53,6 +53,10 @@ span {
     font-size: 20px;
 }
 
+table {
+    border-collapse: collapse;
+  }
+
 /* GLOBALES --------- */
 
 .contenedor {
@@ -191,6 +195,12 @@ span {
 .eliminar_proyecto {
     padding: 12px 12px;
     font-size: 14px;
+    transition: 0.5s;
+}
+
+.eliminar_proyecto.active {
+    margin-right: -180px;
+    transition: 0.5s;
 }
 
 .pointer {
@@ -250,6 +260,22 @@ span {
     text-align: center;
     text-transform: uppercase;
     width: 75%;
+}
+
+.close-alert {
+    color: #aaa;
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: -12px;
+    margin-right: -10px;
+}
+
+.close-alert:hover,
+.close-alert:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* --------- GLOBALES */
@@ -821,8 +847,18 @@ span {
     padding: 10px 15px;
 }
 
-tbody th {
+.columna {
+    padding: 10px 100px;
+    background: var(--azul-AICO2);
+    color: var(--blanco);
+}
+
+tbody tr {
     border-top: 1px solid;
+}
+
+.fila td {
+    padding: 12px 0px;
 }
 
 tbody .btn-editar,

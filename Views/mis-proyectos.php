@@ -28,7 +28,8 @@ if (isset($_SESSION["username"])) {
     </div>
     <div class="tabcontainer center">
         <?php if (isset($_SESSION['message'])) { ?>
-        <p class="<?= $_SESSION['message_type'] ?>">
+        <p class="<?= $_SESSION['message_type'] ?>" id="alert">
+            <span class="close-alert" id="close-alert">&times;</span>
             <?= $_SESSION['message'] ?>
         </p>
         <?php unset($_SESSION['message']);

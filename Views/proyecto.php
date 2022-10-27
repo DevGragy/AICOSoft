@@ -36,9 +36,10 @@ if (isset($_SESSION['username'])) {
         <h2 class="titulo-tareas"> <?php echo $row['project_name']; ?> </h2>
         <h4 class="subt-tareas"> <?php echo $row['description']; ?> </h4>
 
-        <!-- Alerta de proyecto creado -->
+        <!-- Alerta de edición y eliminación de tareas -->
         <?php if (isset($_SESSION['message'])) { ?>
-        <p class="<?= $_SESSION['message_type'] ?>">
+        <p class="<?= $_SESSION['message_type'] ?>" id="alert">
+            <span class="close-alert" id="close-alert">&times;</span>
             <?= $_SESSION['message'] ?>
         </p>
         <?php unset($_SESSION['message']);
@@ -77,25 +78,25 @@ if (isset($_SESSION['username'])) {
                     <tbody>
                         <?php while ($task = $tasks->fetch_assoc()) { ?>
                         <tr>
-                            <th>
+                            <td>
                                 <?php echo $task['task_name']; ?>
-                            </th>
-                            <th>
+                            </td>
+                            <td>
                                 <?php echo $task['date_todo']; ?>
-                            </th>
-                            <th>
+                            </td>
+                            <td>
                                 <?php if ($task['done'] == 0) {
                                             echo 'Sin hacer';
                                         } else {
                                             echo 'Hecha';
                                         } ?>
-                            </th>
-                            <th>
+                            </td>
+                            <td>
                                 <button type="button" data-target="#update<?php echo $task['id_task']; ?>"
                                     class="btn-editar" data-toggle="modal">Editar</button>
                                 <button type="button" data-target="#delete<?php echo $task['id_task']; ?>"
                                     class="btn-eliminar" data-toggle="modal">Borrar</button>
-                            </th>
+                            </td>
                         </tr>
 
                         <?php include "./Includes/modal-editar-tarea.php"

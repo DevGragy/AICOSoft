@@ -27,25 +27,35 @@ if (isset($_SESSION["username"]) && $rol == 1) {
         <h2>
             Tabla de Usuarios Registrados
         </h2>
-        <p>Solo un usuario administrador puedo observar este panel.</p>
-        <table class="">
-            <thead>
-                <tr>
-                    <th>Usuarios</th>
-                    <th>Email</th>
-                    <th>Id_Rol</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $resultado->fetch_assoc()) { ?>
-                <tr>
-                    <td> <?php echo $row['username']; ?> </td>
-                    <td> <?php echo $row['email']; ?> </td>
-                    <td> <?php echo $row['id_rol']; ?> </td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+        <p class="espacio-footer">Solo un usuario administrador puedo observar este panel.</p>
+        <div class="vista-proyecto">
+            <div class="contendor-tareas card-sty">
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th class="columna">Usuarios</th>
+                            <th class="columna">Email</th>
+                            <th class="columna">Rol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = $resultado->fetch_assoc()) { ?>
+                        <tr class="fila">
+                            <td> <?php echo $row['username']; ?> </td>
+                            <td> <?php echo $row['email']; ?> </td>
+                            <td> 
+                                <?php if ($row['id_rol'] == 1) {
+                                            echo 'Administrador';
+                                        } else {
+                                            echo 'Cliente';
+                                        } ?>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </main>
 <?php require_once "../Views/includes/footer.php" ?>

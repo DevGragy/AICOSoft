@@ -13,5 +13,5 @@ if (isset($_POST['crear-proyecto'])) {
         $_SESSION['message'] = 'No se pudo crear el proyecto';
     }
 
-    $_SESSION['message'] = 'El proyecto "' . $project_name . '" ha sido creado. Ingrese a Mis Proyectos para visualizar su proyecto.';
+    $_SESSION['message'] = 'El proyecto "' . $project_name . '" ha sido creado. <br> Ingrese a "Mis Proyectos" para visualizar su proyecto.';
 }

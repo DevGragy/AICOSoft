@@ -8,6 +8,7 @@ let linea3 = document.querySelector('.linea3');
 let linea4 = document.querySelector('.linea4');
 let tabcontainer = document.querySelector('.tabcontainer');
 let topbar = document.querySelector('.topbar');
+let btnElim = document.querySelector('.eliminar_proyecto');
 
 toggle.onclick = function() {
     navigation.classList.toggle('active')
@@ -18,4 +19,5 @@ toggle.onclick = function() {
     linea4.classList.toggle('active')
     tabcontainer.classList.toggle('active')
     topbar.classList.toggle('baract')
+    btnElim.classList.toggle('active')
 }
