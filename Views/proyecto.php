@@ -91,16 +91,16 @@ if (isset($_SESSION['username'])) {
                                         } ?>
                             </th>
                             <th>
-                                <button class="btn-editar" data-toggle="modalUpdate"
-                                    data-target="#editChildren<?php echo $task['id_task'] ?>">Editar</button>
-                                <button class="btn-eliminar" data-toggle="modalDelete"
-                                    data-target="#deleteChildren<?php echo $task['id_task'] ?>">Eliminar</button>
+                                <button type="button" data-target="#update<?php echo $task['id_task']; ?>"
+                                    class="btn-editar" data-toggle="modal">Editar</button>
+                                <button type="button" data-target="#delete<?php echo $task['id_task']; ?>"
+                                    class="btn-eliminar" data-toggle="modal">Borrar</button>
                             </th>
                         </tr>
 
-                        <?php //include "./Includes/modal-editar-tarea.php"
+                        <?php include "./Includes/modal-editar-tarea.php"
                                 ?>
-
+                        <?php include "./Includes/modal-eliminar-tarea.php" ?>
                         <?php } ?>
                     </tbody>
                 </table>
@@ -112,9 +112,9 @@ if (isset($_SESSION['username'])) {
         <button class="btn-eliminar eliminar_proyecto" id="eliminar-pr">Eliminar proyecto</button>
     </div>
     <!-- The Modal -->
-    <div class="modal" id="modal-eliminar">
-        <div class="modal-content">
-            <span class="close" id="close">&times;</span>
+    <div class="modal-pr" id="modal-eliminar">
+        <div class="modalpr-content">
+            <span class="close-pr" id="close-pr">&times;</span>
 
             <div class="borrar-proyecto">
                 <h3>¿Desea eliminar el proyecto "

@@ -3,6 +3,10 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='text/javascript' src='//code.jquery.com/jquery-1.11.0.js'></script>
+    <link rel="stylesheet" href="../Public/css/bootstrap-modal.css">
+
+    <script src="../Public/js/bootstrap-modal.js"></script>
     <link rel="stylesheet" href="../Public/css/main.css">
     <title>Admin Dashboard | AICOSoft</title>
 </head>

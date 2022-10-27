@@ -749,7 +749,7 @@ span {
 
 /* MODAL --------- */
 
-.modal {
+.modal-pr {
     display: none;
     position: fixed;
     z-index: 1;
@@ -762,7 +762,7 @@ span {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-content {
+.modalpr-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 40px;
@@ -773,12 +773,12 @@ span {
     border-radius: 10px;
 }
 
-.modal-content hr {
+.modalpr-content hr {
     border-bottom: 1px solid #ccc;
     margin: 12px 1px;
 }
 
-.close {
+.close-pr {
     color: #aaa;
     float: right;
     font-size: 34px;
@@ -787,8 +787,8 @@ span {
     margin-right: -30px;
 }
 
-.close:hover,
-.close:focus {
+.close-pr:hover,
+.close-pr:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -809,24 +809,24 @@ span {
 }
 
 .contenedor-tareas {
-
 }
 
-.contenedor-tareas h2{
+.contenedor-tareas h2 {
     background: var(--azul-AICO2);
     color: var(--blanco);
     padding: 10px 0px;
 }
 
-.contenedor-tareas th{
+.contenedor-tareas th {
     padding: 10px 15px;
 }
 
-tbody th{
+tbody th {
     border-top: 1px solid;
 }
 
-tbody .btn-editar, tbody .btn-eliminar{
+tbody .btn-editar,
+tbody .btn-eliminar {
     padding: 8px 15px;
     margin: 10px;
 }
