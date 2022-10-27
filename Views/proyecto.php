@@ -38,7 +38,7 @@ if (isset($_SESSION['username'])) {
 
         <!-- Alerta de proyecto creado -->
         <?php if (isset($_SESSION['message'])) { ?>
-        <p class="created">
+        <p class="<?= $_SESSION['message_type'] ?>">
             <?= $_SESSION['message'] ?>
         </p>
         <?php unset($_SESSION['message']);
