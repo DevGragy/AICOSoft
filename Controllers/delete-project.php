@@ -18,7 +18,7 @@ if (isset($_GET['id_project'])) {
         die("Query fallida");
     }
 
-    $_SESSION["message"] = 'Proyecto eliminado';
+    $_SESSION["message"] = 'El proyecto fue eliminado';
     $_SESSION['message_type'] = 'eliminated';
     header("Location: ../Views/mis-proyectos.php");
 }

@@ -12,8 +12,13 @@
                      required value="<?php echo $task['task_name']; ?>">
                  <input class="input-round" type="date" name="date_todo" id="date_todo"
                      min="<?php echo $currentDate; ?>" value="<?php echo $task['date_todo']; ?>">
-                 <input class="input-round" type="checkbox" name="done" id="done" value="<?php echo $task['done']; ?>">
-                 <button class="btn-submit" name="update">Editar Tarea</button>
+                 <div>
+                    <input class="input-round" type="checkbox" name="done" id="done" value="<?php echo $task['done']; ?>">
+                    <label>Tarea concluída.</label>
+                 </div>
+                 <div>
+                    <button class="btn-submit" name="update">Editar Tarea</button>
+                 </div>
              </form>
          </div>
      </div>

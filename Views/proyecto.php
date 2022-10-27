@@ -86,16 +86,16 @@ if (isset($_SESSION['username'])) {
                             </td>
                             <td>
                                 <?php if ($task['done'] == 0) {
-                                            echo 'Sin hacer';
+                                            echo 'En proceso';
                                         } else {
-                                            echo 'Hecha';
+                                            echo 'Concluída';
                                         } ?>
                             </td>
                             <td>
                                 <button type="button" data-target="#update<?php echo $task['id_task']; ?>"
                                     class="btn-editar" data-toggle="modal">Editar</button>
                                 <button type="button" data-target="#delete<?php echo $task['id_task']; ?>"
-                                    class="btn-eliminar" data-toggle="modal">Borrar</button>
+                                    class="btn-eliminar" data-toggle="modal">Eliminar</button>
                             </td>
                         </tr>
 
@@ -118,8 +118,8 @@ if (isset($_SESSION['username'])) {
             <span class="close-pr" id="close-pr">&times;</span>
 
             <div class="borrar-proyecto">
-                <h3>¿Desea eliminar el proyecto "
-                    <?php echo $row['project_name']; ?> " ?
+                <h3>¿Desea eliminar el proyecto 
+                    "<?php echo $row['project_name']; ?>"?
                 </h3>
                 <hr>
                 <p>Al confirmar, el proyecto seleccionado se eliminará de manera permanente.</p>

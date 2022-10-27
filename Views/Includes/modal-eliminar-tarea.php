@@ -8,8 +8,8 @@
              </div>
              <form action="../Controllers/delete-task.php" method="POST">
                  <input type="hidden" name="id_task" value="<?php echo $task['id_task']; ?>">
-                 <h3>¿Desea eliminar la tarea "
-                     <?php echo $task['task_name']; ?>"?
+                 <h3 class="pad-top">¿Desea eliminar la tarea 
+                     "<?php echo $task['task_name']; ?>"?
                  </h3>
                  <button class="btn-eliminar" name="delete">Eliminar Tarea</button>
              </form>

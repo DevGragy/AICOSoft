@@ -207,6 +207,10 @@ table {
     cursor: pointer;
 }
 
+.pad-top {
+    padding-top: 20px;
+}
+
 .card-cont {
     display: block;
     justify-content: space-evenly;
