@@ -1,5 +1,5 @@
 <?php
-include "../Config/config.php";
+include "../config/config.php";
 session_start();
 
 $id_task   = $_REQUEST['id_task'];

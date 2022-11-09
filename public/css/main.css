@@ -465,7 +465,7 @@ table {
     position: fixed;
     width: 200px;
     height: 100%;
-    background: var(--gradient);
+    background: var(--azul-AICO);
     border-left: 10px solid var(--azul-AICO);
     transition: 0.5s;
     overflow: hidden;
@@ -883,3 +883,26 @@ tbody .btn-eliminar {
 }
 
 /* ------ PROYECTO */
+
+
+@media (375px <= width <=720px){
+    .contenedor {
+        grid-template-columns: 1fr;
+        margin: 40px;
+    }
+
+    .formulario {
+        padding: 40px;
+    }
+}
+
+@media (721px <= width <=1200px){
+    .contenedor {
+        grid-template-columns: 1fr;
+        margin: 140px;
+    }
+
+    .formulario {
+        padding: 100px;
+    }
+}

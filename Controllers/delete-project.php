@@ -1,5 +1,5 @@
 <?php
-include "../Config/config.php";
+include "../config/config.php";
 session_start();
 
 //Variables de sesion
@@ -20,5 +20,5 @@ if (isset($_GET['id_project'])) {
 
     $_SESSION["message"] = 'El proyecto fue eliminado';
     $_SESSION['message_type'] = 'eliminated';
-    header("Location: ../Views/mis-proyectos.php");
+    header("Location: ../views/mis-proyectos.php");
 }

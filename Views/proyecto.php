@@ -1,5 +1,5 @@
 <?php
-include "../Config/config.php";
+include "../config/config.php";
 session_start();
 
 //Variables de sesion
@@ -7,16 +7,17 @@ $user_id = $_SESSION["id"];
 $username = $_SESSION["username"];
 $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
-
+    
 $currentDate = date('Y-m-d');
 
 if (isset($_SESSION['username'])) {
-    include "../Controllers/read-project.php";
-    include "../Controllers/create-project.php";
-    include "../Controllers/read-task.php";
-    include "../Controllers/create-task.php";
 
-    include "../Views/includes/header.php";
+    include "../controllers/read-project.php";
+    include "../controllers/create-project.php";
+    include "../controllers/read-task.php";
+    include "../controllers/create-task.php";
+
+    include "../views/includes/header.php";
 ?>
 
 <main class="main">
@@ -24,7 +25,7 @@ if (isset($_SESSION['username'])) {
         <!--User img-->
         <div class="mail">
             <div class="user">
-                <img src="../Public/img/undraw_profile_1.svg">
+                <img src="../public/img/undraw_profile_1.svg">
             </div>
             <label>
                 <?php echo $email ?>
@@ -99,9 +100,9 @@ if (isset($_SESSION['username'])) {
                             </td>
                         </tr>
 
-                        <?php include "./Includes/modal-editar-tarea.php"
+                        <?php include "./includes/modal-editar-tarea.php"
                                 ?>
-                        <?php include "./Includes/modal-eliminar-tarea.php" ?>
+                        <?php include "./includes/modal-eliminar-tarea.php" ?>
                         <?php } ?>
                     </tbody>
                 </table>
@@ -118,7 +119,7 @@ if (isset($_SESSION['username'])) {
             <span class="close-pr" id="close-pr">&times;</span>
 
             <div class="borrar-proyecto">
-                <h3>¿Desea eliminar el proyecto 
+                <h3>¿Desea eliminar el proyecto
                     "<?php echo $row['project_name']; ?>"?
                 </h3>
                 <hr>
@@ -127,7 +128,7 @@ if (isset($_SESSION['username'])) {
                     <button class="btn-cancelar" id="btn-cancelar">Cancelar</button>
                     <?php if (!mysqli_num_rows($tasks) > 0) { ?>
                     <a class="btn-eliminar"
-                        href="../Controllers/delete-project.php?id_project=<?php echo $row['id_project']; ?>">Sí,
+                        href="../controllers/delete-project.php?id_project=<?php echo $row['id_project']; ?>">Sí,
                         Eliminar</a>
                     <?php } else {
                             echo "<p class='eliminated'>No se puede borrar un proyecto con tareas</p>";
@@ -137,7 +138,7 @@ if (isset($_SESSION['username'])) {
         </div>
     </div>
 </main>
-<?php include("../Views/includes/footer.php") ?>
+<?php include("../views/includes/footer.php") ?>
 
 <?php
 } else {

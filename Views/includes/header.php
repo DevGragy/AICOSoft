@@ -8,7 +8,18 @@
 
     <script src="../Public/js/bootstrap-modal.js"></script>
     <link rel="stylesheet" href="../Public/css/main.css">
-    <title>Admin Dashboard | AICOSoft</title>
+    <link rel="icon" href="">
+    <title>
+        <?php if ($_SESSION['id_rol'] == 1) {
+                echo "Admin Dashboard";
+            } else {
+                echo "Dashboard";
+            }
+         ?>
+                
+
+    </title>
+    
 </head>
 
 <body>
@@ -41,7 +52,7 @@
                 <li>
                     <a href="usuarios.php">
                         <span class="icon">
-                            <ion-icon name="person-circle-outline"></ion-icon>
+                        <ion-icon name="people-circle-outline"></ion-icon>
                         </span>
                         <span class="title">Usuarios</span>
                     </a>

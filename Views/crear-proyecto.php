@@ -1,5 +1,5 @@
 <?php
-include "../Config/config.php";
+include "../config/config.php";
 session_start();
 
 $user_id = $_SESSION["id"];
@@ -8,15 +8,15 @@ $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
 
 if (isset($_SESSION["username"])) {
-    include "../Controllers/create-project.php";
-    require_once "../Views/includes/header.php"
+    include "../controllers/create-project.php";
+    require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
         <!--User img-->
         <div class="mail">
             <div class="user">
-                <img src="../Public/img/undraw_profile_1.svg">
+                <img src="../public/img/undraw_profile_1.svg">
             </div>
             <label>
                 <?php echo $email ?>
@@ -49,10 +49,10 @@ if (isset($_SESSION["username"])) {
     </div>
 
 </main>
-<?php require_once "../Views/includes/footer.php" ?>
+<?php require_once "../views/includes/footer.php" ?>
 
 <?php
 } else {
-    header("Location: ./login.php");
+    header("Location: login.php");
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-include "../Config/config.php";
+include "../config/config.php";
 session_start();
 
 //Variables de sesion
@@ -8,18 +8,17 @@ $username = $_SESSION["username"];
 $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
 
-
 if (isset($_SESSION["username"])) {
 
-    include "../Controllers/read-project.php";
-    require_once "../Views/includes/header.php"
+    include "../controllers/read-project.php";
+    require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
         <!--User img-->
         <div class="mail">
             <div class="user">
-                <img src="../Public/img/undraw_profile_1.svg">
+                <img src="../public/img/undraw_profile_1.svg">
             </div>
             <label>
                 <?php echo $email ?>
@@ -46,7 +45,7 @@ if (isset($_SESSION["username"])) {
                     <h3> <?php echo $row['project_name']; ?> </h3>
                     <h4> <?php echo $row['description']; ?> </h4>
                     <p class="fecha">Fecha de Creacion: <?php echo $row['created'] ?> </p>
-                    
+
                     <a class="btn-editar" href="editar-proyecto.php?url=<?php echo $row['url']; ?>">Editar</a>
                 </a>
             </div>
@@ -54,7 +53,7 @@ if (isset($_SESSION["username"])) {
         </div>
     </div>
 </main>
-<?php require_once "../Views/includes/footer.php" ?>
+<?php require_once "../views/includes/footer.php" ?>
 
 <?php
 } else {

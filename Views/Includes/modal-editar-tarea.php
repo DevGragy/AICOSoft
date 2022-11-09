@@ -6,7 +6,7 @@
                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                  <h4 class="modal-title">Editar Tarea</h4>
              </div>
-             <form action="../Controllers/update-task.php" method="POST">
+             <form action="../controllers/update-task.php" method="POST">
                  <input type="hidden" name="id_task" value="<?php echo $task['id_task']; ?>">
                  <input class="input-round" type="text" name="task_name" id="task_name" placeholder="Editar Nombre"
                      required value="<?php echo $task['task_name']; ?>">
@@ -14,7 +14,7 @@
                      min="<?php echo $currentDate; ?>" value="<?php echo $task['date_todo']; ?>">
                  <div>
                     <input class="input-round" type="checkbox" name="done" id="done" value="<?php echo $task['done']; ?>">
-                    <label>Tarea concluída.</label>
+                    <label>Tarea concluida.</label>
                  </div>
                  <div>
                     <button class="btn-submit" name="update">Editar Tarea</button>
