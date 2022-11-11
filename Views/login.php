@@ -19,14 +19,14 @@ include "../Controllers/login.php";
 <body>
     <div class="top-header">
         <div class="top-header-space">
-            <div style="justify-content: space-between">
+            <div class="datos-header">
                 <a><img src="../Public/img/phone-ico.png" alt="Teléfono contacto" class="icono-top-header" /><a
                         href="https://wa.me/5215562533082" target="_blank" class="icono">+52 55 6253
                         3082&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></a>
                 <a><img src="../Public/img/envelope-ico.png" alt="Correo contacto"
                         class="icono-top-header" /><a>comunicacion@gpoaico.com.mx</a></a>
             </div>
-            <div>
+            <div class="datos-redes">
                 <a href="https://www.facebook.com/AICOgpo" target="_blank">
                     <img src="../Public/img/fb-ico.png" alt="Facebook" class="icono" />
                 </a>
