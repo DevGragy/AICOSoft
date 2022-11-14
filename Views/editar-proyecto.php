@@ -19,9 +19,12 @@ if (isset($_SESSION['username'])) {
         </div>
     </div>
 
-    <div class="tabcontainer center">
+    <div class="tabcontainer center padding-edit-pr">
 
-        <form action="editar-proyecto.php?url=<?php echo $_GET['url']; ?>" method="POST" class="contenedor-dash">
+        <form action="editar-proyecto.php?url=<?php echo $_GET['url']; ?>" method="POST"
+            class="contenedor-dash card-sty">
+            <h2>Edita tu proyecto</h2>
+            <p>Selecciona los inputs y cambia los valores por aquellos que quieras editar</p>
             <input class="input-round" type="text" name="project_name" id="projectName" placeholder="Editar Nombre"
                 required value="<?php echo $project_name; ?>">
             <input class="input-round" type="text" name="description" id="projectDes" placeholder="Editar Descripcion"

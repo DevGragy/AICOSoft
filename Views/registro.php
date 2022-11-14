@@ -19,14 +19,14 @@ include "../Controllers/register.php";
 <body>
     <div class="top-header">
         <div class="top-header-space">
-            <div style="justify-content: space-between">
+            <div class="datos-header">
                 <a><img src="../Public/img/phone-ico.png" alt="Teléfono contacto" class="icono-top-header" /><a
                         href="https://wa.me/5215562533082" target="_blank" class="icono">+52 55 6253
                         3082&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></a>
                 <a><img src="../Public/img/envelope-ico.png" alt="Correo contacto"
                         class="icono-top-header" /><a>comunicacion@gpoaico.com.mx</a></a>
             </div>
-            <div>
+            <div class="datos-redes">
                 <a href="https://www.facebook.com/AICOgpo" target="_blank">
                     <img src="../Public/img/fb-ico.png" alt="Facebook" class="icono" />
                 </a>
@@ -54,58 +54,55 @@ include "../Controllers/register.php";
     </header>
     <hr />
     <main class="contenedor-reg card-sty">
-        <div>
-            <form action="" method="POST" class="formulario">
-                <img src="https://gpoaico.com.mx/wp-content/uploads/2021/10/Logo-AICO.png" alt="GRUPO AICO" id="logo"
-                    class="logo-aico-reg" />
-                <h1 class="titulo-reg">Bienvenido a AICOSoft!</h1>
+        <form action="" method="POST" class="formulario">
+            <img src="https://gpoaico.com.mx/wp-content/uploads/2021/10/Logo-AICO.png" alt="GRUPO AICO" id="logo"
+                class="logo-aico-reg" />
+            <h1 class="titulo-reg">Bienvenido a AICOSoft!</h1>
 
-                <h4 class="subt-reg">
-                    ¿No tienes cuenta? Registrate, es gratis.
-                </h4>
+            <h4 class="subt-reg">
+                ¿No tienes cuenta? Registrate, es gratis.
+            </h4>
 
-                <?php if ($error1) : ?>
-                <p class="error">
-                    <?php echo $error1; ?>
+            <?php if ($error1) : ?>
+            <p class="error">
+                <?php echo $error1; ?>
+            </p>
+            <?php endif; ?>
+
+            <?php if ($error2) : ?>
+            <p class="error">
+                <?php echo $error2; ?>
+            </p>
+            <?php endif; ?>
+
+            <?php if ($error3) : ?>
+            <p class="error">
+                <?php echo $error3; ?>
+            </p>
+            <?php endif; ?>
+
+            <input class="input-round" type="text" required name="usuario" placeholder="Usuario"
+                value="<?php echo $username; ?>" />
+
+            <input class="input-round" type="email" required name="email" placeholder="Email"
+                value="<?php echo $email; ?>" />
+
+            <div class="centrar pass-column">
+                <input class="input-round gap-r" type="password" required name="password" placeholder="Contraseña"
+                    value="<?php echo $_POST['password']; ?>" />
+
+                <input class="input-round gap-l" type="password" required name="confirmpass"
+                    placeholder="Confirmar Contraseña" value="<?php echo $_POST['confirmpass']; ?>" />
+            </div>
+
+            <button class="btn-submit" name="registro">Registrarme
+            </button>
+
+            <div class="mb-40">
+                <p class="center">¿Ya tienes una cuenta? Inicia sesión <a href="./login.php" class="aqui">aquí</a>
                 </p>
-                <?php endif; ?>
-
-                <?php if ($error2) : ?>
-                <p class="error">
-                    <?php echo $error2; ?>
-                </p>
-                <?php endif; ?>
-
-                <?php if ($error3) : ?>
-                <p class="error">
-                    <?php echo $error3; ?>
-                </p>
-                <?php endif; ?>
-
-                <input class="input-round" type="text" required name="usuario" placeholder="Usuario"
-                    value="<?php echo $username; ?>" />
-
-                <input class="input-round" type="email" required name="email" placeholder="Email"
-                    value="<?php echo $email; ?>" />
-
-                <div class="centrar">
-                    <input class="input-round gap-r" type="password" required name="password" placeholder="Contraseña"
-                        value="<?php echo $_POST['password']; ?>" />
-
-                    <input class="input-round gap-l" type="password" required name="confirmpass"
-                        placeholder="Confirmar Contraseña" value="<?php echo $_POST['confirmpass']; ?>" />
-                </div>
-
-                <button class="btn-submit" name="registro">Registrarme
-                </button>
-
-                <div class="mb-40">
-                    <p class="center">¿Ya tienes una cuenta? Inicia sesión <a href="./login.php" class="aqui">aquí</a>
-                    </p>
-                </div>
-            </form>
-
-        </div>
+            </div>
+        </form>
     </main>
     <footer class="footer-bg">
         <div class="footer-space">

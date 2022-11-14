@@ -1,9 +1,9 @@
-<?php 
-if(isset($_SESSION["username"])){
+<?php
+if (isset($_SESSION["username"])) {
     header("Location: ./dashboard.php");
 }
 
-if(isset($_POST['acceder'])) {
+if (isset($_POST['acceder'])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
@@ -12,8 +12,7 @@ if(isset($_POST['acceder'])) {
     $row = mysqli_fetch_assoc($result);
     $pass_hash = $row['password'];
 
-
-    if(password_verify($password, $pass_hash)) {
+    if (password_verify($password, $pass_hash)) {
         $_SESSION['id'] = $row['id'];
         $_SESSION['username'] = $row['username'];
         $_SESSION['email'] = $row['email'];
@@ -21,5 +20,5 @@ if(isset($_POST['acceder'])) {
         header("Location: ./dashboard.php");
     } else {
         $error1 = "Correo o contraseña incorrectos.";
-    } 
+    }
 }

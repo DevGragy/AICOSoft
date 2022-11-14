@@ -11,7 +11,6 @@ $rol = $_SESSION["id_rol"];
 if (isset($_GET['id_project'])) {
     $id_project = $_GET['id_project'];
     $query = "DELETE FROM projects WHERE id_project = '$id_project' AND id_user = '$user_id'";
-    echo $query;
     $result = mysqli_query($conexion, $query);
 
     if (!$result) {

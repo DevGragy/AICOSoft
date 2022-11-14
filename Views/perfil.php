@@ -1,10 +1,10 @@
-<?php 
-    session_start();
-    $username = $_SESSION["username"];
-    $email = $_SESSION['email'];
-    $rol = $_SESSION["id_rol"];
+<?php
+session_start();
+$username = $_SESSION["username"];
+$email = $_SESSION['email'];
+$rol = $_SESSION["id_rol"];
 
-    if(isset($_SESSION["username"])) {
+if (isset($_SESSION["username"])) {
     require_once "../Views/includes/header.php"
 ?>
 <main class="main">
@@ -23,7 +23,7 @@
 
         <div class="card-sty">
             <form class="perfil-usuario">
-                <h2 class="my-5 text-center">Perfil de Usuario</h1>
+                <h2 class="center">Perfil de Usuario</h1>
                     <label class="label">Nombre de Usuario</label>
                     <input class="input-space sin-borde" readonly value="<?php echo $username; ?>" />
 
@@ -32,20 +32,20 @@
                         value="<?php echo $email; ?>" />
 
                     <label class="label">Tipo de Usuario</label>
-                    <input class="input-space sin-borde" readonly value="<?php 
-                if($rol == 1) {
-                    echo "Administrador";
-                } else if($rol == 2) {
-                    echo "Cliente";
-                } ?>" />
+                    <input class="input-space sin-borde" readonly value="<?php
+                                                                                if ($rol == 1) {
+                                                                                    echo "Administrador";
+                                                                                } else if ($rol == 2) {
+                                                                                    echo "Cliente";
+                                                                                } ?>" />
             </form>
         </div>
     </div>
 </main>
 <?php require_once "../Views/includes/footer.php" ?>
 
-<?php 
-    } else {
-        header("Location: ./login.php");
-    }
+<?php
+} else {
+    header("Location: ./login.php");
+}
 ?>
