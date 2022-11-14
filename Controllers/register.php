@@ -9,6 +9,7 @@ if (isset($_POST["registro"])) {
     $password = $_POST['password'];
     $confirmpass = $_POST['confirmpass'];
     $id_rol = 2;
+    $activo = 0;
 
     if ($password == $confirmpass) {
         $query = "SELECT * FROM users WHERE email = '$email'";
