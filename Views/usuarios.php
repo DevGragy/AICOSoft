@@ -1,5 +1,5 @@
 <?php
-include "../Config/config.php";
+include "../config/config.php";
 session_start();
 $username = $_SESSION["username"];
 $email = $_SESSION['email'];
@@ -9,14 +9,14 @@ if (isset($_SESSION["username"]) && $rol == 1) {
 
     $query = "SELECT username, email, id_rol FROM users";
     $resultado = mysqli_query($conexion, $query);
-    require_once "../Views/includes/header.php"
+    require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
         <!--User img-->
         <div class="mail">
             <div class="user">
-                <img src="../Public/img/undraw_profile_1.svg">
+                <img src="../public/img/undraw_profile_1.svg">
             </div>
             <label>
                 <?php echo $email ?>
@@ -43,7 +43,7 @@ if (isset($_SESSION["username"]) && $rol == 1) {
                         <tr class="fila">
                             <td> <?php echo $row['username']; ?> </td>
                             <td> <?php echo $row['email']; ?> </td>
-                            <td> 
+                            <td>
                                 <?php if ($row['id_rol'] == 1) {
                                             echo 'Administrador';
                                         } else {
@@ -58,7 +58,7 @@ if (isset($_SESSION["username"]) && $rol == 1) {
         </div>
     </div>
 </main>
-<?php require_once "../Views/includes/footer.php" ?>
+<?php require_once "../views/includes/footer.php" ?>
 
 <?php
 } else {
