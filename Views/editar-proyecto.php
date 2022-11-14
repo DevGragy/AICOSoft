@@ -3,15 +3,15 @@ include "../Config/config.php";
 session_start();
 
 if (isset($_SESSION['username'])) {
-    include "../Controllers/update-project.php";
-    include("../Views/includes/header.php")
+    include "../controllers/update-project.php";
+    include("../views/includes/header.php")
 ?>
 <main class="main">
     <div class="topbar">
         <!--User img-->
         <div class="mail">
             <div class="user">
-                <img src="../Public/img/undraw_profile_1.svg">
+                <img src="../public/img/undraw_profile_1.svg">
             </div>
             <label>
                 <?php echo $email ?>
@@ -34,7 +34,7 @@ if (isset($_SESSION['username'])) {
     </div>
 
 </main>
-<?php include("../Views/includes/footer.php") ?>
+<?php include("../views/includes/footer.php") ?>
 
 <?php
 } else {
