@@ -841,9 +841,6 @@ table {
     flex-wrap: wrap;
 }
 
-.contenedor-tareas {
-}
-
 .contenedor-tareas h2 {
     background: var(--azul-AICO2);
     color: var(--blanco);
