@@ -2,6 +2,17 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 
+function errorsBlock($errors)
+{
+    if (count($errors) > 0) {
+        echo "<div class='error'> <ul>";
+        foreach ($errors as $error) {
+            echo "* " . $error . "<br/>";
+        }
+        echo "</ul> </div>";
+    }
+}
+
 function generateToken()
 {
     $generate = md5(uniqid(mt_rand(), false));
@@ -10,8 +21,8 @@ function generateToken()
 
 function sendEmail($email, $username, $asunto, $cuerpo)
 {
-    require '../PHPMailer/src/PHPMailer.php';
-    require '../PHPMailer/src/SMTP.php';
+    require '../phpmailer/src/PHPMailer.php';
+    require '../phpmailer/src/SMTP.php';
 
     $mail = new PHPMailer(true);
     $mail->isSMTP();
@@ -21,7 +32,7 @@ function sendEmail($email, $username, $asunto, $cuerpo)
     $mail->Port = '587';
 
     $mail->Username = "minigragy@gmail.com";
-    $mail->Password = "EliGAR-97";
+    $mail->Password = "";
 
     $mail->setFrom('minigragy@gmail.com', 'AICO Soft');
     $mail->addAddress($email, $username);

@@ -54,7 +54,9 @@ include "../controllers/register.php";
     </header>
     <hr />
     <main class="contenedor-reg card-sty">
+
         <form action="" method="POST" class="formulario">
+
             <img src="https://gpoaico.com.mx/wp-content/uploads/2021/10/Logo-AICO.png" alt="GRUPO AICO" id="logo"
                 class="logo-aico-reg" />
             <h1 class="titulo-reg">Bienvenido a AICOSoft!</h1>
@@ -63,27 +65,13 @@ include "../controllers/register.php";
                 ¿No tienes cuenta? Registrate, es gratis.
             </h4>
 
-            <?php if ($error1) : ?>
-            <p class="error">
-                <?php echo $error1; ?>
-            </p>
-            <?php endif; ?>
+            <?php if ($errors) {
+                echo errorsBlock($errors);
+            } ?>
 
-            <?php if ($error2) : ?>
-            <p class="error">
-                <?php echo $error2; ?>
-            </p>
-            <?php endif; ?>
-
-            <?php if ($error3) : ?>
-            <p class="error">
-                <?php echo $error3; ?>
-            </p>
-            <?php endif; ?>
-
-            <?php if ($error_email_send) : ?>
-            <p class="error">
-                <?php echo $error_email_send; ?>
+            <?php if ($send_email_modal) : ?>
+            <p class="success">
+                <?php echo $send_email_modal; ?>
             </p>
             <?php endif; ?>
 
@@ -110,6 +98,7 @@ include "../controllers/register.php";
                 </p>
             </div>
         </form>
+
     </main>
     <footer class="footer-bg">
         <div class="footer-space">
