@@ -2,7 +2,7 @@
 include "../Config/config.php";
 session_start();
 
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['username']) && $activo == 1) {
     include "../controllers/update-project.php";
     include("../views/includes/header.php")
 ?>
