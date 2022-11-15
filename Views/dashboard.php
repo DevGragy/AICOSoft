@@ -4,7 +4,7 @@ $username = $_SESSION["username"];
 $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
 
-if (isset($_SESSION["username"]) && $_SESSION['active'] == true) {
+if (isset($_SESSION["username"])) {
     require_once "../views/includes/header.php"
 ?>
 <main class="main">

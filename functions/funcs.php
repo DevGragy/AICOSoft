@@ -10,8 +10,8 @@ function generateToken()
 
 function sendEmail($email, $username, $asunto, $cuerpo)
 {
-    require '../resources/PHPMailer/src/PHPMailer.php';
-    require '../resources/PHPMailer/src/SMTP.php';
+    require '../PHPMailer/src/PHPMailer.php';
+    require '../PHPMailer/src/SMTP.php';
 
     $mail = new PHPMailer(true);
     $mail->isSMTP();

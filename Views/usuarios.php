@@ -3,9 +3,10 @@ include "../config/config.php";
 session_start();
 $username = $_SESSION["username"];
 $email = $_SESSION['email'];
+$activo = $_SESSION["active"];
 $rol = $_SESSION["id_rol"];
 
-if (isset($_SESSION["username"]) && $rol == 1 && $activo == 1) {
+if (isset($_SESSION["username"]) && $rol == 1) {
 
     $query = "SELECT username, email, id_rol FROM users";
     $resultado = mysqli_query($conexion, $query);

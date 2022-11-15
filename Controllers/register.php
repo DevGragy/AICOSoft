@@ -27,8 +27,8 @@ if (isset($_POST["registro"])) {
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['email'] = $row['email'];
-                $_SESSION['id_rol'] = $row['id_rol'];
                 $_SESSION['active'] = $row['active'];
+                $_SESSION['id_rol'] = $row['id_rol'];
 
                 $url = 'http://' . $_SERVER['SERVER_NAME'] . '/aico/views/active.php?token=' . $token;
                 $asunto = 'Activar Cuenta - AICO Soft';
