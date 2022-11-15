@@ -17,8 +17,8 @@ if (isset($_GET['token'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Public/css/bootstrap-modal.css">
-    <link rel="stylesheet" href="../Public/css/main.css">
+    <link rel="stylesheet" href="../public/css/bootstrap-modal.css">
+    <link rel="stylesheet" href="../public/css/main.css">
     <title>Confirmar Registro</title>
 </head>
 
@@ -27,7 +27,7 @@ if (isset($_GET['token'])) {
         <h1 class="center">
             <?php echo $message ?>
         </h1>
-        <a href="login.php"> Inicio de Sesion</a>
+        <a href="login.php" target="_blank"> Inicio de Sesion</a>
     </main>
 </body>
 
