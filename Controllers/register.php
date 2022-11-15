@@ -42,7 +42,6 @@ if (isset($_POST["registro"])) {
                 // } else {
                 //     $errors[] = "Error al enviar el email";
                 // }
-                echo $url;
             } else {
                 $errors[] = "¡Hay un error en la base de datos!";
             }
