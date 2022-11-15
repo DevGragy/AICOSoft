@@ -75,6 +75,12 @@ include "../controllers/login.php";
             </p>
             <?php endif; ?>
 
+            <?php if ($error2) : ?>
+            <p class="error">
+                <?php echo $error2; ?>
+            </p>
+            <?php endif; ?>
+
             <input class="input-round" type="email" required name="email" placeholder="Email"
                 value="<?php echo $email; ?>" />
 

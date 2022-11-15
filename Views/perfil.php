@@ -5,7 +5,6 @@ $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
 
-
 if (isset($_SESSION["username"]) && $verified == 2) {
     require_once "../views/includes/header.php"
 ?>
@@ -34,12 +33,21 @@ if (isset($_SESSION["username"]) && $verified == 2) {
                         value="<?php echo $email; ?>" />
 
                     <label class="label">Tipo de Usuario</label>
-                    <input class="input-space sin-borde" readonly value="<?php
-                                                                                if ($rol == 1) {
-                                                                                    echo "Administrador";
-                                                                                } else if ($rol == 2) {
-                                                                                    echo "Cliente";
-                                                                                } ?>" />
+                    <input class="input-space sin-borde" readonly value="<?php switch ($rol) {
+                                                                                    case 1:
+                                                                                        echo 'Administrador';
+                                                                                        break;
+                                                                                    case 2:
+                                                                                        echo 'Usuario de Pago';
+                                                                                        break;
+                                                                                    case 3:
+                                                                                        echo 'Usuario gratis';
+                                                                                        break;
+                                                                                    default:
+                                                                                        echo 'Usuario gratis';
+                                                                                        break;
+                                                                                }
+                                                                                ?>" />
             </form>
         </div>
     </div>

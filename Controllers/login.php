@@ -11,15 +11,20 @@ if (isset($_POST['acceder'])) {
     $result = mysqli_query($conexion, $query);
     $row = mysqli_fetch_assoc($result);
     $pass_hash = $row['password'];
+    $verified_user = $row['active'];
 
     if (password_verify($password, $pass_hash)) {
-        $_SESSION['id']       = $row['id'];
-        $_SESSION['username'] = $row['username'];
-        $_SESSION['email']    = $row['email'];
-        $_SESSION['id_rol']   = $row['id_rol'];
-        $_SESSION['active']   = $row['active'];
-        header("Location: ./dashboard.php");
+        if ($verified_user == 2) {
+            $_SESSION['id']       = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['email']    = $row['email'];
+            $_SESSION['id_rol']   = $row['id_rol'];
+            $_SESSION['active']   = $row['active'];
+            header("Location: ./dashboard.php");
+        } else {
+            $error1 = "Acceso Denegado - Cuenta no Verificada";
+        }
     } else {
-        $error1 = "Correo o contraseña incorrectos.";
+        $error2 = "Contraseña incorrectos.";
     }
 }

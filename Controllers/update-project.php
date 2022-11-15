@@ -6,7 +6,6 @@ $email    = $_SESSION['email'];
 $rol      = $_SESSION["id_rol"];
 
 if (isset($_GET['url'])) {
-
     $url    = $_GET['url'];
     $query  = "SELECT * FROM projects WHERE url = '$url'";
     $result = mysqli_query($conexion, $query);
@@ -26,7 +25,7 @@ if (isset($_POST['update'])) {
     $updateProject = "UPDATE projects SET project_name = '$project_name', description = '$description' WHERE url = '$url'";
     mysqli_query($conexion, $updateProject);
 
-    $_SESSION['message'] = 'El proyecto "' .$project_name. '" ha sido actualizado';
+    $_SESSION['message'] = 'El proyecto "' . $project_name . '" ha sido actualizado';
     $_SESSION['message_type'] = 'created';
     header("Location: mis-proyectos.php");
 }

@@ -1,8 +1,9 @@
 <?php
 include "../Config/config.php";
 session_start();
+$verified = $_SESSION['active'];
 
-if (isset($_SESSION['username']) && $activo == 1) {
+if (isset($_SESSION['username']) && $verified == 2) {
     include "../controllers/update-project.php";
     include("../views/includes/header.php")
 ?>

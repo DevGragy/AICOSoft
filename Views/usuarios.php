@@ -2,13 +2,11 @@
 include "../config/config.php";
 session_start();
 $username = $_SESSION["username"];
-$email = $_SESSION['email'];
-$rol = $_SESSION["id_rol"];
+$email    = $_SESSION['email'];
+$rol      = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
 
-if (isset($_SESSION["username"]) && $rol == 1 && $verified == 2) {
-
-
+if (isset($_SESSION["username"]) && $rol == 1) {
     $query = "SELECT username, email, active, id_rol FROM users";
     $resultado = mysqli_query($conexion, $query);
     require_once "../views/includes/header.php"
@@ -42,21 +40,26 @@ if (isset($_SESSION["username"]) && $rol == 1 && $verified == 2) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while ($row = $resultado->fetch_assoc()) {
-                                //DEBUG USUARIO VERIFICADO
-                                // $_SESSION['active'] = $row['active'];
-                                // $verified = $_SESSION['active'];
-                                // echo $verified;
-                            ?>
+                        <?php while ($row = $resultado->fetch_assoc()) { ?>
                         <tr class="fila center">
                             <td> <?php echo $row['username']; ?> </td>
                             <td> <?php echo $row['email']; ?> </td>
                             <td>
-                                <?php if ($row['id_rol'] == 1) {
-                                            echo 'Administrador';
-                                        } else {
-                                            echo 'Cliente';
-                                        } ?>
+                                <?php switch ($row['id_rol']) {
+                                            case 1:
+                                                echo 'Administrador';
+                                                break;
+                                            case 2:
+                                                echo 'Usuario de Pago';
+                                                break;
+                                            case 3:
+                                                echo 'Usuario gratis';
+                                                break;
+                                            default:
+                                                echo 'Usuario gratis';
+                                                break;
+                                        }
+                                        ?>
                             </td>
                             <td>
                                 <?php if ($row['active'] == 2) {
