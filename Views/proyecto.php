@@ -7,10 +7,11 @@ $user_id = $_SESSION["id"];
 $username = $_SESSION["username"];
 $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
+$verified = $_SESSION['active'];
 
 $currentDate = date('Y-m-d');
 
-if (isset($_SESSION['username']) && $activo == 1) {
+if (isset($_SESSION['username']) && $verified == 2) {
 
     include "../controllers/read-project.php";
     include "../controllers/create-project.php";

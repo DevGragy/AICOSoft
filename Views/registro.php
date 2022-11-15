@@ -69,9 +69,9 @@ include "../controllers/register.php";
                 echo errorsBlock($errors);
             } ?>
 
-            <?php if ($send_email_modal) : ?>
+            <?php if ($cuerpo) : ?>
             <p class="success">
-                <?php echo $send_email_modal; ?>
+                <?php echo $cuerpo; ?>
             </p>
             <?php endif; ?>
 
