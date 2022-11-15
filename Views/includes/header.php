@@ -16,10 +16,7 @@
             echo "Dashboard";
         }
         ?>
-
-
     </title>
-
 </head>
 
 <body>

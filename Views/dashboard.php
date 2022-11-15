@@ -5,12 +5,10 @@ $email    = $_SESSION['email'];
 $rol      = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
 
-if (!isset($_SESSION["username"])) {
+if (!isset($_SESSION["username"]) && $verified != 2) {
     header("Location: ./login.php");
 }
-if ($verified != 2) {
-    header("Location: ./login.php");
-}
+
 require_once "../views/includes/header.php";
 ?>
 <main class="main">

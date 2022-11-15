@@ -3,9 +3,12 @@ include "../Config/config.php";
 session_start();
 $verified = $_SESSION['active'];
 
-if (isset($_SESSION['username']) && $verified == 2) {
-    include "../controllers/update-project.php";
-    include("../views/includes/header.php")
+if (!isset($_SESSION['username']) && $verified != 2) {
+    header("Location: ./login.php");
+}
+
+include "../controllers/update-project.php";
+include("../views/includes/header.php");
 ?>
 <main class="main">
     <div class="topbar">
@@ -36,9 +39,3 @@ if (isset($_SESSION['username']) && $verified == 2) {
 
 </main>
 <?php include("../views/includes/footer.php") ?>
-
-<?php
-} else {
-    header("Location: ./login.php");
-}
-?>

@@ -5,8 +5,11 @@ $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
 
-if (isset($_SESSION["username"]) && $verified == 2) {
-    require_once "../views/includes/header.php"
+if (!isset($_SESSION["username"]) && $verified != 2) {
+    header("Location: ./login.php");
+}
+
+require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
@@ -28,9 +31,3 @@ if (isset($_SESSION["username"]) && $verified == 2) {
     </div>
 </main>
 <?php require_once "../views/includes/footer.php" ?>
-
-<?php
-} else {
-    header("Location: ./login.php");
-}
-?>
