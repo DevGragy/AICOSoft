@@ -1,8 +1,8 @@
 <?php
-include "../Config/config.php";
+include "../config/config.php";
 session_start();
 error_reporting(0);
-include "../Controllers/login.php";
+include "../controllers/login.php";
 ?>
 
 <!DOCTYPE html>

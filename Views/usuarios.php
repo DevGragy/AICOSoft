@@ -4,10 +4,12 @@ session_start();
 $username = $_SESSION["username"];
 $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
+$verified = $_SESSION['active'];
 
-if (isset($_SESSION["username"]) && $rol == 1) {
+if (isset($_SESSION["username"]) && $rol == 1 && $verified == 2) {
 
-    $query = "SELECT username, email, id_rol FROM users";
+
+    $query = "SELECT username, email, active, id_rol FROM users";
     $resultado = mysqli_query($conexion, $query);
     require_once "../views/includes/header.php"
 ?>
@@ -36,11 +38,17 @@ if (isset($_SESSION["username"]) && $rol == 1) {
                             <th class="columna">Usuarios</th>
                             <th class="columna">Email</th>
                             <th class="columna">Rol</th>
+                            <th class="columna">Verificado</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while ($row = $resultado->fetch_assoc()) { ?>
-                        <tr class="fila">
+                        <?php while ($row = $resultado->fetch_assoc()) {
+                                //DEBUG USUARIO VERIFICADO
+                                // $_SESSION['active'] = $row['active'];
+                                // $verified = $_SESSION['active'];
+                                // echo $verified;
+                            ?>
+                        <tr class="fila center">
                             <td> <?php echo $row['username']; ?> </td>
                             <td> <?php echo $row['email']; ?> </td>
                             <td>
@@ -48,6 +56,13 @@ if (isset($_SESSION["username"]) && $rol == 1) {
                                             echo 'Administrador';
                                         } else {
                                             echo 'Cliente';
+                                        } ?>
+                            </td>
+                            <td>
+                                <?php if ($row['active'] == 2) {
+                                            echo 'Si';
+                                        } else {
+                                            echo 'No';
                                         } ?>
                             </td>
                         </tr>

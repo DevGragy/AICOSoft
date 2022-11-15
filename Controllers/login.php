@@ -13,10 +13,11 @@ if (isset($_POST['acceder'])) {
     $pass_hash = $row['password'];
 
     if (password_verify($password, $pass_hash)) {
-        $_SESSION['id'] = $row['id'];
+        $_SESSION['id']       = $row['id'];
         $_SESSION['username'] = $row['username'];
-        $_SESSION['email'] = $row['email'];
-        $_SESSION['id_rol'] = $row['id_rol'];
+        $_SESSION['email']    = $row['email'];
+        $_SESSION['id_rol']   = $row['id_rol'];
+        $_SESSION['active']   = $row['active'];
         header("Location: ./dashboard.php");
     } else {
         $error1 = "Correo o contraseña incorrectos.";

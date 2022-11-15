@@ -8,7 +8,7 @@ $username = $_SESSION["username"];
 $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
 
-if (isset($_SESSION["username"])) {
+if (isset($_SESSION["username"]) && $activo == 1) {
 
     include "../controllers/read-project.php";
     require_once "../views/includes/header.php"

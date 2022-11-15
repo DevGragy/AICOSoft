@@ -3,8 +3,10 @@ session_start();
 $username = $_SESSION["username"];
 $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
+$verified = $_SESSION['active'];
 
-if (isset($_SESSION["username"])) {
+
+if (isset($_SESSION["username"]) && $verified == 2) {
     require_once "../views/includes/header.php"
 ?>
 <main class="main">
