@@ -2,25 +2,25 @@
 include "../config/config.php";
 session_start();
 
-//Variables de sesion
-$user_id = $_SESSION["id"];
+$user_id  = $_SESSION["id"];
 $username = $_SESSION["username"];
-$email = $_SESSION['email'];
-$rol = $_SESSION["id_rol"];
+$email    = $_SESSION['email'];
+$rol      = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
 
 $currentDate = date('Y-m-d');
 
-if (isset($_SESSION['username']) && $verified == 2) {
+if (!isset($_SESSION['username']) && $verified != 2) {
+    header("Location: ./login.php");
+}
 
-    include "../controllers/read-project.php";
-    include "../controllers/create-project.php";
-    include "../controllers/read-task.php";
-    include "../controllers/create-task.php";
+include "../controllers/read-project.php";
+include "../controllers/create-project.php";
+include "../controllers/read-task.php";
+include "../controllers/create-task.php";
 
-    include "../views/includes/header.php";
+include "../views/includes/header.php";
 ?>
-
 <main class="main">
     <div class="topbar">
         <!--User img-->
@@ -45,7 +45,7 @@ if (isset($_SESSION['username']) && $verified == 2) {
             <?= $_SESSION['message'] ?>
         </p>
         <?php unset($_SESSION['message']);
-            } ?>
+        } ?>
 
         <div class="vista-proyecto">
             <div>
@@ -88,10 +88,10 @@ if (isset($_SESSION['username']) && $verified == 2) {
                             </td>
                             <td>
                                 <?php if ($task['done'] == 0) {
-                                            echo 'En proceso';
-                                        } else {
-                                            echo 'Concluída';
-                                        } ?>
+                                        echo 'En proceso';
+                                    } else {
+                                        echo 'Concluída';
+                                    } ?>
                             </td>
                             <td>
                                 <button type="button" data-target="#update<?php echo $task['id_task']; ?>"
@@ -102,7 +102,7 @@ if (isset($_SESSION['username']) && $verified == 2) {
                         </tr>
 
                         <?php include "./includes/modal-editar-tarea.php"
-                                ?>
+                            ?>
                         <?php include "./includes/modal-eliminar-tarea.php" ?>
                         <?php } ?>
                     </tbody>
@@ -132,17 +132,11 @@ if (isset($_SESSION['username']) && $verified == 2) {
                         href="../controllers/delete-project.php?id_project=<?php echo $row['id_project']; ?>">Sí,
                         Eliminar</a>
                     <?php } else {
-                            echo "<p class='eliminated'>No se puede borrar un proyecto con tareas</p>";
-                        } ?>
+                        echo "<p class='eliminated'>No se puede borrar un proyecto con tareas</p>";
+                    } ?>
                 </div>
             </div>
         </div>
     </div>
 </main>
 <?php include("../views/includes/footer.php") ?>
-
-<?php
-} else {
-    header("Location: ./login.php");
-}
-?>

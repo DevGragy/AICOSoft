@@ -8,9 +8,12 @@ $email = $_SESSION['email'];
 $rol = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
 
-if (isset($_SESSION["username"]) && $verified == 2) {
-    include "../controllers/create-project.php";
-    require_once "../views/includes/header.php"
+if (!isset($_SESSION["username"]) && $verified != 2) {
+    header("Location: ./login.php");
+}
+
+include "../controllers/create-project.php";
+require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
@@ -33,7 +36,7 @@ if (isset($_SESSION["username"]) && $verified == 2) {
             <?= $_SESSION['message'] ?>
         </p>
         <?php unset($_SESSION['message']);
-            } ?>
+        } ?>
 
         <div class="card-sty">
             <form action="" method="POST" class="contenedor-dash">
@@ -51,9 +54,3 @@ if (isset($_SESSION["username"]) && $verified == 2) {
 
 </main>
 <?php require_once "../views/includes/footer.php" ?>
-
-<?php
-} else {
-    header("Location: login.php");
-}
-?>

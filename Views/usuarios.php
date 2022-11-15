@@ -6,10 +6,14 @@ $email    = $_SESSION['email'];
 $rol      = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
 
-if (isset($_SESSION["username"]) && $rol == 1) {
-    $query = "SELECT username, email, active, id_rol FROM users";
-    $resultado = mysqli_query($conexion, $query);
-    require_once "../views/includes/header.php"
+if (!isset($_SESSION["username"]) && $verified != 2 || $rol != 1) {
+    header("Location: ./login.php");
+}
+
+$query = "SELECT username, email, active, id_rol FROM users";
+$resultado = mysqli_query($conexion, $query);
+
+require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
@@ -46,27 +50,27 @@ if (isset($_SESSION["username"]) && $rol == 1) {
                             <td> <?php echo $row['email']; ?> </td>
                             <td>
                                 <?php switch ($row['id_rol']) {
-                                            case 1:
-                                                echo 'Administrador';
-                                                break;
-                                            case 2:
-                                                echo 'Usuario de Pago';
-                                                break;
-                                            case 3:
-                                                echo 'Usuario gratis';
-                                                break;
-                                            default:
-                                                echo 'Usuario gratis';
-                                                break;
-                                        }
-                                        ?>
+                                        case 1:
+                                            echo 'Administrador';
+                                            break;
+                                        case 2:
+                                            echo 'Usuario de Pago';
+                                            break;
+                                        case 3:
+                                            echo 'Usuario gratis';
+                                            break;
+                                        default:
+                                            echo 'Usuario gratis';
+                                            break;
+                                    }
+                                    ?>
                             </td>
                             <td>
                                 <?php if ($row['active'] == 2) {
-                                            echo 'Si';
-                                        } else {
-                                            echo 'No';
-                                        } ?>
+                                        echo 'Si';
+                                    } else {
+                                        echo 'No';
+                                    } ?>
                             </td>
                         </tr>
                         <?php } ?>
@@ -76,10 +80,4 @@ if (isset($_SESSION["username"]) && $rol == 1) {
         </div>
     </div>
 </main>
-<?php require_once "../views/includes/footer.php" ?>
-
-<?php
-} else {
-    header("Location: ./login.php");
-}
-?>
+<?php require_once "../views/includes/footer.php"; ?>

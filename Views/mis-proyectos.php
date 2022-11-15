@@ -2,17 +2,18 @@
 include "../config/config.php";
 session_start();
 
-//Variables de sesion
-$user_id = $_SESSION["id"];
+$user_id  = $_SESSION["id"];
 $username = $_SESSION["username"];
-$email = $_SESSION['email'];
-$rol = $_SESSION["id_rol"];
+$email    = $_SESSION['email'];
+$rol      = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
 
-if (isset($_SESSION["username"]) && $verified == 2) {
+if (!isset($_SESSION["username"]) && $verified != 2) {
+    header("Location: ./login.php");
+}
 
-    include "../controllers/read-project.php";
-    require_once "../views/includes/header.php"
+include "../controllers/read-project.php";
+require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
@@ -33,7 +34,7 @@ if (isset($_SESSION["username"]) && $verified == 2) {
             <?= $_SESSION['message'] ?>
         </p>
         <?php unset($_SESSION['message']);
-            } ?>
+        } ?>
 
         <h2>
             Mis Proyectos
@@ -55,9 +56,3 @@ if (isset($_SESSION["username"]) && $verified == 2) {
     </div>
 </main>
 <?php require_once "../views/includes/footer.php" ?>
-
-<?php
-} else {
-    header("Location: ./login.php");
-}
-?>
