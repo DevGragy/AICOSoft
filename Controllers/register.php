@@ -30,12 +30,8 @@ if (isset($_POST["registro"])) {
                 $asunto = 'Activar Cuenta - AICO Soft';
                 $cuerpo = "Hola, es un placer que quieras formar parte de nuestro equipo. <br/> <br/> Para dar de alta tu cuenta, es necesario que des clic en el siguiente enlace para poder ingresar a nuestro sistema. <a class='aqui' href='$url'>Activa tu Cuenta</a>";
 
-                //PROBAR CON VERIFICAR EN PAGINA LUEGO ENVIAR EMAIL
-                // if (sendEmail($email, $username, $asunto, $cuerpo)) {
-                //     $send_email_modal = 'Sigues las instrucciones en tu email ' . $email . "<br/><a href='login.php'>Iniciar Sesion</a>";
-                // } else {
-                //     $errors[] = "Error al enviar el email";
-                // }
+                sendEmail($email, $username, $asunto, $cuerpo);
+                $send_email_modal = 'Cuenta creada, sigue las instrucciones en tu email: ' . $email;
             } else {
                 $errors[] = "¡Hay un error en la base de datos!";
             }
