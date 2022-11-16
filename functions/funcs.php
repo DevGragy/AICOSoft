@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -24,27 +25,31 @@ function sendEmail($email, $username, $asunto, $cuerpo)
     require '../phpmailer/src/PHPMailer.php';
     require '../phpmailer/src/SMTP.php';
 
-    $mail             = new PHPMailer(true);
-    $mail->isSMTP();
-    $mail->SMTPAuth   = true;
-    $mail->SMTPSecure = 'tls';
-    $mail->Host       = 'smtp.gmail.com';
-    $mail->Port       = '587';
+    $errors      = array();
+    $mail = new PHPMailer(true);
+    try {
+        //Configuracion del Servidor
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.hostinger.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = "contacto@devjaymx.com";
+        $mail->Password   = "Pass123-";
+        $mail->Port       = '587';
 
-    $mail->Username   = "minigragy@gmail.com";
-    $mail->Password   = "";
+        //Recipientes
+        $mail->setFrom('contacto@devjaymx.com', 'AICO Soft');
+        $mail->addAddress($email, $username);
 
-    $mail->setFrom('minigragy@gmail.com', 'AICO Soft');
-    $mail->addAddress($email, $username);
+        //Contenido
+        $mail->Subject    = $asunto;
+        $mail->Body       = $cuerpo;
+        $mail->isHTML(true);
 
-    $mail->Subject    = $asunto;
-    $mail->Body       = $cuerpo;
-    $mail->isHTML(true);
-
-    if ($mail->send())
-        return true;
-    else
-        return false;
+        $mail->send();
+        $errors[] = "Mensaje Enviado!";
+    } catch (Exception $e) {
+        $errors[] = "No se pudo enviar el email, error: " . $mail->ErrorInfo;
+    }
 }
 
 function validateToken($token)
