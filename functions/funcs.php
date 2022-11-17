@@ -32,12 +32,12 @@ function sendEmail($email, $username, $asunto, $cuerpo)
         $mail->isSMTP();
         $mail->Host       = 'smtp.hostinger.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = "contacto@devjaymx.com";
+        $mail->Username   = "aico@devjaymx.com";
         $mail->Password   = "Pass123-";
         $mail->Port       = '587';
 
         //Recipientes
-        $mail->setFrom('contacto@devjaymx.com', 'AICO Soft');
+        $mail->setFrom('aico@devjaymx.com', 'AICO Soft');
         $mail->addAddress($email, $username);
 
         //Contenido
@@ -76,4 +76,14 @@ function activeUser($token)
     include "../config/config.php";
     $set_active = "UPDATE users SET active = 2 WHERE token = '$token'";
     $update_active = mysqli_query($conexion, $set_active);
+}
+
+function getFileSize($file)
+{
+    //$LENGTH = mysql_query("SELECT OCTET_LENGTH(blobdata) FROM thedatabase WHERE id = 'selected_id'");
+    //$FOUND = mysql_fetch_array($LENGTH);
+    //$RESULTS = $FOUND['0'] / 1024;
+    //echo round($RESULTS, 1) . 'KiB';
+
+    // Results: 10.1KiB
 }
