@@ -282,6 +282,15 @@ table {
     cursor: pointer;
 }
 
+.w-50 {
+    width: 50px;
+}
+
+.frame-file {
+    width: 90%;
+    height: 600px;
+}
+
 /* --------- GLOBALES */
 
 /* HEADER AICO --------- */
@@ -836,9 +845,14 @@ table {
 
 /* PROYECTO ------ */
 .vista-proyecto {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.contenedor-tareas {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .contenedor-tareas h2 {
