@@ -13,7 +13,7 @@ if (isset($_POST["registro"])) {
     $password    = $_POST['password'];
     $confirmpass = $_POST['confirmpass'];
     $id_rol      = 3;
-    $activo      = 1;
+    $activo      = 2;
 
     if ($password == $confirmpass) {
         $query    = "SELECT * FROM users WHERE email = '$email'";
@@ -30,8 +30,8 @@ if (isset($_POST["registro"])) {
                 $asunto = 'Activar Cuenta - AICO Soft';
                 $cuerpo = "Hola, es un placer que quieras formar parte de nuestro equipo. <br/> <br/> Para dar de alta tu cuenta, es necesario que des clic en el siguiente enlace para poder ingresar a nuestro sistema. <a class='aqui' href='$url'>Activa tu Cuenta</a>";
 
-                sendEmail($email, $username, $asunto, $cuerpo);
-                $send_email_modal = 'Cuenta creada, sigue las instrucciones en tu email: ' . $email;
+                //sendEmail($email, $username, $asunto, $cuerpo);
+                $send_email_modal = 'Cuenta creada';
             } else {
                 $errors[] = "¡Hay un error en la base de datos!";
             }

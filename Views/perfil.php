@@ -25,14 +25,16 @@ require_once "../views/includes/header.php";
     </div>
     <div class="tabcontainer card-cont">
 
-        <div class="card-sty">
-            <form class="perfil-usuario">
-                <h2 class="center">Perfil de Usuario</h1>
+        <div class="contenedor-archivos">
+            <div class="subir-archivos">
+                <form class="perfil-usuario card-sty">
+                    <h2 class="center">Perfil de Usuario</h2>
+                    <p class="m-y-20">Aqui podras ver tu informacion de Usuario</p>
                     <label class="label">Nombre de Usuario</label>
                     <input class="input-space sin-borde" readonly value="<?php echo $username; ?>" />
 
                     <label class="label">Email</label>
-                    <input class="input-space sin-borde" readonly type="email" required name="email"
+                    <input class="input-space sin-borde" readonly type="email" name="email"
                         value="<?php echo $email; ?>" />
 
                     <label class="label">Tipo de Usuario</label>
@@ -51,7 +53,8 @@ require_once "../views/includes/header.php";
                                                                                     break;
                                                                             }
                                                                             ?>" />
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </main>
