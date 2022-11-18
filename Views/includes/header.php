@@ -11,15 +11,12 @@
     <link rel="icon" href="">
     <title>
         <?php if ($_SESSION['id_rol'] == 1) {
-                echo "Admin Dashboard";
-            } else {
-                echo "Dashboard";
-            }
-         ?>
-                
-
+            echo "Admin Dashboard";
+        } else {
+            echo "Dashboard";
+        }
+        ?>
     </title>
-    
 </head>
 
 <body>
@@ -52,7 +49,7 @@
                 <li>
                     <a href="usuarios.php">
                         <span class="icon">
-                        <ion-icon name="people-circle-outline"></ion-icon>
+                            <ion-icon name="people-circle-outline"></ion-icon>
                         </span>
                         <span class="title">Usuarios</span>
                     </a>
@@ -85,7 +82,7 @@
                 </li>
                 <hr class="linea4">
                 <li>
-                    <a href="../Controllers/logout.php">
+                    <a href="../controllers/logout.php">
                         <span class="icon">
                             <ion-icon name="power-outline"></ion-icon>
                         </span>

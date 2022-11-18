@@ -5,9 +5,9 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Bootstrap Modals only - by shlomo hassid</title>
     <script type='text/javascript' src='//code.jquery.com/jquery-1.11.0.js'></script>
-    <link rel="stylesheet" href="../Public/css/bootstrap-modal.css">
+    <link rel="stylesheet" href="../public/css/bootstrap-modal.css">
 
-    <script src="../Public/js/bootstrap-modal.js"></script>
+    <script src="../public/js/bootstrap-modal.js"></script>
 </head>
 
 <body>

@@ -1,11 +1,15 @@
 <?php
 session_start();
 $username = $_SESSION["username"];
-$email = $_SESSION['email'];
-$rol = $_SESSION["id_rol"];
+$email    = $_SESSION['email'];
+$rol      = $_SESSION["id_rol"];
+$verified = $_SESSION['active'];
 
-if (isset($_SESSION["username"])) {
-    require_once "../views/includes/header.php"
+if (!isset($_SESSION["username"]) || $verified != 2) {
+    header("Location: ./login.php");
+}
+
+require_once "../views/includes/header.php";
 ?>
 <main class="main">
     <div class="topbar">
@@ -32,22 +36,9 @@ if (isset($_SESSION["username"])) {
                         value="<?php echo $email; ?>" />
 
                     <label class="label">Tipo de Usuario</label>
-                    <input class="input-space sin-borde" readonly value="<?php
-                                                                                if ($rol == 1) {
-                                                                                    echo "Administrador";
-                                                                                } else if ($rol == 2) {
-                                                                                    echo "Cliente Premium";
-                                                                                } else if ($rol == 3) {
-                                                                                    echo "Cliente";
-                                                                                } ?>" />
+
             </form>
         </div>
     </div>
 </main>
-<?php require_once "../views/includes/footer.php" ?>
-
-<?php
-} else {
-    header("Location: ./login.php");
-}
-?>
+<?php require_once "../views/includes/footer.php"; ?>
