@@ -11,7 +11,9 @@ $verified = $_SESSION['active'];
 if (!isset($_SESSION["username"]) && $verified != 2) {
     header("Location: ./login.php");
 }
-
+include "../controllers/read-project.php";
+include "../controllers/create-project.php";
+require_once "../views/includes/header.php"
 
 ?>
 <main class="main">
