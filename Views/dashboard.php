@@ -39,7 +39,7 @@ require_once "../views/includes/header.php"
                 <h2 class="titulo-reg">
                     <?php echo $row['project_name']; ?>
                 </h2>
-                
+
                 <p>Tareas totales: </p>
                 <p>Tareas pendientes: 5</p>
                 <p>Tareas terminadas: 7</p>
@@ -53,7 +53,7 @@ require_once "../views/includes/header.php"
                     <div class="outer">
                         <div class="inner">
                             <div id="number">
-                                
+
                             </div>
                         </div>
                     </div>
