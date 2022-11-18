@@ -252,6 +252,7 @@ table {
     text-align: center;
     text-transform: uppercase;
     width: 50%;
+    border-radius: 12px;
 }
 
 .eliminated {
@@ -264,6 +265,7 @@ table {
     text-align: center;
     text-transform: uppercase;
     width: 50%;
+    border-radius: 12px;
 }
 
 .close-alert {
@@ -289,6 +291,10 @@ table {
 .frame-file {
     width: 90%;
     height: 600px;
+}
+
+.m-y-20 {
+    margin-bottom: 40px;
 }
 
 /* --------- GLOBALES */
@@ -700,6 +706,11 @@ table {
 
 /* PERFIL --------- */
 
+.contenedor-usuario {
+    display: flex;
+    justify-content: center;
+}
+
 .perfil-usuario {
     display: flex;
     flex-direction: column;
@@ -846,6 +857,17 @@ table {
 /* --------- MODAL */
 
 /* PROYECTO ------ */
+.contenedor-mis-proyectos {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.crear-mi-proyecto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .vista-proyecto {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -914,7 +936,6 @@ tbody .btn-eliminar {
 }
 
 .progress-box {
-
     height: 160px;
     width: 160px;
     display: flex;
@@ -928,8 +949,8 @@ tbody .btn-eliminar {
     width: 160px;
     border-radius: 50%;
     padding: 20px;
-    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-                -6px -6px 10px -1px rgba(0,0,0,0.2);
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(0, 0, 0, 0.2);
 }
 
 .inner {
@@ -939,11 +960,10 @@ tbody .btn-eliminar {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-                inset -4px -4px 6px -1px rgba(0,0,0,0.2),
-                -0.5px -0.5px 0px rgba(0,0,0,0.2),
-                0.5px 0.5px 0px rgba(0,0,0,15),
-                0px 12px 10px -10px rgba(0,0,0,0.05)
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
+        -0.5px -0.5px 0px rgba(0, 0, 0, 0.2), 0.5px 0.5px 0px rgba(0, 0, 0, 15),
+        0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
 
 #number {
@@ -967,12 +987,28 @@ svg {
 }
 
 @keyframes anim {
-    100%{
+    100% {
         stroke-dashoffset: 165;
     }
 }
 
 /* ------ BARRA DE PROGRESO */
+
+/* ------ ARCHIVOS */
+
+.contenedor-archivos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.subir-archivos {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+/* ------ ARCHIVOS */
 
 /* Escritorio */
 @media only screen and (max-width: 1200px) {
@@ -1067,7 +1103,7 @@ svg {
 @media only screen and (max-width: 600px) {
     nav {
         display: none;
-    }  
+    }
 
     .contenedor {
         margin: 60px 20px;
@@ -1140,5 +1176,4 @@ svg {
     .project-actions {
         position: unset;
     }
-    
 }

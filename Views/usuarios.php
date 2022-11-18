@@ -32,7 +32,7 @@ require_once "../views/includes/header.php"
             Tabla de Usuarios Registrados
         </h2>
         <p class="espacio-footer">Solo un usuario administrador puedo observar este panel.</p>
-        <div class="vista-proyecto">
+        <div class="contenedor-usuario">
             <div class="contendor-tareas card-sty">
                 <table class="">
                     <thead>

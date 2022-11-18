@@ -31,24 +31,28 @@ require_once "../views/includes/header.php"
     <div class="tabcontainer center">
         <!-- Alerta de proyecto creado -->
         <?php if (isset($_SESSION['message'])) { ?>
-        <p class="created" id="alert">
+        <p class="<?= $_SESSION['message_type'] ?>" id="alert">
             <span class="close-alert" id="close-alert">&times;</span>
             <?= $_SESSION['message'] ?>
         </p>
         <?php unset($_SESSION['message']);
         } ?>
 
-        <div class="card-sty">
-            <form action="" method="POST" class="contenedor-dash">
-                <h2 class="titulo-reg">
-                    Crear Proyecto
-                </h2>
-                <input class="input-round" type="text" name="project-name" id="projectName"
-                    placeholder="Nombre del Proyecto" required>
-                <input class="input-round" type="text" name="description" id="projectDes"
-                    placeholder="Descripcion del Proyecto" required maxlength="255">
-                <button class="btn-submit" name="crear-proyecto" onclick="validatedProjects()">Crear proyecto</button>
-            </form>
+        <div class="contenedor-archivos">
+            <div class="subir-archivos">
+                <form action="" method="POST" class="contenedor-dash card-sty">
+                    <h2 class="titulo-reg">
+                        Crear Proyecto
+                    </h2>
+                    <p>Ingresa un nombre y una descripcion para crear un proyecto.</p>
+                    <input class="input-round" type="text" name="project-name" id="projectName"
+                        placeholder="Nombre del Proyecto">
+                    <input class="input-round" type="text" name="description" id="projectDes"
+                        placeholder="Descripcion del Proyecto" maxlength="255">
+                    <button class="btn-submit" name="crear-proyecto">Crear
+                        proyecto</button>
+                </form>
+            </div>
         </div>
     </div>
 
