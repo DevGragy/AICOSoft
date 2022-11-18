@@ -388,7 +388,7 @@ table {
     width: 40px;
 }
 
-.chingadamadre {
+.margen-login {
     margin-top: 12px;
     margin-bottom: 0px;
 }
@@ -634,6 +634,7 @@ table {
 .main div .mail {
     display: flex;
     align-items: center;
+    margin-right: 5px;
 }
 
 .topbar {
@@ -754,7 +755,8 @@ table {
 }
 
 .project-card {
-    box-shadow: 0px 0px 8px 0px rgba(100, 100, 111, 0.2);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     margin-top: 20px;
     padding: 20px 16px 60px;
     display: block;
@@ -902,7 +904,77 @@ tbody .btn-eliminar {
 
 /* ------ PROYECTO */
 
-/* Large Screens */
+/* BARRA DE PROGRESO ------ */
+
+.termo-space {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+    margin-bottom: 20px;
+}
+
+.progress-box {
+
+    height: 160px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.outer {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(0,0,0,0.2);
+}
+
+.inner {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                inset -4px -4px 6px -1px rgba(0,0,0,0.2),
+                -0.5px -0.5px 0px rgba(0,0,0,0.2),
+                0.5px 0.5px 0px rgba(0,0,0,15),
+                0px 12px 10px -10px rgba(0,0,0,0.05)
+}
+
+#number {
+    font-weight: 600;
+    color: #555;
+}
+
+circle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: anim 2s linear forwards;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes anim {
+    100%{
+        stroke-dashoffset: 165;
+    }
+}
+
+/* ------ BARRA DE PROGRESO */
+
+/* Escritorio */
 @media only screen and (max-width: 1200px) {
 }
 
@@ -924,7 +996,7 @@ tbody .btn-eliminar {
 }
 
 /* Tablet */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 820px) {
     .contenedor {
         margin: 40px;
         display: flex;
@@ -956,13 +1028,46 @@ tbody .btn-eliminar {
     .contenedor-reg {
         margin: 60px 20px;
     }
+
+    .tabcontainer {
+        padding: 40px 40px;
+        margin-right: 200px;
+        transition: 0.5s;
+    }
+
+    .margin-bot-tablet {
+        margin-bottom: 40px;
+    }
+
+    .created {
+        width: 80%;
+    }
+
+    .eliminated {
+        width: 80%;
+    }
+
+    .modalpr-content {
+        margin: 45% auto;
+        padding: 10px;
+        width: 60%;
+    }
+
+    .close-pr {
+        margin-top: -9px;
+        margin-right: 0px;
+    }
+
+    .borrar-proyecto {
+        font-size: 20px;
+    }
 }
 
-/* Mobile */
+/* Movil */
 @media only screen and (max-width: 600px) {
     nav {
         display: none;
-    }
+    }  
 
     .contenedor {
         margin: 60px 20px;
@@ -1004,4 +1109,36 @@ tbody .btn-eliminar {
     .logo-grupo-aico {
         margin-left: 0px;
     }
+
+    /* Dashboard */
+
+    .navigation {
+        display: none;
+    }
+
+    .main {
+        position: unset;
+    }
+
+    .topbar {
+        margin-right: 0px;
+    }
+
+    .tabcontainer {
+        padding: 40px 15px;
+        margin-right: 0px;
+    }
+
+    .projects-cards {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-actions {
+        position: unset;
+    }
+    
 }

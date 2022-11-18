@@ -2,6 +2,7 @@
 if (isset($_GET['url'])) {
     $url = $_GET['url'];
     $getProject = "SELECT * FROM projects WHERE url = '$url' AND id_user = '$user_id'";
+
     $projects = mysqli_query($conexion, $getProject);
 
     if (mysqli_num_rows($projects) == 1) {
@@ -13,4 +14,8 @@ if (isset($_GET['url'])) {
         $getTasks = "SELECT * FROM tasks WHERE id_project = '$id_project'";
         $tasks = mysqli_query($conexion, $getTasks);
     }
+
 }
+
+
+

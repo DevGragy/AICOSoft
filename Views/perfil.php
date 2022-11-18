@@ -36,21 +36,7 @@ require_once "../views/includes/header.php";
                         value="<?php echo $email; ?>" />
 
                     <label class="label">Tipo de Usuario</label>
-                    <input class="input-space sin-borde" readonly value="<?php switch ($rol) {
-                                                                                case 1:
-                                                                                    echo 'Administrador';
-                                                                                    break;
-                                                                                case 2:
-                                                                                    echo 'Usuario de Pago';
-                                                                                    break;
-                                                                                case 3:
-                                                                                    echo 'Usuario gratis';
-                                                                                    break;
-                                                                                default:
-                                                                                    echo 'Usuario gratis';
-                                                                                    break;
-                                                                            }
-                                                                            ?>" />
+
             </form>
         </div>
     </div>
