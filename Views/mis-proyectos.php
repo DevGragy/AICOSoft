@@ -11,6 +11,7 @@ $rol = $_SESSION["id_rol"];
 if (isset($_SESSION["username"])) {
 
     include "../controllers/read-project.php";
+    include "../controllers/create-project.php";
     require_once "../views/includes/header.php"
 ?>
 <main class="main">
@@ -26,6 +27,30 @@ if (isset($_SESSION["username"])) {
         </div>
     </div>
     <div class="tabcontainer center">
+
+        <!-- Alerta de proyecto creado -->
+        <?php if (isset($_SESSION['message'])) { ?>
+        <p class="created" id="alert">
+            <span class="close-alert" id="close-alert">&times;</span>
+            <?= $_SESSION['message'] ?>
+        </p>
+        <?php unset($_SESSION['message']);
+            } ?>
+
+        <div class="card-sty">
+            <form action="" method="POST" class="contenedor-dash">
+                <h2 class="titulo-reg">
+                    Crear Proyecto
+                </h2>
+                <input class="input-round" type="text" name="project-name" id="projectName"
+                    placeholder="Nombre del Proyecto" required>
+                <input class="input-round" type="text" name="description" id="projectDes"
+                    placeholder="Descripcion del Proyecto" required maxlength="255">
+                <button class="btn-submit" name="crear-proyecto" onclick="validatedProjects()">Crear proyecto</button>
+            </form>
+        </div>
+
+        <!-- Alerta de proyecto editado -->
         <?php if (isset($_SESSION['message'])) { ?>
         <p class="<?= $_SESSION['message_type'] ?>" id="alert">
             <span class="close-alert" id="close-alert">&times;</span>
@@ -33,8 +58,8 @@ if (isset($_SESSION["username"])) {
         </p>
         <?php unset($_SESSION['message']);
             } ?>
-
-        <h2>
+ 
+        <h2 class="pad-top">
             Mis Proyectos
         </h2>
 

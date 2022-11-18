@@ -36,6 +36,8 @@ if (isset($_SESSION["username"])) {
                                                                                 if ($rol == 1) {
                                                                                     echo "Administrador";
                                                                                 } else if ($rol == 2) {
+                                                                                    echo "Cliente Premium";
+                                                                                } else if ($rol == 3) {
                                                                                     echo "Cliente";
                                                                                 } ?>" />
             </form>

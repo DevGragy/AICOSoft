@@ -67,7 +67,7 @@ include "../Controllers/login.php";
         </div>
         <form action="" method="POST" class="formulario card-der">
             <h1 class="titulo-reg">¡Bienvenido a AICOSoft!</h1>
-            <h4 class="subt-reg center chingadamadre">Inicia sesion ingresando tus datos 😃</h4>
+            <h4 class="subt-reg center margen-login">Inicia sesion ingresando tus datos 😃</h4>
 
             <?php if ($error1) : ?>
             <p class="error">

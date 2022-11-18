@@ -47,7 +47,7 @@ if (isset($_SESSION['username'])) {
             } ?>
 
         <div class="vista-proyecto">
-            <div>
+            <div class="margin-bot-tablet">
                 <form action="" method="POST" class="contenedor-dash card-sty">
                     <h4 class="titulo-reg">
                         Añadir Tarea

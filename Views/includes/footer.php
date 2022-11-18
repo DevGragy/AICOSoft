@@ -5,6 +5,7 @@
 <script src="../public/js/projects.js"></script>
 <script src="../public/js/modal.js"></script>
 <script src="../public/js/closeAlerts.js"></script>
+<script src="../public/js/progressBar.js"></script>
 
 </body>
 
