@@ -33,7 +33,7 @@ function sendEmail($email, $username, $asunto, $cuerpo)
         $mail->Host       = 'smtp.hostinger.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = "aico@devjaymx.com";
-        $mail->Password   = "Pass123-";
+        $mail->Password   = "";
         $mail->Port       = '587';
 
         //Recipientes
@@ -86,4 +86,12 @@ function getFileSize($file)
     //echo round($RESULTS, 1) . 'KiB';
 
     // Results: 10.1KiB
+}
+
+function secToDaysHoursMinutes($seconds)
+{
+    $days = floor($seconds / 86400);
+    $hours = floor(($seconds - $days * 86400) / 3600);
+    $minutes = floor(($seconds / 60) % 60);
+    return "Dias: $days <br> Horas: $hours <br> Minutos: $minutes";
 }
