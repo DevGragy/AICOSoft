@@ -12,7 +12,8 @@ if (isset($_POST["registro"])) {
     $email       = $_POST['email'];
     $password    = $_POST['password'];
     $confirmpass = $_POST['confirmpass'];
-    $id_rol      = 3;
+    $free_period = 1;
+    $id_rol      = 2;
     $activo      = 2;
 
     if ($password == $confirmpass) {
@@ -22,7 +23,7 @@ if (isset($_POST["registro"])) {
         $result   = mysqli_query($conexion, $query);
 
         if (!$result->num_rows > 0) {
-            $newUser = "INSERT INTO users (username, email, password, token, active, id_rol) VALUES ('$username', '$email', '$hashpass', '$token', '$activo', '$id_rol')";
+            $newUser = "INSERT INTO users (username, email, password, token, active, free_period, id_rol) VALUES ('$username', '$email', '$hashpass', '$token', '$activo', '$free_period', '$id_rol')";
             $userAdded = mysqli_query($conexion, $newUser);
 
             if ($userAdded) {
