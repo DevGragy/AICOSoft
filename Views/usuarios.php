@@ -17,6 +17,7 @@ require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
+        <?php include "./includes/menu-movil.php"?>
         <!--User img-->
         <div class="mail">
             <div class="user">
@@ -46,7 +47,7 @@ require_once "../views/includes/header.php"
                     <tbody>
                         <?php while ($row = $resultado->fetch_assoc()) { ?>
                         <tr class="fila center">
-                            <td> <?php echo $row['username']; ?> </td>
+                            <td class="td-bg"> <?php echo $row['username']; ?> </td>
                             <td> <?php echo $row['email']; ?> </td>
                             <td>
                                 <?php switch ($row['id_rol']) {

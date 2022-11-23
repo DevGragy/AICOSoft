@@ -12,11 +12,13 @@ if (!isset($_SESSION["username"]) && $verified != 2) {
     header("Location: ./login.php");
 }
 include "../controllers/read-project.php";
-include "../controllers/count-tasks.php";
 require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
+
+        <?php include "./includes/menu-movil.php"?>
+
         <!--User img-->
         <div class="mail">
             <div class="user">
@@ -39,10 +41,21 @@ require_once "../views/includes/header.php"
                 <h2 class="titulo-reg">
                     <?php echo $row['project_name']; ?>
                 </h2>
-
-                <p>Tareas totales: </p>
-                <p>Tareas pendientes: 5</p>
-                <p>Tareas terminadas: 7</p>
+                <?php $id_project = $row['id_project'];
+                    include "../controllers/count-tasks.php";  
+                ?>
+                <div class="flex">
+                    Tareas totales:
+                    <p id="totales"><?php echo $cadenaTotal; ?>  </p>
+                </div>
+                <div class="flex">
+                    Tareas en proceso:
+                    <p id="proceso"><?php echo $int_done; ?>  </p>
+                </div>
+                <div class="flex">
+                    Tareas concluídas:
+                    <p id="concluida"><?php echo $int_undone; ?>  </p>
+                </div>
             </div>
             <div>
                 <h2 class="titulo-reg">

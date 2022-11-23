@@ -17,6 +17,7 @@ require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
+        <?php include "./includes/menu-movil.php"?>
         <!--User img-->
         <div class="mail">
             <div class="user">

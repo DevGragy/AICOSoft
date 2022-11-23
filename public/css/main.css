@@ -55,6 +55,8 @@ span {
 
 table {
     border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
 }
 
 /* GLOBALES --------- */
@@ -102,6 +104,13 @@ table {
     text-align: center;
 }
 
+.contenedor-files {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    text-align: center;
+}
+
 .label {
     margin: 8px 0;
     font-weight: 600;
@@ -114,6 +123,15 @@ table {
     font-size: 16px;
     border-radius: 18px;
     border-color: var(--negro);
+}
+
+.input-round2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.margin-bot-ex {
+    margin-bottom: 20px;
 }
 
 .btn-submit {
@@ -477,6 +495,10 @@ table {
 .container {
     position: relative;
     width: 100%;
+}
+
+.flex {
+    display: flex;
 }
 
 .navigation {
@@ -890,7 +912,7 @@ table {
 }
 
 .columna {
-    padding: 10px 100px;
+    padding: 10px 80px;
     background: var(--azul-AICO2);
     color: var(--blanco);
 }
@@ -1008,10 +1030,74 @@ svg {
     margin: 40px 0;
 }
 
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1; 
+}
+
+.inputfile + label {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--negro);
+    background-color: var(--blanco);
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 12px;
+
+    transition: 0.3s;
+
+    outline: 1px var(--negro);
+	outline: -webkit-focus-ring-color auto 5px;
+
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    color: var(--blanco);
+    background-color: var(--azul-botones);
+    outline: 1px var(--blanco);
+    transition: 0.3s;
+}
+
+.contenedor-files label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contenedor-files label .icono ion-icon {
+    font-size: 1.50em;
+    margin-left: -15px;
+}
+
 /* ------ ARCHIVOS */
+
+
+@media only screen and (min-width: 1200px) {
+    .mov-nav {
+        display: none;
+    }
+    
+}
 
 /* Escritorio */
 @media only screen and (max-width: 1200px) {
+    .mov-nav {
+        display: none;
+    }
+    
+    .vista-proyecto {
+        grid-template-columns: 1fr;
+    }
+
+    .project-actions {
+        bottom: auto;
+    }
 }
 
 /* Laptop */
@@ -1029,6 +1115,7 @@ svg {
         height: 800px;
         max-width: 700px;
     }
+
 }
 
 /* Tablet */
@@ -1146,6 +1233,17 @@ svg {
         margin-left: 0px;
     }
 
+    .modalpr-content {
+        margin: 45% auto;
+        padding: 10px;
+        width: 60%;
+        height: 38%;
+    }
+
+    .close-pr {
+        display: none;
+    }
+
     /* Dashboard */
 
     .navigation {
@@ -1175,5 +1273,75 @@ svg {
 
     .project-actions {
         position: unset;
+    }
+
+    .vista-proyecto {
+        grid-template-columns: 1fr;
+    }
+
+    /* Menu */
+
+    .topbar {
+        justify-content: space-between;
+        background: var(--azul-AICO);
+        color: var(--blanco);
+    }
+
+    .mov-nav {
+        display: flex;
+    }
+
+    .mov-container {
+        display: flex;
+        height: 100%;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mov-label {
+        display: block;
+        cursor: pointer;
+    }
+
+    .mov-item {
+        color: var(--blanco);
+        text-decoration: none;
+    }
+
+    .mov-menu {
+        list-style: none;
+        position: fixed;
+        top: 60px;
+        bottom: 0px;
+        background: var(--azul-AICO);
+        width: 50%;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: unset;
+        padding-left: 20px;
+
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        transition: clip-path 1s;
+
+    }
+
+    .mov-input {
+        display: none;
+    }
+
+    .mov-input:checked + .mov-menu {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .mov-menu-icon {
+        font-size: 2.5rem;
+    }
+
+    .title {
+        margin-left: 10px;
     }
 }
