@@ -33,7 +33,7 @@ function sendEmail($email, $username, $asunto, $cuerpo)
         $mail->Host       = 'smtp.hostinger.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = "aico@devjaymx.com";
-        $mail->Password   = "Pass123-";
+        $mail->Password   = "";
         $mail->Port       = '587';
 
         //Recipientes
