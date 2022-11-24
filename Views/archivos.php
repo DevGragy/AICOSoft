@@ -18,7 +18,7 @@ require_once "../views/includes/header.php";
 ?>
 <main class="main">
     <div class="topbar">
-        <?php include "./includes/menu-movil.php"?>
+        <?php include "./includes/menu-movil.php" ?>
         <!--User img-->
         <div class="mail">
             <div class="user">
@@ -38,13 +38,14 @@ require_once "../views/includes/header.php";
         </p>
         <?php unset($_SESSION['message']);
         } ?>
-        <h2>Archivos</h2>
+        <h2>Archivos de <?php echo $username ?> </h2>
         <div class="contenedor-archivos">
             <div class="subir-archivos">
                 <form action="" method="POST" enctype="multipart/form-data" class="contenedor-files card-sty">
                     <h2>Subir Archivo</h2>
                     <p>Tamaño MAXIMO por archivo de 40MB.</p>
-                    <input type="text" name="file-name" placeholder="Nombre del Archivo" class="input-round input-round2" required>
+                    <input type="text" name="file-name" placeholder="Nombre del Archivo"
+                        class="input-round input-round2" required>
                     <input type="file" name="file-only" class="input-round inputfile" id="file" required>
                     <label for="file" class="margin-bot-ex">
                         <span class="icono">
