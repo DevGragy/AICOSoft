@@ -46,12 +46,13 @@ require_once "../views/includes/header.php";
                     <p>Tamaño MAXIMO por archivo de 40MB.</p>
                     <input type="text" name="file-name" placeholder="Nombre del Archivo"
                         class="input-round input-round2" required>
-                    <input type="file" name="file-only" class="input-round inputfile" id="file" required>
+                    <input type="file" name="file-only" class="input-round inputfile" id="file" required 
+                    data-multiple-caption="{count} files selected" multiple>
                     <label for="file" class="margin-bot-ex">
                         <span class="icono">
-                            <ion-icon name="arrow-up-circle-outline" style="margin-top: 3px;"></ion-icon>
+                            <ion-icon name="arrow-up-circle-outline" style="margin-top: 10px;"></ion-icon>
+                            <p>Elegir un archivo</p>
                         </span>
-                        Elegir un archivo
                     </label>
                     <button name="create-file" class="btn-submit">Subir Archivo</button>
                 </form>

@@ -870,6 +870,19 @@ table {
 
 /* MODAL --------- */
 
+.modal-arch {
+    display: flex;
+    flex-direction: column;
+}
+
+.archivo-space {
+    margin: 20px 40px;
+}
+
+.archivo-space2 {
+    margin: 0px 150px;
+}
+
 .modal-pr {
     display: none;
     position: fixed;
@@ -1109,9 +1122,7 @@ tbody .btn-eliminar {
 }
 
 .contenedor-files label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 10px;
 }
 
 .contenedor-files label .icono ion-icon {
@@ -1383,5 +1394,9 @@ tbody .btn-eliminar {
 
     .title {
         margin-left: 10px;
+    }
+
+    .archivo-space2 {
+        margin: 0px 100px;
     }
 }

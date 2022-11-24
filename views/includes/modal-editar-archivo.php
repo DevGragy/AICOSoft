@@ -10,15 +10,22 @@ $archivo = $file['file'];
 <!-- Modal -->
 <div id="update<?php echo $file['id_file'] ?>" class="modal fade">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content modal-arch">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title"><?php echo $nombre; ?></h4>
             </div>
             <form action="../controllers/update-file.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id_file" value="<?php echo $file['id_file']; ?>">
-                <input type="text" name="file-name" value="<?php echo $file['name']; ?>" class="input-round">
-                <input type="file" name="file-only" class="input-round">
+                <input type="text" name="file-name" value="<?php echo $file['name']; ?>" class="input-round archivo-space">
+                <input type="file" name="file-only" class="input-round inputfile" id="file" required 
+                    data-multiple-caption="{count} files selected" multiple>
+                    <label for="file" class="margin-bot-ex archivo-space2">
+                        <span class="icono">
+                            <ion-icon name="arrow-up-circle-outline" style="margin-top: 10px;"></ion-icon>
+                            <p>Elegir un archivo</p>
+                        </span>
+                    </label>
                 <div>
                     <button class="btn-submit" name="update">Editar Archivo</button>
                 </div>
