@@ -1,42 +1,37 @@
-let numbers = document.querySelectorAll('[id=number]')
-let totales = document.querySelectorAll('[id=totales]')
-let proceso = document.querySelectorAll('[id=proceso]')
-let concluida = document.querySelectorAll('[id=concluida]')
+/*let charts = document.querySelectorAll("#myChart");
+let proceso = document.querySelectorAll("[id=proceso]");
+let concluida = document.querySelectorAll("[id=concluida]");
 
-let counter = 0;
+let allData = {
+    dataProcess: [],
+    dataDone: [],
+};
 
-for (let i = 0; i < totales.length; i++) {
-  let total = totales[i].innerHTML
+proceso.forEach((process) => {
+    data = process.innerHTML;
+    allData.dataProcess.push(data);
+});
 
-  for (let i = 0; i < proceso.length; i++) {
-    let en_proceso = proceso[i].innerHTML
+concluida.forEach((finish) => {
+    data = finish.innerHTML;
+    allData.dataDone.push(data);
+});
 
-    for (let i = 0; i < concluida.length; i++) {
-      let ya_concluida = concluida[i].innerHTML
-      
-      var num_total = parseFloat(total)
-      var num_proceso = parseFloat(en_proceso)
-      var num_concluida = parseFloat(ya_concluida)
+console.log(allData);
 
-      var porcentaje = (num_concluida/num_total)*100
-
-      console.log(porcentaje)
-
-    }
-  }
-}
-
-//numbers.forEach((number) =>{
-  //setInterval(() => {
-    //if(counter == 65) {
-        //clearInterval();
-    //}else{
-        //counter += 1;
-        //number.innerHTML = counter + "%";
-    //}
-  
-  //}, 30);
-//}) 
-
-
-//(num_concluida/num_total)*100
+charts.forEach((ctx) => {
+    new Chart(ctx, {
+        type: "doughnut",
+        data: {
+            labels: ["Sin Hacer", "Hechas"],
+            datasets: [
+                {
+                    label: "# ",
+                    data: [allData.dataProcess, allData.dataDone],
+                    borderWidth: 1,
+                },
+            ],
+        },
+    });
+});
+*/

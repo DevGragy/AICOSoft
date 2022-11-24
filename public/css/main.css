@@ -85,6 +85,14 @@ table {
     text-align: center;
 }
 
+.space-around {
+    justify-content: space-around;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
 .centrar {
     display: flex;
     justify-content: center;
@@ -501,6 +509,41 @@ table {
     display: flex;
 }
 
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.transform-dash {
+    text-transform: initial;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    max-width: 600px;
+    gap: 20px;
+}
+
+.dash-card {
+    padding: 20px;
+}
+
+.dash-one-card {
+    margin: 0 auto;
+    max-width: 600px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.mtb-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .navigation {
     position: fixed;
     width: 200px;
@@ -717,6 +760,7 @@ table {
     padding: 40px 150px;
     margin-right: 200px;
     transition: 0.5s;
+    font-size: 17px;
 }
 
 .tabcontainer.active {
@@ -952,40 +996,18 @@ tbody .btn-eliminar {
 
 .termo-space {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 20px 0px;
+    margin: 0 auto;
     margin-bottom: 20px;
-}
-
-.progress-box {
-    height: 160px;
-    width: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.outer {
-    height: 160px;
-    width: 160px;
-    border-radius: 50%;
-    padding: 20px;
-    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-        -6px -6px 10px -1px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
 }
 
 .inner {
-    height: 120px;
-    width: 120px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
-        inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
-        -0.5px -0.5px 0px rgba(0, 0, 0, 0.2), 0.5px 0.5px 0px rgba(0, 0, 0, 15),
-        0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    bottom: 70px;
+    left: 4px;
 }
 
 #number {
@@ -993,25 +1015,49 @@ tbody .btn-eliminar {
     color: #555;
 }
 
-circle {
-    fill: none;
-    stroke: url(#GradientColor);
-    stroke-width: 20px;
-    stroke-dasharray: 472;
-    stroke-dashoffset: 472;
-    animation: anim 2s linear forwards;
-}
-
-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 @keyframes anim {
-    100% {
-        stroke-dashoffset: 165;
+    0% {
+        transform: rotate(0deg);
     }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    margin-top: 20px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.tasks-dash {
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 12px;
 }
 
 /* ------ BARRA DE PROGRESO */
@@ -1031,12 +1077,12 @@ svg {
 }
 
 .inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1; 
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
 
 .inputfile + label {
@@ -1051,8 +1097,7 @@ svg {
     transition: 0.3s;
 
     outline: 1px var(--negro);
-	outline: -webkit-focus-ring-color auto 5px;
-
+    outline: -webkit-focus-ring-color auto 5px;
 }
 
 .inputfile:focus + label,
@@ -1069,20 +1114,17 @@ svg {
     align-items: center;
 }
 
-
 .contenedor-files label .icono ion-icon {
-    font-size: 1.50em;
+    font-size: 1.5em;
     margin-left: -15px;
 }
 
 /* ------ ARCHIVOS */
 
-
 @media only screen and (min-width: 1200px) {
     .mov-nav {
         display: none;
     }
-    
 }
 
 /* Escritorio */
@@ -1090,7 +1132,7 @@ svg {
     .mov-nav {
         display: none;
     }
-    
+
     .vista-proyecto {
         grid-template-columns: 1fr;
     }
@@ -1115,7 +1157,6 @@ svg {
         height: 800px;
         max-width: 700px;
     }
-
 }
 
 /* Tablet */
@@ -1326,7 +1367,6 @@ svg {
 
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
         transition: clip-path 1s;
-
     }
 
     .mov-input {

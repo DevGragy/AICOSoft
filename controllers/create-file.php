@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/Mexico_City');
 
 if (isset($_POST['create-file'])) {
     $file_name = $_POST['file-name'];
