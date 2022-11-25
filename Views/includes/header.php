@@ -63,6 +63,8 @@
                     </a>
                 </li>
                 <?php endif; ?>
+
+                <?php if ($_SESSION['id_rol'] != 3) : ?>
                 <hr class="linea3">
                 <li>
                     <a href="mis-proyectos.php">
@@ -88,6 +90,7 @@
                         <span class="title">Archivos</span>
                     </a>
                 </li>
+                <?php endif; ?>
                 <hr class="linea4">
                 <li>
                     <a href="../controllers/logout.php">

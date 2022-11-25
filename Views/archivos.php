@@ -7,9 +7,14 @@ $username = $_SESSION["username"];
 $email    = $_SESSION['email'];
 $rol      = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
+$free     = $_SESSION['free'];
 
 if (!isset($_SESSION["username"]) && $verified != 2) {
     header("Location: ./login.php");
+}
+
+if ($rol == 3 && $free == 0) {
+    header("Location: ./dashboard.php");
 }
 
 include "../controllers/read-file.php";
@@ -32,10 +37,10 @@ require_once "../views/includes/header.php";
     <div class="tabcontainer center">
         <!-- Alerta de edición y eliminación de archivos -->
         <?php if (isset($_SESSION['message'])) { ?>
-        <p class="<?= $_SESSION['message_type'] ?>" id="alert">
-            <span class="close-alert" id="close-alert">&times;</span>
-            <?= $_SESSION['message'] ?>
-        </p>
+            <p class="<?= $_SESSION['message_type'] ?>" id="alert">
+                <span class="close-alert" id="close-alert">&times;</span>
+                <?= $_SESSION['message'] ?>
+            </p>
         <?php unset($_SESSION['message']);
         } ?>
         <h2>Archivos de <?php echo $username ?> </h2>
@@ -44,10 +49,8 @@ require_once "../views/includes/header.php";
                 <form action="" method="POST" enctype="multipart/form-data" class="contenedor-files card-sty">
                     <h2>Subir Archivo</h2>
                     <p>Tamaño MAXIMO por archivo de 40MB.</p>
-                    <input type="text" name="file-name" placeholder="Nombre del Archivo"
-                        class="input-round input-round2" required>
-                    <input type="file" name="file-only" class="input-round inputfile" id="file" required 
-                    data-multiple-caption="{count} files selected" multiple>
+                    <input type="text" name="file-name" placeholder="Nombre del Archivo" class="input-round input-round2" required>
+                    <input type="file" name="file-only" class="input-round inputfile" id="file" required data-multiple-caption="{count} files selected" multiple>
                     <label for="file" class="margin-bot-ex">
                         <span class="icono">
                             <ion-icon name="arrow-up-circle-outline" style="margin-top: 10px;"></ion-icon>
@@ -101,32 +104,30 @@ require_once "../views/includes/header.php";
                                 $value = "<img class='w-50' src='../public/img/doc.png'>";
                             }
                         ?>
-                        <tr>
-                            <td>
-                                <?php echo $fileName; ?>
-                            </td>
-                            <td>
-                                <a class="pointer" href="../controllers/preview-file.php?id=<?php echo $fileId ?>">
-                                    <?php echo $value; ?>
-                                </a>
-                            </td>
-                            <td>
-                                <?php echo $fileDate; ?>
-                            </td>
-                            <td>
-                                <?php echo $fileCategory; ?>
-                            </td>
-                            <td>
-                                <button type="button" data-target="#update<?php echo $file['id_file']; ?>"
-                                    class="btn-editar" data-toggle="modal">Ver/Editar</button>
-                                <button type="button" data-target="#delete<?php echo $file['id_file']; ?>"
-                                    class="btn-eliminar" data-toggle="modal">Eliminar</button>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <?php echo $fileName; ?>
+                                </td>
+                                <td>
+                                    <a class="pointer" href="../controllers/preview-file.php?id=<?php echo $fileId ?>">
+                                        <?php echo $value; ?>
+                                    </a>
+                                </td>
+                                <td>
+                                    <?php echo $fileDate; ?>
+                                </td>
+                                <td>
+                                    <?php echo $fileCategory; ?>
+                                </td>
+                                <td>
+                                    <button type="button" data-target="#update<?php echo $file['id_file']; ?>" class="btn-editar" data-toggle="modal">Ver/Editar</button>
+                                    <button type="button" data-target="#delete<?php echo $file['id_file']; ?>" class="btn-eliminar" data-toggle="modal">Eliminar</button>
+                                </td>
+                            </tr>
 
-                        <?php include "./includes/modal-editar-archivo.php"
+                            <?php include "./includes/modal-editar-archivo.php"
                             ?>
-                        <?php include "./includes/modal-eliminar-archivo.php" ?>
+                            <?php include "./includes/modal-eliminar-archivo.php" ?>
                         <?php } ?>
                     </tbody>
                 </table>
