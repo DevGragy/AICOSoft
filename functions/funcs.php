@@ -93,5 +93,5 @@ function secToDaysHoursMinutes($seconds)
     $days = floor($seconds / 86400);
     $hours = floor(($seconds - $days * 86400) / 3600);
     $minutes = floor(($seconds / 60) % 60);
-    return "Dias: $days <br> Horas: $hours <br> Minutos: $minutes";
+    return "Dias: $days <br> Horas: $hours <br> Minutos: $minutes <br> <br> ";
 }

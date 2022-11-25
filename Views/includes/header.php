@@ -45,6 +45,14 @@
                         <span class="title">Perfil</span>
                     </a>
                 </li>
+                <li>
+                    <a href="suscripcion.php">
+                        <span class="icon">
+                            <ion-icon name="bag-add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Suscripcion</span>
+                    </a>
+                </li>
                 <?php if ($_SESSION['id_rol'] == 1) : ?>
                 <li>
                     <a href="usuarios.php">

@@ -25,7 +25,7 @@ $segundosCreacionYActual = $fechaHoraSegundos - $secondsCreated . "<br>";
 $int_seconds = (int) $segundosCreacionYActual;
 
 #Validamos si llega a $maxTime
-$freeDays = (3600 * 24) * 1;
+$freeDays = (3600 * 24) * 7;
 $maxTime = $freeDays;
 
 if ($userRol != 3 && $freeUserPeriod == 0) {
