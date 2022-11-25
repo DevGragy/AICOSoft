@@ -59,7 +59,7 @@ require_once "../views/includes/header.php"
                 if ($rol == 2) {
                     echo "Tu suscripcion vence el: " . $nextPay;
                 } else if ($rol == 3) {
-                    echo $actualiza;
+                    echo $actualiza."<a class='aqui' href='./suscripcion.php'>Activa tu Cuenta</a>";
                 } else if ($rol == 1) {
                     echo "Eres admin";
                 } ?>

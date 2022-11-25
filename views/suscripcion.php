@@ -54,17 +54,6 @@ require_once "../views/includes/header.php";
                 }  ?>
             </div>
         </div>
-
-        <div class="card-sty dash-one-card ">
-            <div class="dash-card ">
-
-                <p>* Debido a ser la v1.0 de AICOSoft aun no contamos con pagos recurrentes mensuales por lo que
-                    tienes que actualizar tu pago cada mes. *
-                    <br /><br />
-                    Estaras recibiendo un aviso, en el inicio de tu dashboard.
-                </p>
-            </div>
-        </div>
     </div>
 </main>
 <?php require_once "../views/includes/footer.php"; ?>

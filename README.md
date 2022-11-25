@@ -13,7 +13,13 @@ Dashboard creado con el stack WAMP.
 
 # Carpetas del proyecto
 
-## controllers
+## Config
+
+### config.php
+
+### paypal.php
+
+## Controllers
 
 Contiene los diferentes controladores que utiliza el sitio web. 
 
@@ -135,6 +141,8 @@ Cierra la sesión del dashboard eliminando los datos de sesión y redirige al us
 ?>
 ```
 
+### paypalCheckout.php
+
 ### preview-file.php
 
 Permite visualizar una interfaz que muestra una vista previa de el documento seleccionado siempre que este tenga una extensión compatible.
@@ -193,6 +201,10 @@ $newUser = "INSERT INTO users (username, email, password, token, active, free_pe
 ### set-premium.php
 
 Permite asignar el periodo de prueba a los usuarios que se registran por primera vez.
+
+### subscribed.php
+
+### unsuscribed.php
 
 ### update-file.php
 
@@ -353,6 +365,8 @@ Permite visualizar la pantalla de "Login" del dashboard, dando acceso al formula
 
 Permite visualizar la sección de "Mis proyectos" del dashboard, dando acceso a la interfaz que permite agregar un nuevo proyecto, ingresar a los diferentes proyectos o editar un proyecto en específico.
 
+### orderDetails.php
+
 ### perfil.php
 
 Permite visualizar la sección de "Perfil" del dashboard, dando acceso a la interfaz que visualiza el nombre, email y tipo de usuario del usuario que ingresó al dashboard.
@@ -365,10 +379,11 @@ Permite visualizar la sección de "Proyecto" del dashboard, dando acceso a los d
 
 Permite visualizar la sección de "Registro" del dashboard, dando acceso al formulario para crear una nueva cuenta que tendrá acceso al resto de las secciones del dashboard de acuerdo a los roles que se le asignen, ya sea de manera automática o manual.
 
+### suscripcion.php
+
 ### usuarios.php
 
 Permite visualizar la sección de "Usuarios" del dashboard, dando acceso únicamente a usuarios con el rol "Administrador" a una tabla con la información de todos los usuarios registrados.
-
 
 ## includes
 
