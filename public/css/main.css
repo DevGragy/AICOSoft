@@ -1132,6 +1132,53 @@ tbody .btn-eliminar {
 
 /* ------ ARCHIVOS */
 
+/* ------ SUSCRIPCION */
+.suscrito-aico {
+    border: 1px solid #14b8a6;
+    background-color: #ccfbf1;
+    color: #134e4a;
+    padding: 18px 12px;
+    margin: 12px auto;
+    margin-bottom: 32px;
+    text-align: center;
+    border-radius: 12px;
+    width: 80%;
+}
+
+.text-initial {
+    text-align: start;
+}
+
+.lista {
+    list-style: none;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mtb-40 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.price {
+    font-size: 40px;
+}
+
+.price-card {
+    margin: 0 auto;
+    max-width: 400px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* ------ SUSCRIPCION */
+
 @media only screen and (min-width: 1200px) {
     .mov-nav {
         display: none;

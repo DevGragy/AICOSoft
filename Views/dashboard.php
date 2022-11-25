@@ -12,6 +12,9 @@ if (!isset($_SESSION["username"]) && $verified != 2) {
     header("Location: ./login.php");
 }
 include "../controllers/read-project.php";
+include "../functions/funcs.php";
+include "../controllers/unsubscribe.php";
+
 require_once "../views/includes/header.php"
 ?>
 <main class="main">
@@ -51,7 +54,12 @@ require_once "../views/includes/header.php"
         </div>
         <div class="card-sty dash-one-card ">
             <div class="dash-card ">
-                * Todo esto y mas en AICO Soft *
+                <?php
+                if ($rol != 3) {
+                    echo "Tu suscripcion vence el: " . $nextPay;
+                } else if ($rol == 3) {
+                    echo $actualiza;
+                } ?>
             </div>
         </div>
         <div>
