@@ -7,9 +7,14 @@ $username = $_SESSION["username"];
 $email    = $_SESSION['email'];
 $rol      = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
+$free     = $_SESSION['free'];
 
 if (!isset($_SESSION["username"]) && $verified != 2) {
     header("Location: ./login.php");
+}
+
+if ($rol == 3 && $free == 0) {
+    header("Location: ./dashboard.php");
 }
 
 include "../controllers/read-project.php";
@@ -20,7 +25,7 @@ require_once "../views/includes/header.php"
 ?>
 <main class="main">
     <div class="topbar">
-        <?php include "./includes/menu-movil.php"?>
+        <?php include "./includes/menu-movil.php" ?>
         <!--User img-->
         <div class="mail">
             <div class="user">

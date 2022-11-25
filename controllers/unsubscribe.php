@@ -13,8 +13,11 @@ $userRol = $userRow['id_rol'];
 $nextPay = date('Y-m-d H:i:s', strtotime($userLastPay . "+1 minutes"));
 $currentDate = date('Y-m-d H:i:s');
 
-if ($currentDate >= $nextPay) {
-    $queryUserRol = "UPDATE users SET id_rol = 3, last_payment = '$currentDate' WHERE id = '$user_id'";
+$intnextpay = strtotime($nextPay);
+$intcurrentdate = strtotime($currentDate);
+
+if ($intnextpay <= $intcurrentdate) {
+    $queryUserRol = "UPDATE users SET id_rol = 3 WHERE id = '$user_id'";
     $setFree = mysqli_query($conexion, $queryUserRol);
 }
 

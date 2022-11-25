@@ -20,6 +20,7 @@ if (isset($_POST['acceder'])) {
             $_SESSION['email']    = $row['email'];
             $_SESSION['id_rol']   = $row['id_rol'];
             $_SESSION['active']   = $row['active'];
+            $_SESSION['free']     = $row['free_period'];
             header("Location: ./dashboard.php");
         } else {
             $error1 = "Acceso Denegado - Cuenta no Verificada";

@@ -8,13 +8,14 @@ $username = $_SESSION["username"];
 $email    = $_SESSION['email'];
 $rol      = $_SESSION["id_rol"];
 $verified = $_SESSION['active'];
+
 if (!isset($_SESSION["username"]) && $verified != 2) {
     header("Location: ./login.php");
 }
-include "../controllers/read-project.php";
-include "../functions/funcs.php";
-include "../controllers/unsubscribe.php";
 
+include "../controllers/read-project.php";
+include "../controllers/unsubscribe.php";
+include "../functions/funcs.php";
 require_once "../views/includes/header.php"
 ?>
 <main class="main">
