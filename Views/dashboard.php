@@ -56,10 +56,12 @@ require_once "../views/includes/header.php"
         <div class="card-sty dash-one-card ">
             <div class="dash-card ">
                 <?php
-                if ($rol != 3) {
+                if ($rol == 2) {
                     echo "Tu suscripcion vence el: " . $nextPay;
                 } else if ($rol == 3) {
                     echo $actualiza;
+                } else if ($rol == 1) {
+                    echo "Eres admin";
                 } ?>
             </div>
         </div>

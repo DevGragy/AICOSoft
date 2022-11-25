@@ -49,7 +49,9 @@ require_once "../views/includes/header.php";
                     <li class="mb-20">Subida de archivos</li>
                     <li class="mb-20">Visualizacion de archivos</li>
                 </ul>
-                <?php include '../controllers/paypalCheckout.php'; ?>
+                <?php if ($rol != 1) {
+                    include '../controllers/paypalCheckout.php';
+                }  ?>
             </div>
         </div>
 

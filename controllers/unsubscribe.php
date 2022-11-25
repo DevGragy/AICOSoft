@@ -16,9 +16,11 @@ $currentDate = date('Y-m-d H:i:s');
 $intnextpay = strtotime($nextPay);
 $intcurrentdate = strtotime($currentDate);
 
-if ($intnextpay <= $intcurrentdate) {
-    $queryUserRol = "UPDATE users SET id_rol = 3 WHERE id = '$user_id'";
-    $setFree = mysqli_query($conexion, $queryUserRol);
+if ($rol == 2 || $rol == 3) {
+    if ($intnextpay <= $intcurrentdate) {
+        $queryUserRol = "UPDATE users SET id_rol = 3 WHERE id = '$user_id'";
+        $setFree = mysqli_query($conexion, $queryUserRol);
+    }
 }
 
 $actualiza = 'Actualiza tu pago para seguir utilizando AICOSoft';
