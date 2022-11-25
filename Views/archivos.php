@@ -65,7 +65,7 @@ require_once "../views/includes/header.php";
                     Mis Archivos
                 </h2>
 
-                <table>
+                <table class="display-block">
                     <thead>
                         <tr>
                             <th>Nombre</th>

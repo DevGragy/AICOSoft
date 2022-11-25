@@ -1183,6 +1183,10 @@ tbody .btn-eliminar {
     .mov-nav {
         display: none;
     }
+
+    .display-block {
+        display: table;
+    }
 }
 
 /* Escritorio */
